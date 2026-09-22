@@ -1,0 +1,901 @@
+[
+ {
+  "pmcid": "PMC12296543",
+  "doi": "10.1016/j.ultsonch.2025.107464",
+  "area": "A2_property",
+  "eligible_position": 0,
+  "year": 2025,
+  "journal": "Ultrasonics sonochemistry",
+  "title": "Preparation of aspirin inhalable powder by ultrasound-intensified anti-solvent crystallization for pulmonary drug delivery.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0/E0/EP0/S0: read the whole METHODS subsection 'Evaluation the significance of process parameter via machine learning' and the RESULTS_DISCUSSION subsection 'Evaluation of key process parameter via machine learning', plus abstract and conclusion. The decision-tree regressor is used only to rank process parameters by Shapley value; no predictive metric (R2/RMSE), no train/test split, no cross-validation and no uncertainty of any kind is reported. Regex v1.1 returned 0 candidates; the evaluation digest had 3 sentences, all about wet-lab measurements.",
+   "E": "U0/E0/EP0/S0: read the whole METHODS subsection 'Evaluation the significance of process parameter via machine learning' and the RESULTS_DISCUSSION subsection 'Evaluation of key process parameter via machine learning', plus abstract and conclusion. The decision-tree regressor is used only to rank process parameters by Shapley value; no predictive metric (R2/RMSE), no train/test split, no cross-validation and no uncertainty of any kind is reported. Regex v1.1 returned 0 candidates; the evaluation digest had 3 sentences, all about wet-lab measurements.",
+   "EP": "U0/E0/EP0/S0: read the whole METHODS subsection 'Evaluation the significance of process parameter via machine learning' and the RESULTS_DISCUSSION subsection 'Evaluation of key process parameter via machine learning', plus abstract and conclusion. The decision-tree regressor is used only to rank process parameters by Shapley value; no predictive metric (R2/RMSE), no train/test split, no cross-validation and no uncertainty of any kind is reported. Regex v1.1 returned 0 candidates; the evaluation digest had 3 sentences, all about wet-lab measurements.",
+   "S": "U0/E0/EP0/S0: read the whole METHODS subsection 'Evaluation the significance of process parameter via machine learning' and the RESULTS_DISCUSSION subsection 'Evaluation of key process parameter via machine learning', plus abstract and conclusion. The decision-tree regressor is used only to rank process parameters by Shapley value; no predictive metric (R2/RMSE), no train/test split, no cross-validation and no uncertainty of any kind is reported. Regex v1.1 returned 0 candidates; the evaluation digest had 3 sentences, all about wet-lab measurements."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "high",
+  "notes": "Decision-tree + SHAP used for process-parameter attribution only. The model's own predictive performance is never quantified anywhere in the main article, so U0/E0/EP0/S0 rest on complete absence rather than on a negative statement. Table S1 (SI) holds the 37 training preparations, not evaluation results.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11106676",
+  "doi": "10.3762/bjnano.15.47",
+  "area": "A2_property",
+  "eligible_position": 2,
+  "year": 2024,
+  "journal": "Beilstein journal of nanotechnology",
+  "title": "On the additive artificial intelligence-based discovery of nanoparticle neurodegenerative disease drug delivery systems.",
+  "U": 1,
+  "U_code": "U1",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": [
+    {
+     "section": "TABLE",
+     "quote": "Result summary of N2D3Ss alongside average of three samples and standard deviations.",
+     "words": 12
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Because of the nature of this big data system, we divided the information fusion dataset into three samples.",
+     "words": 18
+    }
+   ],
+   "E": "E0: the training (t) and validation (v) series are a 75:25 stratified random split of one fused dataset (4403 ChEMBL NDD assays + 260 NP cytotoxicity assays from journal articles); read the subsections 'IF phase and proposal of training and validation series subsets' and 'Generalities for IFPTML model training and validation series'. No independent source is held out. EP0: no new assay is performed in this study. S0: the section titled 'Robustness analysis of IFPTML models' reports the SD of Sp/Sn/AUROC across three resamples, not a stated distribution shift.",
+   "EP": "E0: the training (t) and validation (v) series are a 75:25 stratified random split of one fused dataset (4403 ChEMBL NDD assays + 260 NP cytotoxicity assays from journal articles); read the subsections 'IF phase and proposal of training and validation series subsets' and 'Generalities for IFPTML model training and validation series'. No independent source is held out. EP0: no new assay is performed in this study. S0: the section titled 'Robustness analysis of IFPTML models' reports the SD of Sp/Sn/AUROC across three resamples, not a stated distribution shift.",
+   "S": "E0: the training (t) and validation (v) series are a 75:25 stratified random split of one fused dataset (4403 ChEMBL NDD assays + 260 NP cytotoxicity assays from journal articles); read the subsections 'IF phase and proposal of training and validation series subsets' and 'Generalities for IFPTML model training and validation series'. No independent source is held out. EP0: no new assay is performed in this study. S0: the section titled 'Robustness analysis of IFPTML models' reports the SD of Sp/Sn/AUROC across three resamples, not a stated distribution shift."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "med",
+  "notes": "U1 because Table 3 reports AVG and SDV rows of Sp, Sn and AUROC over three resampled working datasets, i.e. spread of model performance over repeated resamples. The wording in the text ('the number of cases (n) ... presented the lowest standard deviation') is confusing, but the table's SDV values for the performance metrics themselves are unambiguous. Confidence med because the judgement depends on reading Table 3. No per-prediction uncertainty, so not U2.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11165469",
+  "doi": "10.1002/advs.202310141",
+  "area": "A2_property",
+  "eligible_position": 4,
+  "year": 2024,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Mechanical Field Guiding Structure Design Strategy for Meta-Fiber Reinforced Hydrogel Composites by Deep Learning.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: read METHODS 'GAN' subsection and RESULTS_DISCUSSION section 3.2; only pixel-wise MSE and a fibre volume-fraction regression R2 (0.957 / 0.835) on the validation split are reported, with no spread and no per-prediction uncertainty. E0: the 1800 image pairs are all FE-simulated and '80% of which are randomly divided into training set and the left for validation set'; the comparison with literature experiments validates the FE solid-mechanics model, not the GAN. EP0: designed structures are checked only by FE re-simulation ('The FE simulation of the real displacement of the generated composite structure is illustrated in Figure 9c for verification'), which section 7 excludes. S0: no shift test.",
+   "E": "U0: read METHODS 'GAN' subsection and RESULTS_DISCUSSION section 3.2; only pixel-wise MSE and a fibre volume-fraction regression R2 (0.957 / 0.835) on the validation split are reported, with no spread and no per-prediction uncertainty. E0: the 1800 image pairs are all FE-simulated and '80% of which are randomly divided into training set and the left for validation set'; the comparison with literature experiments validates the FE solid-mechanics model, not the GAN. EP0: designed structures are checked only by FE re-simulation ('The FE simulation of the real displacement of the generated composite structure is illustrated in Figure 9c for verification'), which section 7 excludes. S0: no shift test.",
+   "EP": "U0: read METHODS 'GAN' subsection and RESULTS_DISCUSSION section 3.2; only pixel-wise MSE and a fibre volume-fraction regression R2 (0.957 / 0.835) on the validation split are reported, with no spread and no per-prediction uncertainty. E0: the 1800 image pairs are all FE-simulated and '80% of which are randomly divided into training set and the left for validation set'; the comparison with literature experiments validates the FE solid-mechanics model, not the GAN. EP0: designed structures are checked only by FE re-simulation ('The FE simulation of the real displacement of the generated composite structure is illustrated in Figure 9c for verification'), which section 7 excludes. S0: no shift test.",
+   "S": "U0: read METHODS 'GAN' subsection and RESULTS_DISCUSSION section 3.2; only pixel-wise MSE and a fibre volume-fraction regression R2 (0.957 / 0.835) on the validation split are reported, with no spread and no per-prediction uncertainty. E0: the 1800 image pairs are all FE-simulated and '80% of which are randomly divided into training set and the left for validation set'; the comparison with literature experiments validates the FE solid-mechanics model, not the GAN. EP0: designed structures are checked only by FE re-simulation ('The FE simulation of the real displacement of the generated composite structure is illustrated in Figure 9c for verification'), which section 7 excludes. S0: no shift test."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": true
+  },
+  "acknowledged_gap_evidence": [
+   {
+    "section": "RESULTS_DISCUSSION",
+    "quote": "This issue indeed constrains the generalization capability of the current model, and may be solved by enlarging the dataset with other boundary conditions.",
+    "words": 23
+   }
+  ],
+  "SI_dependency": false,
+  "n_supplementary_files": 0,
+  "confidence": "high",
+  "notes": "Abstract phrase 'predict the structure of the hydrogel composite with satisfied confidence' is rhetorical, not an uncertainty estimate. The limitation sentence about generalisation is recorded as acknowledged_gap_S, not as S1.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12216472",
+  "doi": "10.1038/s41598-025-06227-y",
+  "area": "A2_property",
+  "eligible_position": 6,
+  "year": 2025,
+  "journal": "Scientific reports",
+  "title": "Implementing partial least squares and machine learning regressive models for prediction of drug release in targeted drug delivery application.",
+  "U": 1,
+  "U_code": "U1",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": [
+    {
+     "section": "TABLE",
+     "quote": "R2 values for ML models. Model | Train | Test | K-fold mean | K-fold standard dev.",
+     "words": 17
+    },
+    {
+     "section": "TABLE",
+     "quote": "AdaBoost-MLP | 0.996146 | 0.994043 | 0.995294 | 0.00148856.",
+     "words": 9
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "In this study, 5-fold cross-validation was used to evaluate predictive models on a dataset of 155 samples with over 1500 spectral variables, reduced via PLS regression.",
+     "words": 26
+    }
+   ],
+   "E": "E0/EP0/S0: read METHODS 'Dataset and visualization' and the whole 'Results and discussion'. One dataset of 155 Raman-spectra samples (taken from the earlier literature study) is split 80:20 with 5-fold CV; there is no second data source, no new experiment and no stated distribution change. The 'experimental versus predicted' parity plots are on the random test split.",
+   "EP": "E0/EP0/S0: read METHODS 'Dataset and visualization' and the whole 'Results and discussion'. One dataset of 155 Raman-spectra samples (taken from the earlier literature study) is split 80:20 with 5-fold CV; there is no second data source, no new experiment and no stated distribution change. The 'experimental versus predicted' parity plots are on the random test split.",
+   "S": "E0/EP0/S0: read METHODS 'Dataset and visualization' and the whole 'Results and discussion'. One dataset of 155 Raman-spectra samples (taken from the earlier literature study) is split 80:20 with 5-fold CV; there is no second data source, no new experiment and no stated distribution change. The 'experimental versus predicted' parity plots are on the random test split."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 0,
+  "confidence": "high",
+  "notes": "U1 from the 'K-fold standard dev' column of Table 1 (e.g. 0.00148856 for AdaBoost-MLP), i.e. SD of R2 across the 5 folds. Regex v1.1 produced 0 candidates for this paper; the U1 evidence was found only through the evaluation digest / table read, which is a regex false negative worth logging.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11884566",
+  "doi": "10.1002/advs.202415902",
+  "area": "A2_property",
+  "eligible_position": 8,
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Machine Learning-Driven Prediction, Preparation, and Evaluation of Functional Nanomedicines Via Drug-Drug Self-Assembly.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: accuracy, precision, recall, F1 and AUC are single values (main text quotes 91.89% for LR); the numbers live in Table S5 of the SI and no spread over folds/seeds is given. Learning curves compare training and test scores, which is not a spread of a metric. E0: the 87 drug combinations (own NSAID/PTX and NSAID/DOX experiments plus literature-reported self-assembling pairs) are pooled and then 'divided into a training dataset and a test dataset at a ratio of 50:37'. S0: no shift test.",
+   "E": "U0: accuracy, precision, recall, F1 and AUC are single values (main text quotes 91.89% for LR); the numbers live in Table S5 of the SI and no spread over folds/seeds is given. Learning curves compare training and test scores, which is not a spread of a metric. E0: the 87 drug combinations (own NSAID/PTX and NSAID/DOX experiments plus literature-reported self-assembling pairs) are pooled and then 'divided into a training dataset and a test dataset at a ratio of 50:37'. S0: no shift test.",
+   "EP": "U0: accuracy, precision, recall, F1 and AUC are single values (main text quotes 91.89% for LR); the numbers live in Table S5 of the SI and no spread over folds/seeds is given. Learning curves compare training and test scores, which is not a spread of a metric. E0: the 87 drug combinations (own NSAID/PTX and NSAID/DOX experiments plus literature-reported self-assembling pairs) are pooled and then 'divided into a training dataset and a test dataset at a ratio of 50:37'. S0: no shift test.",
+   "S": "U0: accuracy, precision, recall, F1 and AUC are single values (main text quotes 91.89% for LR); the numbers live in Table S5 of the SI and no spread over folds/seeds is given. Learning curves compare training and test scores, which is not a spread of a metric. E0: the 87 drug combinations (own NSAID/PTX and NSAID/DOX experiments plus literature-reported self-assembling pairs) are pooled and then 'divided into a training dataset and a test dataset at a ratio of 50:37'. S0: no shift test."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": true,
+  "n_supplementary_files": 2,
+  "confidence": "med",
+  "notes": "EP is the borderline. RESULTS says 'After predicting a nanomedicine formed from drug combinations in the test set, we will compare the predicted outcomes with the actual experimental results', which reads prospectively, but the dataset description shows all 87 combinations were experimentally labelled before the 50:37 split, so this is a hold-out, not prospective validation. The Conclusion sentence 'Among these small molecule carriers for nanomedicines predicted from the model, we selected two widely used antineoplastic drugs to assemble with INDs' does not state that these were new samples made after the model was fixed, nor give a predicted-vs-observed comparison. Coded EP=0; flag for adjudication. SI_dependency true: model metrics are in Table S5 and the Experimental Section defers to the SI.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12294283",
+  "doi": "10.3390/gels11070550",
+  "area": "A2_property",
+  "eligible_position": 10,
+  "year": 2025,
+  "journal": "Gels (Basel, Switzerland)",
+  "title": "Interpretable Prediction and Analysis of PVA Hydrogel Mechanical Behavior Using Machine Learning.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: read METHODS ('The dataset was split into training and testing sets using an 80:20 ratio') and the whole model-comparison part of RESULTS_DISCUSSION; every metric (train/test R2, MAE 30.534, RMSE 46.864) is a single value. E0: the 350 data points come from one literature compilation and are split randomly; no second source is held out. S0: no shift test; residual heterogeneity across literature sources is discussed but never evaluated.",
+   "E": "U0: read METHODS ('The dataset was split into training and testing sets using an 80:20 ratio') and the whole model-comparison part of RESULTS_DISCUSSION; every metric (train/test R2, MAE 30.534, RMSE 46.864) is a single value. E0: the 350 data points come from one literature compilation and are split randomly; no second source is held out. S0: no shift test; residual heterogeneity across literature sources is discussed but never evaluated.",
+   "EP": "U0: read METHODS ('The dataset was split into training and testing sets using an 80:20 ratio') and the whole model-comparison part of RESULTS_DISCUSSION; every metric (train/test R2, MAE 30.534, RMSE 46.864) is a single value. E0: the 350 data points come from one literature compilation and are split randomly; no second source is held out. S0: no shift test; residual heterogeneity across literature sources is discussed but never evaluated.",
+   "S": "U0: read METHODS ('The dataset was split into training and testing sets using an 80:20 ratio') and the whole model-comparison part of RESULTS_DISCUSSION; every metric (train/test R2, MAE 30.534, RMSE 46.864) is a single value. E0: the 350 data points come from one literature compilation and are split randomly; no second source is held out. S0: no shift test; residual heterogeneity across literature sources is discussed but never evaluated."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 0,
+  "confidence": "high",
+  "notes": "The only regex v1.1 candidate is an EP pattern inside a future-work clause ('future experimental validation of these design principles would benefit from advanced characterization techniques'), flagged FUTURE_NEG; section 7 forbids it from raising EP. It is a weak acknowledgement of missing experimental validation rather than an E/S limitation statement, so acknowledged_gap left false.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11685617",
+  "doi": "10.1038/s41467-024-55072-6",
+  "area": "A2_property",
+  "eligible_position": 12,
+  "year": 2024,
+  "journal": "Nature communications",
+  "title": "Artificial intelligence-driven rational design of ionizable lipids for mRNA delivery.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 1,
+  "E_code": "E1",
+  "EP": 1,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: read METHODS 'Data splitting and hyperparameters' and the model-performance part of RESULTS. 5-fold CV is used only to tune hyper-parameters; reported metrics (RMSE 0.25, MAE 0.19, R2 ~0.59, ACC/recall/precision/F1) are single values. Every 'mean ± SD (n = 3)' in the figures is wet-lab replicate spread. S0: no stated distribution-shift evaluation; the remark that two mispredicted lipids 'contain hydroxyl groups in their tails – a feature scarcely represented in our collected dataset' is a post-hoc explanation of outliers, not a designed shift test with performance reported.",
+   "E": [
+    {
+     "section": "RESULTS",
+     "quote": "In addition to validating our model’s performance using our collected dataset, we also subjected the model to validation using an external dataset.",
+     "words": 22
+    },
+    {
+     "section": "RESULTS",
+     "quote": "The prediction from the model trained on the whole data showed high accuracy, with a correct rate achieving around 0.78.",
+     "words": 20
+    },
+    {
+     "section": "RESULTS",
+     "quote": "This defective performance was also evidenced by the external validation, in which the number of wrong predictions increased from three to six (Fig. 4b).",
+     "words": 24
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS",
+     "quote": "Eventually, six of them (Fig. 4c) were selected for synthesis and evaluation.",
+     "words": 12
+    },
+    {
+     "section": "FIG",
+     "quote": "Experimental validation of the three ionizable lipids resulted from the first-round of virtual screening.",
+     "words": 14
+    },
+    {
+     "section": "RESULTS",
+     "quote": "Its luminescence signal approached SM-102, showing no significant difference from SM-102 in the area under curves (AUC) of luminescence signals (Fig. 4e).",
+     "words": 22
+    }
+   ],
+   "S": "U0: read METHODS 'Data splitting and hyperparameters' and the model-performance part of RESULTS. 5-fold CV is used only to tune hyper-parameters; reported metrics (RMSE 0.25, MAE 0.19, R2 ~0.59, ACC/recall/precision/F1) are single values. Every 'mean ± SD (n = 3)' in the figures is wet-lab replicate spread. S0: no stated distribution-shift evaluation; the remark that two mispredicted lipids 'contain hydroxyl groups in their tails – a feature scarcely represented in our collected dataset' is a post-hoc explanation of outliers, not a designed shift test with performance reported."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": true,
+  "n_supplementary_files": 8,
+  "confidence": "high",
+  "notes": "E1 is explicit and quantitative (14 lipids for delivery efficiency, 9 LNPs for pKa, from an external dataset; correct rate ~0.78; Model 2 re-checked on the same external set). EP1 is a two-round design-make-test loop: three lipids in round 1 and six in round 2 were synthesised after the models were fixed and their in vivo luciferase signals compared with MC3/SM-102 controls. Borderline not taken: Supplementary Table 9 reports each candidate's predicted 'probability of being positive', a classifier score used to rank candidates; I do not read a class probability as per-prediction uncertainty under section 7 (which lists GP SD, ensembles, MC-dropout, BNN, quantile and evidential models), so U stays 0 rather than 2. SI_dependency true: the external-validation tables (S5, S7–S9) are in the SI.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC7284204",
+  "doi": "10.1002/advs.201903392",
+  "area": "A2_property",
+  "eligible_position": 14,
+  "year": 2020,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Immune Modulation by Design: Using Topography to Control Human Monocyte Attachment and Macrophage Differentiation.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "Read the full parsed text, not only the digest: this JATS file has untitled body sections, so the parser put ~3000 words of Results into BODY_OTHER and the evaluation digest covered only 6 sentences. U0: 'Regression models were generated using random forest and XGBoost ... 70% of the data instances were employed for model training and 30% for testing', and the only metrics are single R2 values (0.84 training, 0.56 test) for the polarisation model. E0: the screening data are from one lab's TopoChips; donor replicates are averaged before modelling ('average, standard deviation, and SNR were calculated between donors for the modeling studies'), and no donor- or chip-level hold-out is evaluated. S0: no cross-donor, cross-cell-type or perturbation evaluation of the model is reported.",
+   "E": "Read the full parsed text, not only the digest: this JATS file has untitled body sections, so the parser put ~3000 words of Results into BODY_OTHER and the evaluation digest covered only 6 sentences. U0: 'Regression models were generated using random forest and XGBoost ... 70% of the data instances were employed for model training and 30% for testing', and the only metrics are single R2 values (0.84 training, 0.56 test) for the polarisation model. E0: the screening data are from one lab's TopoChips; donor replicates are averaged before modelling ('average, standard deviation, and SNR were calculated between donors for the modeling studies'), and no donor- or chip-level hold-out is evaluated. S0: no cross-donor, cross-cell-type or perturbation evaluation of the model is reported.",
+   "EP": "Read the full parsed text, not only the digest: this JATS file has untitled body sections, so the parser put ~3000 words of Results into BODY_OTHER and the evaluation digest covered only 6 sentences. U0: 'Regression models were generated using random forest and XGBoost ... 70% of the data instances were employed for model training and 30% for testing', and the only metrics are single R2 values (0.84 training, 0.56 test) for the polarisation model. E0: the screening data are from one lab's TopoChips; donor replicates are averaged before modelling ('average, standard deviation, and SNR were calculated between donors for the modeling studies'), and no donor- or chip-level hold-out is evaluated. S0: no cross-donor, cross-cell-type or perturbation evaluation of the model is reported.",
+   "S": "Read the full parsed text, not only the digest: this JATS file has untitled body sections, so the parser put ~3000 words of Results into BODY_OTHER and the evaluation digest covered only 6 sentences. U0: 'Regression models were generated using random forest and XGBoost ... 70% of the data instances were employed for model training and 30% for testing', and the only metrics are single R2 values (0.84 training, 0.56 test) for the polarisation model. E0: the screening data are from one lab's TopoChips; donor replicates are averaged before modelling ('average, standard deviation, and SNR were calculated between donors for the modeling studies'), and no donor- or chip-level hold-out is evaluated. S0: no cross-donor, cross-cell-type or perturbation evaluation of the model is reported."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": true,
+  "n_supplementary_files": 2,
+  "confidence": "med",
+  "notes": "EP considered and rejected: 'Further testing on a range of selected topographies validated this observation with corresponding responses seen in TNFα and IL-10 intracellular staining (Figure S12)' validates the biological design rule, not a model prediction, and reports no predicted-vs-measured comparison; the in vivo experiment tested the structural stability of the features. Confidence med because of the poor section parse and because the supporting figures are in the SI.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12656060",
+  "doi": "10.3390/polym17222973",
+  "area": "A2_property",
+  "eligible_position": 16,
+  "year": 2025,
+  "journal": "Polymers",
+  "title": "Additive Manufacturing of Bead-Chain-Shaped Scaffolds with AI-Based Process Optimization.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 1,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: read the METHODS model subsection and the Figure 2 discussion. Five-fold CV is run but only its mean is given – 'The average validation MSE and RMSE across all folds were reported as final indicators' and 'five-fold cross-validation yielded an average validation MSE of 0.000485 mm2'. Section 7 explicitly excludes an average over repeats with no spread, so U0, not U1. The ± values in Table 3 are replicate spread of measured scaffold dimensions. E0: single printer, single lab, no independent dataset. S0: no shift or perturbation test of the model.",
+   "E": "U0: read the METHODS model subsection and the Figure 2 discussion. Five-fold CV is run but only its mean is given – 'The average validation MSE and RMSE across all folds were reported as final indicators' and 'five-fold cross-validation yielded an average validation MSE of 0.000485 mm2'. Section 7 explicitly excludes an average over repeats with no spread, so U0, not U1. The ± values in Table 3 are replicate spread of measured scaffold dimensions. E0: single printer, single lab, no independent dataset. S0: no shift or perturbation test of the model.",
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "To further validate the model’s practical effectiveness, Figure 2e,f present a comparison of the dimensional error rates of D1 and D2 between samples fabricated using experimentally determined conditions and those produced using AI-recommended parameters.",
+     "words": 34
+    },
+    {
+     "section": "TABLE",
+     "quote": "AI-recommended printing conditions for BCS scaffolds and the measured D1 and D2 values.",
+     "words": 13
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "In both cases, the AI-recommended group consistently exhibited lower error rates, with statistically significant improvement observed in “BCS 6040”.",
+     "words": 19
+    }
+   ],
+   "S": "U0: read the METHODS model subsection and the Figure 2 discussion. Five-fold CV is run but only its mean is given – 'The average validation MSE and RMSE across all folds were reported as final indicators' and 'five-fold cross-validation yielded an average validation MSE of 0.000485 mm2'. Section 7 explicitly excludes an average over repeats with no spread, so U0, not U1. The ± values in Table 3 are replicate spread of measured scaffold dimensions. E0: single printer, single lab, no independent dataset. S0: no shift or perturbation test of the model."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 2,
+  "confidence": "high",
+  "notes": "EP1: the MLP was trained on a grid of pressure/speed/delay combinations, then recommended off-grid conditions (e.g. 177 kPa, 64.24 mm/min, 0.25 s), scaffolds were printed at those conditions and the measured D1/D2 and error rates compared with the targets and with the best experimental conditions. Note the single regex v1.1 candidate (U1_spread matching 'all folds') is a false positive under the codebook, since only the fold average is reported.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC7502161",
+  "doi": null,
+  "area": "A2_property",
+  "eligible_position": 18,
+  "year": 2020,
+  "journal": "Avicenna journal of medical biotechnology",
+  "title": "Application of Electrospray in Preparing Solid Lipid Nanoparticles and Optimization of Nanoparticles Using Artificial Neural Networks.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "Short paper; read all 16 parsed paragraphs. U0: 'The best predictive ANNs model presented R2 values of 0.73, 0.95 and 0.94 for training, test, and validation (unseen) data sets, respectively' – single values, no spread, no per-prediction uncertainty. E0/EP0: 'to evaluate the predictive ability of the created model by ANNs, six remaining data sets were used as an unseen (Validation) data set (Table 2)' – these six runs belong to the same in-house electrospray design matrix and were measured before modelling, so they are a random hold-out, not an independent source and not prospective. S0: no shift test.",
+   "E": "Short paper; read all 16 parsed paragraphs. U0: 'The best predictive ANNs model presented R2 values of 0.73, 0.95 and 0.94 for training, test, and validation (unseen) data sets, respectively' – single values, no spread, no per-prediction uncertainty. E0/EP0: 'to evaluate the predictive ability of the created model by ANNs, six remaining data sets were used as an unseen (Validation) data set (Table 2)' – these six runs belong to the same in-house electrospray design matrix and were measured before modelling, so they are a random hold-out, not an independent source and not prospective. S0: no shift test.",
+   "EP": "Short paper; read all 16 parsed paragraphs. U0: 'The best predictive ANNs model presented R2 values of 0.73, 0.95 and 0.94 for training, test, and validation (unseen) data sets, respectively' – single values, no spread, no per-prediction uncertainty. E0/EP0: 'to evaluate the predictive ability of the created model by ANNs, six remaining data sets were used as an unseen (Validation) data set (Table 2)' – these six runs belong to the same in-house electrospray design matrix and were measured before modelling, so they are a random hold-out, not an independent source and not prospective. S0: no shift test.",
+   "S": "Short paper; read all 16 parsed paragraphs. U0: 'The best predictive ANNs model presented R2 values of 0.73, 0.95 and 0.94 for training, test, and validation (unseen) data sets, respectively' – single values, no spread, no per-prediction uncertainty. E0/EP0: 'to evaluate the predictive ability of the created model by ANNs, six remaining data sets were used as an unseen (Validation) data set (Table 2)' – these six runs belong to the same in-house electrospray design matrix and were measured before modelling, so they are a random hold-out, not an independent source and not prospective. S0: no shift test."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 0,
+  "confidence": "high",
+  "notes": "Regex v1.1 returned 0 candidates; digest covered the whole ML reporting. Table 2 lists observed vs predicted particle size for the six hold-out runs, including one large miss (observed 10 nm vs predicted 456 nm), but this is still hold-out evaluation.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC8493061",
+  "doi": "10.3389/fmolb.2021.677547",
+  "area": "A2_property",
+  "eligible_position": 20,
+  "year": 2021,
+  "journal": "Frontiers in molecular biosciences",
+  "title": "Microfluidic Synthesis of Indomethacin-Loaded PLGA Microparticles Optimized by Machine Learning.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: 'The total dataset consisted of 23 cases, which has been further divided into ~60, 20, and 20% for the training, test, and validation sets'; correlations 0.992 / 0.997 / 0.990 are single values, and the ± 0.4 µm figures are droplet-size measurement spread. E0: all 23 cases are the authors' own microfluidic runs. S0: no shift test.",
+   "E": "U0: 'The total dataset consisted of 23 cases, which has been further divided into ~60, 20, and 20% for the training, test, and validation sets'; correlations 0.992 / 0.997 / 0.990 are single values, and the ± 0.4 µm figures are droplet-size measurement spread. E0: all 23 cases are the authors' own microfluidic runs. S0: no shift test.",
+   "EP": "U0: 'The total dataset consisted of 23 cases, which has been further divided into ~60, 20, and 20% for the training, test, and validation sets'; correlations 0.992 / 0.997 / 0.990 are single values, and the ± 0.4 µm figures are droplet-size measurement spread. E0: all 23 cases are the authors' own microfluidic runs. S0: no shift test.",
+   "S": "U0: 'The total dataset consisted of 23 cases, which has been further divided into ~60, 20, and 20% for the training, test, and validation sets'; correlations 0.992 / 0.997 / 0.990 are single values, and the ± 0.4 µm figures are droplet-size measurement spread. E0: all 23 cases are the authors' own microfluidic runs. S0: no shift test."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "med",
+  "notes": "EP is the borderline. The ANN was used to pick operating conditions – 'we chose a concentration of 2% (w/v) PLGA and flow rates of 3.7 and 9.2 µL/min for the disperse and continuous phases, respectively, as optimal conditions to generate size-tunable IND-loaded droplets' – and new blank and IND-loaded droplets were then produced (38.82 ± 0.5 and 45.35 ± 0.4 µm). But the paper states no predicted size for those conditions and makes no predicted-vs-measured comparison for the new run, so EP=0 under 'code what the paper reports'. Flag for adjudication; confidence med.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11615115",
+  "doi": "10.1007/s13346-024-01603-z",
+  "area": "A2_property",
+  "eligible_position": 22,
+  "year": 2025,
+  "journal": "Drug delivery and translational research",
+  "title": "Engineering mannose-functionalized nanostructured lipid carriers by sequential design using hybrid artificial intelligence tools.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 1,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: read METHODS 'FormRules®'/'INForm®' subsections and the model-quality paragraphs. Model quality is reported only as training-set R2 per submodel plus an ANOVA α ('the quality of the models was evaluated for predictability (R2 > 70% for all formulation properties) and accuracy (α < 0.01)'); no spread over folds/seeds and no per-prediction interval. The one regex v1.1 candidate matches 'mutation standard deviation = 0.1', a genetic-algorithm hyper-parameter – a false positive. E0: all N01–N44 formulations are the authors' own; no independent dataset. S0: no shift test (the 3-month storage check is formulation stability, not model evaluation).",
+   "E": "U0: read METHODS 'FormRules®'/'INForm®' subsections and the model-quality paragraphs. Model quality is reported only as training-set R2 per submodel plus an ANOVA α ('the quality of the models was evaluated for predictability (R2 > 70% for all formulation properties) and accuracy (α < 0.01)'); no spread over folds/seeds and no per-prediction interval. The one regex v1.1 candidate matches 'mutation standard deviation = 0.1', a genetic-algorithm hyper-parameter – a false positive. E0: all N01–N44 formulations are the authors' own; no independent dataset. S0: no shift test (the 3-month storage check is formulation stability, not model evaluation).",
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Formulations (IND-NLC-SA) were experimentally produced under the conditions outlined in Table 5, yielding values similar to those predicted by the model.",
+     "words": 21
+    },
+    {
+     "section": "TABLE",
+     "quote": "Values of selected variables obtained from INForm® optimization, values predicted by the model and those obtained experimentally",
+     "words": 17
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "However, the DL was slightly lower than anticipated, indicating a discrepancy in this parameter that can be attributed to the limited number of loaded formulations with SA in the database.",
+     "words": 30
+    }
+   ],
+   "S": "U0: read METHODS 'FormRules®'/'INForm®' subsections and the model-quality paragraphs. Model quality is reported only as training-set R2 per submodel plus an ANOVA α ('the quality of the models was evaluated for predictability (R2 > 70% for all formulation properties) and accuracy (α < 0.01)'); no spread over folds/seeds and no per-prediction interval. The one regex v1.1 candidate matches 'mutation standard deviation = 0.1', a genetic-algorithm hyper-parameter – a false positive. E0: all N01–N44 formulations are the authors' own; no independent dataset. S0: no shift test (the 3-month storage check is formulation stability, not model evaluation)."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "high",
+  "notes": "EP1 twice over: Table 3 and Table 5 each put the INForm®-optimised variable settings next to 'Predicted values' and 'Experimental values' for size, ZP, PDI and DL, and the text states the optimised formulation was produced and measured afterwards. This is a sequential design-make-test paper sampled in A2; it would also meet the A5 definition.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC9513834",
+  "doi": "10.34133/2022/9784273",
+  "area": "A2_property",
+  "eligible_position": 24,
+  "year": 2022,
+  "journal": "Research (Washington, D.C.)",
+  "title": "High-Content Screening and Analysis of Stem Cell-Derived Neural Interfaces Using a Combinatorial Nanotechnology and Machine Learning Approach.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: the paper is GP-heavy (15 regex candidates, all U2 family) but every one fails section 7. The GPR is used for its posterior mean to interpolate cell-behaviour heat maps; the only mention of uncertainty is the generic 'Moreover, GPR can perform probabilistic regression to measure the predictive uncertainty but does so at the price of poor scalability in the data', which section 7 lists as not counting; and the Bayesian optimiser with an expected-improvement acquisition function is used solely for hyper-parameter tuning, also excluded. No predictive SD, interval or uncertainty map is reported. E0/EP0: 'the observation data was split into 90% training and 10% testing data to allow for hold-out cross-validation to determine the model's predictive accuracy' – one lab, one nanoarray platform, and no numeric accuracy is even given. S0: the three cell lines each get their own map; no model trained on one line or substrate is evaluated on another.",
+   "E": "U0: the paper is GP-heavy (15 regex candidates, all U2 family) but every one fails section 7. The GPR is used for its posterior mean to interpolate cell-behaviour heat maps; the only mention of uncertainty is the generic 'Moreover, GPR can perform probabilistic regression to measure the predictive uncertainty but does so at the price of poor scalability in the data', which section 7 lists as not counting; and the Bayesian optimiser with an expected-improvement acquisition function is used solely for hyper-parameter tuning, also excluded. No predictive SD, interval or uncertainty map is reported. E0/EP0: 'the observation data was split into 90% training and 10% testing data to allow for hold-out cross-validation to determine the model's predictive accuracy' – one lab, one nanoarray platform, and no numeric accuracy is even given. S0: the three cell lines each get their own map; no model trained on one line or substrate is evaluated on another.",
+   "EP": "U0: the paper is GP-heavy (15 regex candidates, all U2 family) but every one fails section 7. The GPR is used for its posterior mean to interpolate cell-behaviour heat maps; the only mention of uncertainty is the generic 'Moreover, GPR can perform probabilistic regression to measure the predictive uncertainty but does so at the price of poor scalability in the data', which section 7 lists as not counting; and the Bayesian optimiser with an expected-improvement acquisition function is used solely for hyper-parameter tuning, also excluded. No predictive SD, interval or uncertainty map is reported. E0/EP0: 'the observation data was split into 90% training and 10% testing data to allow for hold-out cross-validation to determine the model's predictive accuracy' – one lab, one nanoarray platform, and no numeric accuracy is even given. S0: the three cell lines each get their own map; no model trained on one line or substrate is evaluated on another.",
+   "S": "U0: the paper is GP-heavy (15 regex candidates, all U2 family) but every one fails section 7. The GPR is used for its posterior mean to interpolate cell-behaviour heat maps; the only mention of uncertainty is the generic 'Moreover, GPR can perform probabilistic regression to measure the predictive uncertainty but does so at the price of poor scalability in the data', which section 7 lists as not counting; and the Bayesian optimiser with an expected-improvement acquisition function is used solely for hyper-parameter tuning, also excluded. No predictive SD, interval or uncertainty map is reported. E0/EP0: 'the observation data was split into 90% training and 10% testing data to allow for hold-out cross-validation to determine the model's predictive accuracy' – one lab, one nanoarray platform, and no numeric accuracy is even given. S0: the three cell lines each get their own map; no model trained on one line or substrate is evaluated on another."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "high",
+  "notes": "Good example of the pilot's warning that GP vocabulary drives U2 false positives. 'To validate our strategy, we compared the cell mapping results with and without machine learning' is an ablation of the interpolation step, not prospective validation.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC8415910",
+  "doi": "10.3389/fbioe.2021.704738",
+  "area": "A2_property",
+  "eligible_position": 26,
+  "year": 2021,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Unraveling the Local Relation Between Tissue Composition and Human Brain Mechanics Through Machine Learning.",
+  "U": 1,
+  "U_code": "U1",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 1,
+  "S_code": "S1",
+  "S1_type": "extrapolation",
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS",
+     "quote": "the neural networks could reproduce the stress-stretch curves of the training data with a median coefficient of determination R 2 = 0.94 (standard deviation 0.24)",
+     "words": 25
+    },
+    {
+     "section": "RESULTS",
+     "quote": "predict such curves for the validation samples with R 2 = 0.90 (standard deviation of ±0.51)",
+     "words": 16
+    }
+   ],
+   "E": "E0: all 86 specimens are human brain tissue tested in one lab with one set-up; leave-one-out CV over specimens is not an independent source, and section 7 excludes LOOCV. EP0: the relaxation experiments were part of the same mechanical testing campaign, not produced after the model was fixed. Read METHODS 'Constitutive artificial neural networks' and 'Leave-one-out cross validation', RESULTS and the Figure 6/7 legends.",
+   "EP": "E0: all 86 specimens are human brain tissue tested in one lab with one set-up; leave-one-out CV over specimens is not an independent source, and section 7 excludes LOOCV. EP0: the relaxation experiments were part of the same mechanical testing campaign, not produced after the model was fixed. Read METHODS 'Constitutive artificial neural networks' and 'Leave-one-out cross validation', RESULTS and the Figure 6/7 legends.",
+   "S": [
+    {
+     "section": "RESULTS",
+     "quote": "Moreover, the trained networks were able to predict the stress response of relaxation experiments not included in the training data, as shown in Figures 6C–F.",
+     "words": 25
+    },
+    {
+     "section": "FIG",
+     "quote": "to predict the stress response also for loading scenarios not included in the training data such as the relaxation experiments shown in (C–F)",
+     "words": 23
+    }
+   ]
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 5,
+  "confidence": "med",
+  "notes": "U1 is clean: the SD of R2 across the LOO-CV folds is reported for both training (0.24) and validation (±0.51). The Bayesian optimisation with a GP is hyper-parameter tuning only, so not U2. S1 is the judgement call: the network was trained on cyclic loading data and then applied to a different loading protocol (stress relaxation) explicitly 'not included in the training data', which is a stated distribution change, but the result is shown graphically in Figure 6C–F rather than as a metric, so 'performance reported' is satisfied only qualitatively. Coded S1 = 1 (extrapolation) with med confidence; flag for adjudication.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12033270",
+  "doi": "10.1038/s41598-025-99823-x",
+  "area": "A2_property",
+  "eligible_position": 28,
+  "year": 2025,
+  "journal": "Scientific reports",
+  "title": "Chemometric and computational modeling of polysaccharide coated drugs for colonic drug delivery.",
+  "U": 1,
+  "U_code": "U1",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": [
+    {
+     "section": "TABLE",
+     "quote": "Coefficient of determinations for final models. Model | Train | K-fold mean (k = 3) | K-fold standard dev (k = 3) | K-fold mean (k = 10) | K-fold standard dev (k = 10) | Test.",
+     "words": 37
+    },
+    {
+     "section": "TABLE",
+     "quote": "MLP | 0.999258 | 0.996726 | 0.00296553 | 0.995198 | 0.00310705 | 0.998904.",
+     "words": 13
+    }
+   ],
+   "E": "E0/EP0/S0: read METHODS (PCA, Cook's distance, SMA tuning, 'The dataset was divided into training and test sets using train_test_split from sklearn.model_selection, and k-fold cross-validation (k = 3) was conducted using cross_val_score') and the whole Results. One 155-sample Raman dataset, 80/20 random split, no second source, no new experiment, no stated distribution change. The only regex v1.1 candidate ('exploration and exploitation') describes the Slime Mould hyper-parameter search – a false positive.",
+   "EP": "E0/EP0/S0: read METHODS (PCA, Cook's distance, SMA tuning, 'The dataset was divided into training and test sets using train_test_split from sklearn.model_selection, and k-fold cross-validation (k = 3) was conducted using cross_val_score') and the whole Results. One 155-sample Raman dataset, 80/20 random split, no second source, no new experiment, no stated distribution change. The only regex v1.1 candidate ('exploration and exploitation') describes the Slime Mould hyper-parameter search – a false positive.",
+   "S": "E0/EP0/S0: read METHODS (PCA, Cook's distance, SMA tuning, 'The dataset was divided into training and test sets using train_test_split from sklearn.model_selection, and k-fold cross-validation (k = 3) was conducted using cross_val_score') and the whole Results. One 155-sample Raman dataset, 80/20 random split, no second source, no new experiment, no stated distribution change. The only regex v1.1 candidate ('exploration and exploitation') describes the Slime Mould hyper-parameter search – a false positive."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 0,
+  "confidence": "high",
+  "notes": "U1 from the 'K-fold standard dev' columns of Table 1 at both k = 3 and k = 10 (e.g. 0.00296553 and 0.00310705 for MLP): SD of R2 across folds. Same underlying 155-sample Raman dataset as PMC12216472 in this subset, by different author groups – relevant to the independence of sampled units, worth noting for the analysis but it does not change the codes.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC13128258",
+  "doi": "10.1016/j.actbio.2024.06.038",
+  "area": "A2_property",
+  "eligible_position": 30,
+  "year": 2024,
+  "journal": "Acta biomaterialia",
+  "title": "Discovering 3D hidden elasticity in isotropic and transversely isotropic materials with physics-informed UNets.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 1,
+  "S_code": "S1",
+  "S1_type": "synthetic",
+  "evidence": {
+   "U": "U0: El-UNet is a deterministic physics-informed solver; only mean absolute relative errors are reported, with no interval, ensemble or calibration. E0: every evaluation is against finite-element ground truth for simulated brain tissue and articular cartilage; there is no experimental data, so no simulation-to-experiment transfer. EP0: no physical experiment is performed. Read METHODS (FE simulation set-up, noise injection) and the full Results.",
+   "E": "U0: El-UNet is a deterministic physics-informed solver; only mean absolute relative errors are reported, with no interval, ensemble or calibration. E0: every evaluation is against finite-element ground truth for simulated brain tissue and articular cartilage; there is no experimental data, so no simulation-to-experiment transfer. EP0: no physical experiment is performed. Read METHODS (FE simulation set-up, noise injection) and the full Results.",
+   "EP": "U0: El-UNet is a deterministic physics-informed solver; only mean absolute relative errors are reported, with no interval, ensemble or calibration. E0: every evaluation is against finite-element ground truth for simulated brain tissue and articular cartilage; there is no experimental data, so no simulation-to-experiment transfer. EP0: no physical experiment is performed. Read METHODS (FE simulation set-up, noise injection) and the full Results.",
+   "S": [
+    {
+     "section": "METHODS",
+     "quote": "As a separate experiment, to investigate the effect of input data noise on model estimations, we also included 5 % Gaussian noise in the input strains",
+     "words": 26
+    },
+    {
+     "section": "RESULTS",
+     "quote": "Mean absolute relative errors for the model using noisy strains were 4.327 % for elastic modulus and 1.32 % for Poisson’s ratio.",
+     "words": 22
+    },
+    {
+     "section": "RESULTS",
+     "quote": "Mean estimation errors from the noisy strains were: Exx:8.91%, Eyy:3.81%, vxy:7.43%, vyz:4.67%, Gxy:4.82%.",
+     "words": 13
+    }
+   ]
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": true,
+  "n_supplementary_files": 8,
+  "confidence": "high",
+  "notes": "S1 = synthetic and quantitative: 5% Gaussian noise added to the input strain fields, with errors reported both without noise (1.33% / 0.33%) and with noise (4.327% / 1.32%) for the brain case, and for all five parameters in the cartilage case. Regex v1.1 missed it ('we also included 5 % Gaussian noise' is not matched by the added/additive/injected/synthetic/artificial noise pattern) – a regex false negative worth logging. SI_dependency true: the noisy-input figures are Supplementary Figures S1–S2, although the error numbers are in the main text.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC10784499",
+  "doi": "10.1038/s41598-023-50876-w",
+  "area": "A2_property",
+  "eligible_position": 32,
+  "year": 2024,
+  "journal": "Scientific reports",
+  "title": "Machine learning assisted exploration of the influential parameters on the PLGA nanoparticles.",
+  "U": 1,
+  "U_code": "U1",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "The performance of SVR was with seven features the best among other ML models with the lowest MSE (0.0082 ± 6.48 × 10–6) and (0.001696 ± 0.00029) respectively.",
+     "words": 28
+    },
+    {
+     "section": "METHODS",
+     "quote": "During the training process, we fine-tuned the hyperparameters of each model using the tenfold cross-validation method, which helps in optimizing the model's performance and generalizability.",
+     "words": 25
+    }
+   ],
+   "E": "E0/EP0/S0: read METHODS (data curation from the literature, 'we split the data into training and testing sets using a 70/30 ratio', tenfold CV) and the whole Results. The dataset is compiled from published PLGA-nanoparticle papers, pooled and split randomly; no second source is held out, no nanoparticle is prepared in this study (a full-text search for experimental validation, synthesis and external terms returns nothing), and no distribution change is stated.",
+   "EP": "E0/EP0/S0: read METHODS (data curation from the literature, 'we split the data into training and testing sets using a 70/30 ratio', tenfold CV) and the whole Results. The dataset is compiled from published PLGA-nanoparticle papers, pooled and split randomly; no second source is held out, no nanoparticle is prepared in this study (a full-text search for experimental validation, synthesis and external terms returns nothing), and no distribution change is stated.",
+   "S": "E0/EP0/S0: read METHODS (data curation from the literature, 'we split the data into training and testing sets using a 70/30 ratio', tenfold CV) and the whole Results. The dataset is compiled from published PLGA-nanoparticle papers, pooled and split randomly; no second source is held out, no nanoparticle is prepared in this study (a full-text search for experimental validation, synthesis and external terms returns nothing), and no distribution change is stated."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 2,
+  "confidence": "med",
+  "notes": "U1 because MSE values are reported as x ± y (e.g. 0.0082 ± 6.48 × 10-6, 0.00486 ± 0.00058) in a paper whose stated evaluation protocol is tenfold cross-validation, so the ± is the spread of the metric across folds. Confidence med because the paper never states what the ± denotes; if it were anything else, this would fall back to U0.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12227466",
+  "doi": "10.1007/s10142-025-01649-3",
+  "area": "A2_property",
+  "eligible_position": 34,
+  "year": 2025,
+  "journal": "Functional & integrative genomics",
+  "title": "Discovering novel type I collagen fragments from Cyprinus carpio supporting bone regeneration.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "The ML component is unsupervised: 'For clustering, we employed the KMeans algorithm to classify the collagen fragments based on their combined features', with PCA for visualisation; bioactivity, net charge and hydrophobicity are rule-based calculations (Boman index, Barley hydrophobicity), not learned. Read METHODS 'fragment analysis/clustering', RESULTS 'Analysis and expression of CcCOL1 fragments' and the Discussion. No predictive metric, no uncertainty, no held-out or external evaluation, and no stated distribution change appears anywhere; the evaluation digest is 7 sentences, all wet-lab. Regex v1.1 returned 0 candidates.",
+   "E": "The ML component is unsupervised: 'For clustering, we employed the KMeans algorithm to classify the collagen fragments based on their combined features', with PCA for visualisation; bioactivity, net charge and hydrophobicity are rule-based calculations (Boman index, Barley hydrophobicity), not learned. Read METHODS 'fragment analysis/clustering', RESULTS 'Analysis and expression of CcCOL1 fragments' and the Discussion. No predictive metric, no uncertainty, no held-out or external evaluation, and no stated distribution change appears anywhere; the evaluation digest is 7 sentences, all wet-lab. Regex v1.1 returned 0 candidates.",
+   "EP": "The ML component is unsupervised: 'For clustering, we employed the KMeans algorithm to classify the collagen fragments based on their combined features', with PCA for visualisation; bioactivity, net charge and hydrophobicity are rule-based calculations (Boman index, Barley hydrophobicity), not learned. Read METHODS 'fragment analysis/clustering', RESULTS 'Analysis and expression of CcCOL1 fragments' and the Discussion. No predictive metric, no uncertainty, no held-out or external evaluation, and no stated distribution change appears anywhere; the evaluation digest is 7 sentences, all wet-lab. Regex v1.1 returned 0 candidates.",
+   "S": "The ML component is unsupervised: 'For clustering, we employed the KMeans algorithm to classify the collagen fragments based on their combined features', with PCA for visualisation; bioactivity, net charge and hydrophobicity are rule-based calculations (Boman index, Barley hydrophobicity), not learned. Read METHODS 'fragment analysis/clustering', RESULTS 'Analysis and expression of CcCOL1 fragments' and the Discussion. No predictive metric, no uncertainty, no held-out or external evaluation, and no stated distribution change appears anywhere; the evaluation digest is 7 sentences, all wet-lab. Regex v1.1 returned 0 candidates."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 2,
+  "confidence": "high",
+  "notes": "EP considered and rejected: six variants selected from the three clusters were expressed in P. pastoris and assayed (triple helix, self-assembly, osteoblast differentiation, rat tibia defect), which is a lot of downstream experiment, but the clustering produces no predicted quantity and the paper never compares a predicted value with a measurement. Under section 7 EP needs a comparison with the model's predictions, so EP = 0.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC11561990",
+  "doi": "10.1177/15330338241296725",
+  "area": "A2_property",
+  "eligible_position": 36,
+  "year": 2024,
+  "journal": "Technology in cancer research & treatment",
+  "title": "Predicting Calcein Release from Ultrasound-Targeted Liposomes: A Comparative Analysis of Random Forest and Support Vector Machine.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 0,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: Table 1 gives one R2, MAE, MSE and a20-index per model/kernel/power density (RF 0.9669 / 0.9760 / 0.9808); cross-validation is mentioned only as part of hyper-parameter selection and grid search, with no per-fold or ± values. E0: all data are the authors' own nine release runs per liposome and power density, split with 'a randomized data-splitting technique'. EP0: no experiment is performed after the models are fixed.",
+   "E": "U0: Table 1 gives one R2, MAE, MSE and a20-index per model/kernel/power density (RF 0.9669 / 0.9760 / 0.9808); cross-validation is mentioned only as part of hyper-parameter selection and grid search, with no per-fold or ± values. E0: all data are the authors' own nine release runs per liposome and power density, split with 'a randomized data-splitting technique'. EP0: no experiment is performed after the models are fixed.",
+   "EP": "U0: Table 1 gives one R2, MAE, MSE and a20-index per model/kernel/power density (RF 0.9669 / 0.9760 / 0.9808); cross-validation is mentioned only as part of hyper-parameter selection and grid search, with no per-fold or ± values. E0: all data are the authors' own nine release runs per liposome and power density, split with 'a randomized data-splitting technique'. EP0: no experiment is performed after the models are fixed.",
+   "S": "U0: Table 1 gives one R2, MAE, MSE and a20-index per model/kernel/power density (RF 0.9669 / 0.9760 / 0.9808); cross-validation is mentioned only as part of hyper-parameter selection and grid search, with no per-fold or ± values. E0: all data are the authors' own nine release runs per liposome and power density, split with 'a randomized data-splitting technique'. EP0: no experiment is performed after the models are fixed."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": true
+  },
+  "acknowledged_gap_evidence": [
+   {
+    "section": "RESULTS_DISCUSSION",
+    "quote": "We conclude that while RF is a valuable algorithm for predicting release under specific experimental conditions, its effectiveness does not extend to other conditions.",
+    "words": 24
+   }
+  ],
+  "SI_dependency": true,
+  "n_supplementary_files": 2,
+  "confidence": "med",
+  "notes": "S is the borderline and the reason for med confidence. Section 3.x 'Prediction of Calcein Release at Power Densities of 7.5 and 8 mW/cm2' deliberately probes power densities outside the three trained on, and concludes RF collapses to the nearest trained condition while SVM interpolates. But no measurements exist at 7.5 or 8 mW/cm2, so no performance can be and is reported under the shift; section 7 requires 'with performance reported'. Coded S = 0, with the failure statement recorded as acknowledged_gap_S. Confidence on the S item alone is low; flag for adjudication. SI_dependency true: the three-power-density release profile is deferred to Figure S5.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ },
+ {
+  "pmcid": "PMC12736625",
+  "doi": "10.3390/pharmaceutics17121546",
+  "area": "A2_property",
+  "eligible_position": 38,
+  "year": 2025,
+  "journal": "Pharmaceutics",
+  "title": "Combined Experimental and Computational Approaches for Ternary Solid Dispersions to Enhance the Oral Bioavailability of Penfluridol.",
+  "U": 0,
+  "U_code": "U0",
+  "U2_use": null,
+  "E": 0,
+  "E_code": "E0",
+  "EP": 1,
+  "S": 0,
+  "S_code": "S0",
+  "S1_type": null,
+  "evidence": {
+   "U": "U0: 'Model performance was evaluated using multiple metrics, yielding an R2 score of 0.92, a root mean squared error (RMSE) of 10.28, a mean absolute error (MAE) of 6.92, and a five-fold cross-validation score of 0.906' – a single CV score, no spread, no per-prediction uncertainty. E0: the RFR is trained on the authors' own first dissolution set (PF-SD1–PF-SD4); no external or literature test set. S0: the pH-varying dissolution study tests the robustness of the formulation, not of the model. Read METHODS 2.5 'Machine Learning' and Results 3.2–3.3.",
+   "E": "U0: 'Model performance was evaluated using multiple metrics, yielding an R2 score of 0.92, a root mean squared error (RMSE) of 10.28, a mean absolute error (MAE) of 6.92, and a five-fold cross-validation score of 0.906' – a single CV score, no spread, no per-prediction uncertainty. E0: the RFR is trained on the authors' own first dissolution set (PF-SD1–PF-SD4); no external or literature test set. S0: the pH-varying dissolution study tests the robustness of the formulation, not of the model. Read METHODS 2.5 'Machine Learning' and Results 3.2–3.3.",
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "The model predicted that a ratio of drug:P407:PVP-K30 = 1:3:1 would likely achieve > 85% drug release within 1 h (Figure 3).",
+     "words": 22
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Based on this prediction, a second set of formulations (PF-SD5–PF-SD7) with varying ratios of P407 was prepared.",
+     "words": 17
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Dissolution studies confirmed the model predictions: PF-SD5 (drug:P407:PVP-K30 = 1:3:1) achieved > 85% drug release within 1 h (Figure 2B).",
+     "words": 20
+    }
+   ],
+   "S": "U0: 'Model performance was evaluated using multiple metrics, yielding an R2 score of 0.92, a root mean squared error (RMSE) of 10.28, a mean absolute error (MAE) of 6.92, and a five-fold cross-validation score of 0.906' – a single CV score, no spread, no per-prediction uncertainty. E0: the RFR is trained on the authors' own first dissolution set (PF-SD1–PF-SD4); no external or literature test set. S0: the pH-varying dissolution study tests the robustness of the formulation, not of the model. Read METHODS 2.5 'Machine Learning' and Results 3.2–3.3."
+  },
+  "acknowledged_gap": {
+   "U": false,
+   "E": false,
+   "S": false
+  },
+  "acknowledged_gap_evidence": [],
+  "SI_dependency": false,
+  "n_supplementary_files": 1,
+  "confidence": "high",
+  "notes": "Textbook EP: predict optimum, prepare the new formulations, measure, compare. Only the single regex v1.1 candidate fired and it was a pharmacokinetics ± (wet-lab spread), so both the EP evidence and the U0 decision came from reading the sections.",
+  "coder": "B",
+  "coded_date": "2026-09-21"
+ }
+]

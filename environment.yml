@@ -1,0 +1,20 @@
+name: trustlayer-biomat
+channels: [conda-forge]
+dependencies:
+  - python=3.13
+  - numpy=2.4
+  - scipy=1.17
+  - pandas=2.3
+  - scikit-learn=1.9
+  - matplotlib=3.11
+  - joblib
+  - pip
+  - pip:
+    - torch==2.12.0
+    - torchvision==0.27.0
+    - glasspy==0.6.0
+    - matminer==0.10.1
+    - pymatgen
+    - medmnist==3.0.2
+    - rdkit==2026.3.3
+    - requests

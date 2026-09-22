@@ -1,0 +1,75 @@
+## Title/abstract precision (first 12 records of each random frame)
+| Area | v1 incl./12 | v2 incl./12 | reasons for exclusion (v1+v2, first 12) |
+|---|---|---|---|
+| A1_imaging | 4/12 | 1/12 | {'NOT_BIOMED': 11, 'WRONG_AREA': 4, 'NO_ML': 4} |
+| A2_property | 10/12 | n/a | {'NO_ML': 2} |
+| A3_sensors | 2/12 | 8/12 | {'NOT_BIOMED': 12, 'WRONG_AREA': 2} |
+| A4_tissue | 1/12 | 4/12 | {'NOT_BIOMED': 8, 'NOT_RESEARCH': 3, 'WRONG_AREA': 4, 'NO_ML': 4} |
+| A5_autonomous | 4/12 | 1/12 | {'NOT_BIOMED': 9, 'NO_ML': 10} |
+all screened records: 127 | exclusion reasons: {'NOT_BIOMED': 48, 'WRONG_AREA': 13, 'NO_ML': 23, 'NOT_RESEARCH': 3}
+
+## Regex screen: 25 papers, 6818 sentences, 99 candidate hits
+| Pattern | hits | papers hit | TP hits | hit precision | papers with >=1 TP |
+|---|---|---|---|---|---|
+| E_external | 2 | 2 | 1 | 50% | 1/2 |
+| E_prospective | 13 | 5 | 12 | 92% | 5/5 |
+| S_group | 4 | 3 | 2 | 50% | 1/3 |
+| S_ood | 4 | 2 | 2 | 50% | 1/2 |
+| S_robust | 3 | 2 | 3 | 100% | 2/2 |
+| U1_spread | 14 | 3 | 12 | 86% | 3/3 |
+| U2_acquisition | 16 | 4 | 13 | 81% | 3/4 |
+| U2_gp | 33 | 3 | 32 | 97% | 2/3 |
+| U2_probabilistic | 2 | 2 | 2 | 100% | 2/2 |
+| U2_uq | 7 | 1 | 7 | 100% | 1/1 |
+| U3_calibration | 1 | 1 | 0 | 0% | 0/1 |
+FP categories: [('BACKGROUND_GENERAL', 5), ('PROCEDURE_ONLY', 2), ('LIMITATION_OR_FUTURE_WORK', 1), ('ORDINARY_HOLDOUT', 1), ('GENERIC_DISCUSSION', 1), ('NOT_ML', 1), ('CLAIM_WITHOUT_ASSESSMENT', 1), ('HYPERPARAMETER_BO', 1)]
+hits by section x verdict: {('RESULTS_DISCUSSION', 'TP'): 25, ('DISCUSSION', 'FP'): 2, ('INTRO', 'TP'): 2, ('RESULTS', 'FP'): 1, ('FIG', 'FP'): 1, ('FIG', 'TP'): 6, ('RESULTS', 'TP'): 13, ('RESULTS_DISCUSSION', 'FP'): 2, ('TABLE', 'TP'): 8, ('METHODS', 'TP'): 23, ('ABSTRACT', 'TP'): 4, ('INTRO', 'FP'): 5, ('CONCLUSION', 'TP'): 4, ('METHODS', 'FP'): 2, ('DISCUSSION', 'TP'): 1}
+
+## Paper-level: regex-only code vs verified code
+| Area | PMCID | U regex→verified | E1 | EP | S1 |
+|---|---|---|---|---|---|
+| A1_imaging | PMC10161767 | U0→U0 | 1→1 | 0→0 | 1→1 |
+| A1_imaging | PMC12538699 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A1_imaging | PMC8665348 | U1→U1 | 0→0 | 0→1 | 1→1 |
+| A1_imaging | PMC8471570 | U0→U0 | 0→0 | 0→0 | 1→0 |
+| A1_imaging | PMC12796348 | U0→U0 | 0→0 | 0→0 | 1→1 |
+| A2_property | PMC12296543 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A2_property | PMC12666576 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A2_property | PMC11106676 | U1→U1 | 0→0 | 0→0 | 0→0 |
+| A2_property | PMC9546622 | U0→U0 | 0→0 | 1→1 | 0→0 |
+| A2_property | PMC11165469 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A3_sensors | PMC11377509 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A3_sensors | PMC10039194 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A3_sensors | PMC10407620 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A3_sensors | PMC12499495 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A3_sensors | PMC11348057 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A4_tissue | PMC11468966 | U0→U0 | 0→0 | 1→1 | 0→0 |
+| A4_tissue | PMC11085928 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A4_tissue | PMC10070414 | U0→U0 | 0→0 | 0→0 | 1→1 |
+| A4_tissue | PMC11170757 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A4_tissue | PMC8778756 | U0→U0 | 0→0 | 0→0 | 0→0 |
+| A5_autonomous | PMC12511971 | U0→U0 | 0→0 | 1→1 | 0→0 |
+| A5_autonomous | PMC12587402 | U2→U2 | 0→0 | 0→1 | 1→0 |
+| A5_autonomous | PMC11422183 | U2→U2 | 0→0 | 1→1 | 0→0 |
+| A5_autonomous | PMC12157168 | U3→U2 | 0→0 | 1→1 | 0→0 |
+| A5_autonomous | PMC12590431 | U2→U2 | 0→0 | 0→1 | 0→0 |
+regex-only agreement with verified code: {'U': '24/25', 'E1': '25/25', 'EP': '22/25', 'S1': '23/25'}
+
+## Paper-level confusion (regex flag vs verified), TP/FP/FN/TN
+U>=1: TP=6 FP=0 FN=0 TN=19
+U>=2: TP=4 FP=0 FN=0 TN=21
+U3: TP=0 FP=1 FN=0 TN=24
+E1: TP=1 FP=0 FN=0 TN=24
+EP: TP=5 FP=0 FN=3 TN=17
+S1: TP=4 FP=2 FN=0 TN=19
+
+## Verified prevalence in pilot (n per area = 5; descriptive only)
+A1_imaging {'U>=1': '1/5 (95% CI 0.04-0.62)', 'U>=2': '0/5 (95% CI 0.00-0.43)', 'U3': '0/5 (95% CI 0.00-0.43)', 'E1': '1/5 (95% CI 0.04-0.62)', 'EP': '1/5 (95% CI 0.04-0.62)', 'S1': '3/5 (95% CI 0.23-0.88)'}
+A2_property {'U>=1': '1/5 (95% CI 0.04-0.62)', 'U>=2': '0/5 (95% CI 0.00-0.43)', 'U3': '0/5 (95% CI 0.00-0.43)', 'E1': '0/5 (95% CI 0.00-0.43)', 'EP': '1/5 (95% CI 0.04-0.62)', 'S1': '0/5 (95% CI 0.00-0.43)'}
+A3_sensors {'U>=1': '0/5 (95% CI 0.00-0.43)', 'U>=2': '0/5 (95% CI 0.00-0.43)', 'U3': '0/5 (95% CI 0.00-0.43)', 'E1': '0/5 (95% CI 0.00-0.43)', 'EP': '0/5 (95% CI 0.00-0.43)', 'S1': '0/5 (95% CI 0.00-0.43)'}
+A4_tissue {'U>=1': '0/5 (95% CI 0.00-0.43)', 'U>=2': '0/5 (95% CI 0.00-0.43)', 'U3': '0/5 (95% CI 0.00-0.43)', 'E1': '0/5 (95% CI 0.00-0.43)', 'EP': '1/5 (95% CI 0.04-0.62)', 'S1': '1/5 (95% CI 0.04-0.62)'}
+A5_autonomous {'U>=1': '4/5 (95% CI 0.38-0.96)', 'U>=2': '4/5 (95% CI 0.38-0.96)', 'U3': '0/5 (95% CI 0.00-0.43)', 'E1': '0/5 (95% CI 0.00-0.43)', 'EP': '5/5 (95% CI 0.57-1.00)', 'S1': '0/5 (95% CI 0.00-0.43)'}
+ALL {'U>=1': '6/25 (95% CI 0.11-0.43)', 'U>=2': '4/25 (95% CI 0.06-0.35)', 'U3': '0/25 (95% CI 0.00-0.13)', 'E1': '1/25 (95% CI 0.01-0.20)', 'EP': '8/25 (95% CI 0.17-0.52)', 'S1': '4/25 (95% CI 0.06-0.35)'}
+
+## Text available to the screen
+median sentences/paper: 247 | papers with >=1 supplementary file: 20 / 25

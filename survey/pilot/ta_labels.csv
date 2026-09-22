@@ -1,0 +1,128 @@
+version,area,rank,pmcid,decision,reason,other_area,note
+v1,A1_imaging,1,PMC12118306,exclude,NOT_BIOMED,,metal-ion detection with polymer microspheres; no biomedical application stated
+v1,A1_imaging,2,PMC10107930,exclude,NOT_BIOMED,,bone-marrow biopsy fibrosis grading; no material
+v1,A1_imaging,3,PMC10161767,include,,,ML fibre-orientation metrics from WAXD patterns of biological composites
+v1,A1_imaging,4,PMC12538699,include_provisional,,,TopoChip image dataset resource; ML examples to be confirmed in full text
+v1,A1_imaging,5,PMC12108964,exclude,WRONG_AREA,A2_property,gold-nanostar optical properties from synthesis parameters (not image-based)
+v1,A1_imaging,6,PMC8665348,include,,,DL sorting/reconstruction of defocused cell-on-biomaterial microscopy images
+v1,A1_imaging,7,PMC8471570,include,,,3D CNN on virtual tomography predicts scaffold mechanical properties
+v1,A1_imaging,8,PMC9902733,exclude,NOT_BIOMED,,kidney organoid images; no material
+v1,A1_imaging,9,PMC12752004,exclude,NO_ML,,neural networks = nerve fibres
+v1,A1_imaging,10,PMC8126813,exclude,NOT_BIOMED,,TOF-SIMS of tumour tissue
+v1,A1_imaging,11,PMC11625131,exclude,WRONG_AREA,A2_property,ANN for docetaxel release from gelatin nanoparticles (not image-based)
+v1,A1_imaging,12,PMC9173896,exclude,NOT_BIOMED,,dermoscopic melanoma images
+v1,A1_imaging,13,PMC12251723,exclude,NOT_BIOMED,,phosphate-removal adsorbent (environmental)
+v1,A1_imaging,14,PMC11934609,exclude,NOT_BIOMED,,sperm metabolic imaging
+v1,A1_imaging,15,PMC12796348,include,,,hydrogel-particle assay read by lens-free diffraction imaging + DL
+v1,A1_imaging,16,PMC11294195,exclude,NOT_BIOMED,,malaria blood-smear diagnosis device (clinical diagnosis; borderline)
+v1,A1_imaging,17,PMC12641341,exclude,WRONG_AREA,A5_autonomous,BO-controlled droplet generation
+v1,A1_imaging,18,PMC10667280,include_provisional,,,physics-informed DL of liposome accumulation from imaging (beyond quota)
+v1,A1_imaging,19,PMC10319894,exclude,NOT_BIOMED,,dystrophic muscle autofluorescence (beyond quota)
+v1,A2_property,1,PMC12296543,include,,,decision-tree + SHAP for inhalable aspirin powder process-property
+v1,A2_property,2,PMC12666576,include,,,ML for AgNP (antibacterial) process parameters
+v1,A2_property,3,PMC9313127,exclude,NO_ML,,neural networks = neuronal networks in hydrogel
+v1,A2_property,4,PMC11106676,include,,,IFPTML for nanoparticle drug-delivery systems
+v1,A2_property,5,PMC9546622,include,,,GA + DL design of collagen sequences (Tm) with experimental validation
+v1,A2_property,6,PMC11165469,include,,,GAN/DL design of meta-fibre reinforced hydrogel composites
+v1,A2_property,7,PMC10070414,include,,,CNN generation of spinodal porous bone biomaterials
+v1,A2_property,8,PMC12216472,include,,,PLS + ML regression of drug release from coated colonic delivery
+v1,A2_property,9,PMC9104973,include,,,multinomial logistic regression for polymer blends for cartilage repair
+v1,A2_property,10,PMC11884566,include,,,ML prediction of drug-drug self-assembling nanomedicines
+v1,A2_property,11,PMC7917235,exclude,NO_ML,,convolutional coarse-graining of microtubule simulation (no predictive ML model)
+v1,A2_property,12,PMC10590434,include,,,ensemble ML for liposome size/PDI
+v1,A3_sensors,1,PMC9445076,exclude,NOT_BIOMED,,clinical use of commercial wearable (device incidental)
+v1,A3_sensors,2,PMC12473479,exclude,NOT_BIOMED,,FBG land monitoring
+v1,A3_sensors,3,PMC9862774,exclude,NOT_BIOMED,,pressure-sensing material; no biomedical use stated (borderline)
+v1,A3_sensors,4,PMC12610047,exclude,NOT_BIOMED,,activity recognition from commercial IMUs
+v1,A3_sensors,5,PMC12298904,exclude,NOT_BIOMED,,wind-turbine blade impact localisation
+v1,A3_sensors,6,PMC11398124,include,,,knowledge-graph ML design of wearable strain sensor
+v1,A3_sensors,7,PMC12369696,include,,,CNN-LSTM on triboelectric e-skin for colonoscopic robot
+v1,A3_sensors,8,PMC9013843,exclude,NOT_BIOMED,,clinical use of commercial wearables (Huntington's)
+v1,A3_sensors,9,PMC10578443,exclude,NOT_BIOMED,,clinical use of commercial wearable (OCD)
+v1,A3_sensors,10,PMC11766870,exclude,NOT_BIOMED,,structural impact localisation
+v1,A3_sensors,11,PMC12481560,exclude,NOT_BIOMED,,air-quality e-nose
+v1,A3_sensors,12,PMC11485280,exclude,NOT_BIOMED,,structural-health / robotic piezo sensor (borderline)
+v1,A4_tissue,1,PMC12011309,exclude,NOT_BIOMED,,digit regeneration transcriptomics
+v1,A4_tissue,2,PMC12040341,exclude,NOT_RESEARCH,,untagged review
+v1,A4_tissue,3,PMC10057383,exclude,WRONG_AREA,A3_sensors,SWCNT dry-electrode sleeve + ML
+v1,A4_tissue,4,PMC8753532,exclude,NO_ML,,organoid clearing
+v1,A4_tissue,5,PMC10497969,exclude,NOT_BIOMED,,native cartilage image segmentation (borderline)
+v1,A4_tissue,6,PMC11231322,exclude,NOT_BIOMED,,stem-cell image analysis; no material
+v1,A4_tissue,7,PMC10602575,exclude,WRONG_AREA,A3_sensors,MXene hydrogel strain sensor + gesture recognition
+v1,A4_tissue,8,PMC10244346,exclude,NOT_BIOMED,,PSC differentiation imaging; no material
+v1,A4_tissue,9,PMC8910760,exclude,NOT_BIOMED,,MSC proteomics
+v1,A4_tissue,10,PMC10386166,include_provisional,,,ANN for electrospun PEO fibre diameter (biomedical use not explicit)
+v1,A4_tissue,11,PMC12380408,exclude,NOT_RESEARCH,,perspective
+v1,A4_tissue,12,PMC11789582,exclude,WRONG_AREA,A3_sensors,hydrogel optical-waveguide sensor + AI
+v1,A5_autonomous,1,PMC12511971,include_provisional,,,ML + automated flow synthesis of PLA (biomedical one of several stated uses)
+v1,A5_autonomous,2,PMC12587402,include,,,BO for multi-objective biologics formulation
+v1,A5_autonomous,3,PMC12376025,exclude,NOT_BIOMED,,automated SAS fitting
+v1,A5_autonomous,4,PMC12074357,exclude,NOT_BIOMED,,autonomous vehicles
+v1,A5_autonomous,5,PMC11701726,exclude,NO_ML,,HTE peptide chemistry
+v1,A5_autonomous,6,PMC8372320,exclude,NOT_BIOMED,,photocatalysts
+v1,A5_autonomous,7,PMC12557465,exclude,NOT_BIOMED,,flame-spray catalysts
+v1,A5_autonomous,8,PMC12188418,exclude,NOT_BIOMED,,block-polymer inverse design; no biomedical use (borderline)
+v1,A5_autonomous,9,PMC11896811,exclude,NO_ML,,active learning = pedagogy
+v1,A5_autonomous,10,PMC12391189,exclude,NO_ML,,automated bioprinting without ML
+v1,A5_autonomous,11,PMC11422183,include,,,BO for PAM/alginate hydrogel optimisation
+v1,A5_autonomous,12,PMC12157168,include,,,BO for vaccine formulation
+v1,A5_autonomous,13,PMC10288256,exclude,NO_ML,,optical diatombot
+v1,A5_autonomous,14,PMC11520512,exclude,NOT_BIOMED,,small-molecule drug solubility
+v1,A5_autonomous,15,PMC12316898,exclude,WRONG_AREA,A2_property,ML of nanomedicine organ delivery (TPE = hyper-parameter search)
+v1,A5_autonomous,16,PMC10744304,exclude,WRONG_AREA,A2_property,BO used to calibrate an in-silico neotissue model (not experiment selection)
+v1,A5_autonomous,17,PMC9622803,exclude,NO_ML,,cell stretcher
+v1,A5_autonomous,18,PMC12590431,include,,,active learning + FEM for probiotic tabletting process
+v1,A5_autonomous,19,PMC10561544,exclude,NOT_BIOMED,,viscosity estimation for closed-loop labs (beyond quota)
+v1,A5_autonomous,20,PMC9239686,exclude,NOT_BIOMED,,robotic BO of iPSC-RPE culture; cells not material (beyond quota; borderline)
+v2,A1_imaging,1,PMC10333301,exclude,WRONG_AREA,A2_property,AI-assisted optimisation of chitosan-NP biofabrication
+v2,A1_imaging,2,PMC10670125,exclude,NOT_BIOMED,,tumour vascular 3D reconstruction
+v2,A1_imaging,3,PMC12158774,exclude,NOT_BIOMED,,connectomics (hydrogel is a tool)
+v2,A1_imaging,4,PMC8471570,include,,,(same record as v1 A1 #7)
+v2,A1_imaging,5,PMC10948263,exclude,NOT_BIOMED,,clinical CT
+v2,A1_imaging,6,PMC9136609,exclude,NOT_BIOMED,,drug-sensitivity outcome in PDX (device is a tool; borderline)
+v2,A1_imaging,7,PMC10368888,exclude,NO_ML,,ML only named as future work in abstract
+v2,A1_imaging,8,PMC10966564,exclude,NO_ML,,neural networks = neurons
+v2,A1_imaging,9,PMC12752004,exclude,NO_ML,,(same record as v1 A1 #9)
+v2,A1_imaging,10,PMC12511074,exclude,NOT_BIOMED,,cell fluorescence prediction; no material
+v2,A1_imaging,11,PMC10914818,exclude,NOT_BIOMED,,ML for small-molecule drug design
+v2,A1_imaging,12,PMC8614058,exclude,WRONG_AREA,A2_property,omics network ML for nanotoxicity (borderline)
+v2,A3_sensors,1,PMC11377509,include,,,AgNP electrochemical biosensor + ML
+v2,A3_sensors,2,PMC10039194,include_provisional,,,mechanoluminescent-triboelectric skin-like sensor; ML recognition to confirm
+v2,A3_sensors,3,PMC9013843,exclude,NOT_BIOMED,,(same record as v1 A3 #8)
+v2,A3_sensors,4,PMC10407620,include,,,ML-assisted flexible wearable tyrosine sensor
+v2,A3_sensors,5,PMC12499495,include_provisional,,,thermochromic e-skin for joint/spine care; ML to confirm
+v2,A3_sensors,6,PMC11502717,exclude,NOT_BIOMED,,clinical use of commercial e-nose
+v2,A3_sensors,7,PMC11348057,include,,,ML-facilitated flexible wearable sensor
+v2,A3_sensors,8,PMC11325392,include_provisional,,,Bayesian-optimisation structure search for graphene sensor surface (borderline)
+v2,A3_sensors,9,PMC12369696,include,,,(same record as v1 A3 #7)
+v2,A3_sensors,10,PMC10403537,exclude,WRONG_AREA,A2_property,ANN for AuNP biosynthesis
+v2,A3_sensors,11,PMC11220713,include_provisional,,,self-powered pressure sensor for rehabilitation; ML to confirm
+v2,A3_sensors,12,PMC12080330,exclude,WRONG_AREA,A1_imaging,DL classification of polymer-coating stain images
+v2,A4_tissue,1,PMC10850738,exclude,NO_ML,,neural network tissue = neurons
+v2,A4_tissue,2,PMC12158774,exclude,NOT_BIOMED,,connectomics (hydrogel is a tool)
+v2,A4_tissue,3,PMC12251101,include_provisional,,,chitosan wound-healing hydrogels with AI/ML
+v2,A4_tissue,4,PMC10107930,exclude,NOT_BIOMED,,(same record as v1 A1 #2)
+v2,A4_tissue,5,PMC10951922,exclude,NO_ML,,spatial statistics of ECM fibres
+v2,A4_tissue,6,PMC12082301,exclude,NOT_RESEARCH,,discussion piece
+v2,A4_tissue,7,PMC11468966,include,,,AI-optimised thermogelling mucoadhesive hydrogel
+v2,A4_tissue,8,PMC11085928,include,,,DL cell tracking in nonwoven biomaterials
+v2,A4_tissue,9,PMC10070414,include,,,(same record as v1 A2 #7) porous bone biomaterial design
+v2,A4_tissue,10,PMC10050687,exclude,NOT_BIOMED,,bone-marrow single-cell atlas
+v2,A4_tissue,11,PMC8616054,exclude,NO_ML,,ECM hydrogel 3D culture
+v2,A4_tissue,12,PMC9392801,exclude,WRONG_AREA,A2_property,ML screening of PBAE delivery polymers
+v2,A4_tissue,13,PMC11170757,include,,,DL pore/window sizes from SEM of TE scaffolds
+v2,A4_tissue,14,PMC7039897,exclude,NO_ML,,bioprinted muscle (beyond quota)
+v2,A4_tissue,15,PMC8778756,include,,,DCNN staging of heart decellularisation scaffolds (beyond quota)
+v2,A4_tissue,16,PMC8126813,exclude,NOT_BIOMED,,(same record as v1 A1 #10) (beyond quota)
+v2,A5_autonomous,1,PMC11009904,exclude,NOT_BIOMED,,active learning of AM photopolymers; no biomedical use (borderline)
+v2,A5_autonomous,2,PMC9622803,exclude,NO_ML,,cell stretcher
+v2,A5_autonomous,3,PMC9539360,exclude,NOT_BIOMED,,BO of mRNA IVT reaction yield (bioprocess; borderline)
+v2,A5_autonomous,4,PMC11762284,exclude,NO_ML,,membrane functionalisation
+v2,A5_autonomous,5,PMC9414851,exclude,NO_ML,,cell-culture chip
+v2,A5_autonomous,6,PMC12376025,exclude,NOT_BIOMED,,(same record as v1 A5 #3)
+v2,A5_autonomous,7,PMC10594909,exclude,NO_ML,,self-driving nanoparticles (pun)
+v2,A5_autonomous,8,PMC10775998,exclude,NOT_BIOMED,,active learning of protein-condensate sequences (borderline)
+v2,A5_autonomous,9,PMC10259616,exclude,NO_ML,,education RCT
+v2,A5_autonomous,10,PMC13576497,include,,,semi-self-driving robotic formulator
+v2,A5_autonomous,11,PMC9674283,exclude,NO_ML,,microrobot
+v2,A5_autonomous,12,PMC7234925,exclude,NO_ML,,exposure robot

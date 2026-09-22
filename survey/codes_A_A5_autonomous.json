@@ -1,0 +1,460 @@
+[
+ {
+  "pmcid": "PMC12587402",
+  "doi": "10.1021/acs.molpharmaceut.5c00591",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "looked": "METHODS 'Bayesian Optimization Algorithm' (full GP/BO description), RESULTS_DISCUSSION 'Sequential Experimental Design Using Bayesian Optimization' and 'Accelerated Identification of Pareto Optimal Formulations', all figure legends and tables. A GP is fitted per objective, but only its mean is used: the exploitation route builds a Pareto front with NSGA-II and then picks the point farthest from existing observations, the exploration route minimises a purely geometric 'Steinerberger sum', and batching uses Kriging-believer mean fantasies. No predictive interval, SD or uncertainty map is reported for any prediction, and no SD/CI of any model-performance metric is given (the 95% CIs in Table S2 are measurement CIs of the biophysical assays).",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Finally, the best Pareto point was selected based on its minimum distance to preexisting observations in objective and in variable space."
+     },
+     {
+      "section": "METHODS",
+      "quote": "The exploration route (p = 25%) works by minimizing the “Steinerberger sum”,[CIT] a measure of proximity to explored points in the variable space, from 20 random starting points, with the mentioned constraints added."
+     }
+    ]
+   },
+   "E": {
+    "looked": "METHODS (assays and BO algorithm), RESULTS_DISCUSSION (all four optimisation iterations), CONCLUSION. Every data point is a mAb formulation screened in-house on the same assay set-up; no second lab, site, instrument, public/literature dataset or simulation-to-experiment transfer is used.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "We also assessed how well the GP models predicted the outcomes of subsequent iterations using the mean absolute error (MAE) as the metric (Figure S6)."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "For all three objectives, prediction quality improved after the first iteration as more training data became available."
+     }
+    ]
+   },
+   "S": {
+    "looked": "METHODS, RESULTS_DISCUSSION including 'Correlation with High Protein Concentration Measurements', CONCLUSION. The only extrapolation sentence is a caution about transferring measured low-concentration properties to high concentration, not an evaluation of the ML model under a stated distribution shift; it also carries a FUTURE_NEG marker.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "U is the judgement call in this paper. The frozen pilot (A6 section 10.2) recorded U2 (internal) for PMC12587402; I code U0 because the Methods show the GP entering the decision only through its posterior mean (NSGA-II Pareto front on GP predictions, distance-based selection, Steinerberger-sum exploration, Kriging-believer batching), which is the codebook's explicit 'A GP used only for its mean' exclusion. Flag for adjudication. EP rests on a main-text statement whose figure is in the SI (Figure S6), so SI_dependency = true, but the main text reports the direction of the result ('prediction quality improved after the first iteration'; 'For k D, however, the prediction error rose again in the final two iterations')."
+ },
+ {
+  "pmcid": "PMC11422183",
+  "doi": "10.1093/rb/rbae109",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (BO acquisition)",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Three acquisition types, expected improvement (EI), maximum probability of improvement (MPI) and lower confidence bound (LCB) were used."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "In each iteration of the Bayesian optimization, three acquisition functions are used, including the EI, MPI and LCB."
+     }
+    ]
+   },
+   "E": {
+    "looked": "METHODS (hydrogel synthesis, testing, BO process), RESULTS_DISCUSSION (BO iterations, classification model, regression model, experimental verification), CONCLUSION. All 213 data sets are produced in the authors' own laboratory on the same set-up; no independent lab/site/instrument, no public or literature dataset, no simulation-to-experiment transfer.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "We fabricate new samples according to the recommended parameters from the machine learning algorithms."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "To validate the accuracy of the machine learning model predictions, we further conduct experiments to validate the predictions of the model."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Upon comparison, it is evident that the experimental results are closely aligned with the data predicted by machine learning model, indicating the model can effectively predict the changes in resistivity based on sample quality."
+     }
+    ]
+   },
+   "S": {
+    "looked": "METHODS, RESULTS_DISCUSSION (classification model, learning curves, regression model, experimental verification), CONCLUSION. Only random splits and cross-validation are used; the verification varies NaCl, AM and alginate content but the paper never states that the test compositions lie outside the training distribution, and there is no cross-batch/instrument/operator split, no added-noise test and no stated extrapolation.",
+    "quotes": []
+   }
+  },
+  "confidence": "high",
+  "notes": "Straightforward GPyOpt BO paper: uncertainty-based acquisition functions are named in Methods and Results (U2 internal), and BO-recommended compositions were fabricated and measured (EP). No per-prediction interval is plotted, so the U2 sub-code is internal rather than reported. Agrees with the frozen pilot's verified codes."
+ },
+ {
+  "pmcid": "PMC12157168",
+  "doi": "10.1371/journal.pone.0324205",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (BO acquisition); U1 also satisfied by cross-validation metric spreads",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "The ChemAssistant® platform generated a GP model, and then suggested new experiments using a balance between exploration (designed to improve the GP accuracy) and exploitation (designed to find solutions to the optimization problem) strategies."
+     },
+     {
+      "section": "METHODS",
+      "quote": "where κ 0 is an exploration-exploitation tradeoff parameter where lower κ is accompanied by BO favoring exploitation with function value near mean μ(x′) and higher κ favors exploration where uncertainty (or the posterior variance) is higher."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The model cross-validation shows R2 = 0.87 and RMSE = 0.14 ± 0.02."
+     }
+    ]
+   },
+   "E": {
+    "looked": "METHODS 'ML model generation and validation', RESULTS for both case studies, Tables 1-4, DISCUSSION. The test sets are hold-out experimental batches run by the same group on the same assays (codebook puts these under EP, not E1); no other lab, site, instrument, cohort, public/literature dataset or simulation-to-experiment transfer is reported.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "The model was tested by using a test set, consisting of 22 new experimental data points that were never used in any steps of model development."
+     },
+     {
+      "section": "METHODS",
+      "quote": "The final model was validated using the holdout method by comparing prediction data against a test dataset comprising of experimental data never used in model generation (S2 and S3 Table)."
+     }
+    ]
+   },
+   "S": {
+    "looked": "METHODS, RESULTS for both case studies, DISCUSSION, CONCLUSION. No cross-virus, cross-scale, cross-site or cross-instrument evaluation, no added-noise or perturbation test, and no stated extrapolation beyond the training ranges; the two case studies use two separate models rather than transferring one model to the other product.",
+    "quotes": []
+   }
+  },
+  "confidence": "high",
+  "notes": "U3 was deliberately withheld: the Methods sentence 'it models the data already acquired ... and provides well-calibrated uncertainties for every prediction' is an assertion with no empirical calibration assessment (no coverage, reliability diagram, ECE, NLL, CRPS or conformal interval anywhere), which the codebook caps at U2; the frozen protocol names this exact sentence as the regex U3 false positive. U1 is independently satisfied (RMSE = 0.14 +/- 0.02 etc. across Table 1 and Table 2), but U takes the highest level reached."
+ },
+ {
+  "pmcid": "PMC12590431",
+  "doi": "10.1016/j.ijpx.2025.100420",
+  "U": "U2",
+  "E": "E1",
+  "EP": 1,
+  "S": "S1",
+  "evidence": {
+   "U": {
+    "subcode": "reported and internal (max-standard-deviation acquisition; predicted mean +/- SD tabulated)",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "At each iteration of AL, the trained surrogate model was used to predict the standard deviation of probiotic survival rates, enabling the selection of a new data point with the highest uncertainty using a maximum standard deviation acquisition function"
+     },
+     {
+      "section": "METHODS",
+      "quote": "To account for prediction uncertainty and identify a high-survival region rather than a single point, candidate points with predicted mean values within 99 % of the maximum were selected as the potential optimal region."
+     },
+     {
+      "section": "TABLE",
+      "quote": "Case | GPR survival rate(%, mean ± SD) | Experimental survival rate(%, mean ± SD)."
+     }
+    ]
+   },
+   "E": {
+    "subcode": "simulation -> experiment",
+    "quotes": [
+     {
+      "section": "ABSTRACT",
+      "quote": "All data utilised in AL were generated using an FE model that was specifically developed to predict viability of probiotics during tabletting."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The probiotic survival rate under various main compression pressures at a fixed compression speed was experimentally measured and compared with the predictions generated by the GPR model, as shown in Fig. 4."
+     },
+     {
+      "section": "FIG",
+      "quote": "Experimental data (n = 3) were obtained from our previous study"
+     }
+    ]
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "To further verify the accuracy of the identified optimal compaction design space, representative points were selected, and tablets were produced according to the corresponding parameter settings."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Nonetheless, the optimal conditions identified by experiments fall within the range predicted by the GPR model, with only minor differences."
+     }
+    ]
+   },
+   "S": {
+    "subcode": "natural (sim-to-real)",
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "These predictions were then systematically compared with corresponding experimental results to evaluate the model's accuracy and reliability in capturing the complex relationships between compaction parameters and probiotic survival rate."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "It should also be noted that a noticeable deviation was observed between the GPR model predictions and experimental results at higher precompression pressures."
+     }
+    ]
+   }
+  },
+  "confidence": "med",
+  "notes": "E1 and S1 both rest on the same sim-to-real structure: the GPR surrogate is trained exclusively on finite-element simulation outputs and is then evaluated against physical tabletting measurements, with agreement and a named region of deviation reported. The codebook lists 'simulation -> experiment' under E1 and 'sim-to-real' under S1 natural, and the frozen pilot coded PMC10161767 as E1 = 1 and S1 = 1 on exactly that basis, so I follow that precedent. The frozen pilot recorded E1 = 0, S1 = 0 for this paper; flag for adjudication. Counter-argument for the adjudicator: part of the experimental comparison data comes from the same group's earlier study on the same compaction analyser, so if 'independent source' is read as lab/instrument rather than data-generating process, E1 would fall to 0. EP is independent of that issue (new tablets produced at the model-identified optimum)."
+ },
+ {
+  "pmcid": "PMC12356264",
+  "doi": "10.1126/sciadv.adx2299",
+  "U": "U2",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (expected-improvement acquisition); U1 also satisfied by SD over five independent runs",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "BO then constructs a surrogate model using Gaussian processes (GPs) that predicts outcomes for unobserved parameter sets and quantifies the uncertainty surrounding them."
+     },
+     {
+      "section": "METHODS",
+      "quote": "These predictions and uncertainty estimates are used to inform an acquisition function, which strategically balances exploring new areas and exploiting promising configurations to guide the optimization process efficiently."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The mean and SD of δT* (of five independent runs) were relatively high at the first 15 random sampling (Fig. 2B, vertical dashed line), followed by its drop at the onset of convergence (iteration 30)."
+     }
+    ]
+   },
+   "E": {
+    "looked": "RESULTS (all five application subsections), MATERIALS AND METHODS ('BO pipeline', 'Electrodynamics simulation method', 'Synthesis and geometrical constraints of AuBPs', 'Parameter space'), DISCUSSION. The GP surrogate is trained and tested entirely against boundary-element-method simulations. The 15 synthesised AuBP samples are used to fit the empirical tip-radius relations that define the parameter space, i.e. as model input, not as an independent test. The one candidate external check, spectral matching, is stated only as a claim with the result deferred to the SI.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "Before its deployment, the pipeline was benchmarked by running a custom-made workflow of spectral matching, thus confirming its predictive accuracy (see the “Benchmarking: spectral matching” section in the Supplementary Materials)."
+     }
+    ]
+   },
+   "EP": {
+    "looked": "RESULTS and DISCUSSION. The optimised dimensions are explicitly left for later experimental work; no particle is synthesised at the predicted optimum and measured against the prediction in the main article.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "The single- and multiobjective optimization generated a set of geometrical features offering insightful design principles ready for experimental evaluation."
+     }
+    ]
+   },
+   "S": {
+    "looked": "RESULTS, MATERIALS AND METHODS. The only S-family candidate is 'the tip radius was extrapolated from its linear dependence on length and width', which describes how the parameter space was constructed, not an evaluation of the surrogate under a stated shift. No cross-instrument, cross-material, noise-perturbation or out-of-range evaluation of the GP is reported.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "Entirely in-silico closed-loop BO (GP + expected improvement over boundary-element simulations), so U2 internal is unambiguous and U1 is also met (mean and SD of the objective over five independent runs per wavelength). E and EP hinge on one main-text sentence that asserts a spectral-matching benchmark against experiment but defers the result to the Supplementary Materials; under the protocol's 'reported in the main article' construct that cannot raise E1, and what is benchmarked there appears to be the electrodynamics simulator rather than the GP surrogate. SI_dependency = true; an adjudicator with the SI should re-check E and EP."
+ },
+ {
+  "pmcid": "PMC12154192",
+  "doi": "10.1126/sciadv.adt9466",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "looked": "MATERIALS AND METHODS 'Peptide fingerprints and ML models', RESULTS 'Details of the active learning loops' and 'Iterative ML model development using active learning', Fig. 5 and Fig. 6 legends, DISCUSSION. GPR and SVR are both fitted, but the word uncertainty never appears: candidate selection is driven by quadrant position relative to the beta-sheet propensity score and by sequence diversity, not by GP posterior variance, and no predictive interval or error bar is reported. Cross-validation errors are reported as means over ten folds with no spread, which the codebook excludes from U1.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "Thus, with the dual aim to select as diverse candidates as possible and to specifically provide examples to ML model where it is presently failing, we selected candidates from all the four quadrants in both the R1 and R2."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Figure 5C shows the mean tenfold cross-validation errors (normalized with respect to their range) for the M1, M2, and M3 models trained separately on the full and the non-valine dataset."
+     }
+    ]
+   },
+   "E": {
+    "looked": "RESULTS 'Overall active learning workflow' and the active-learning loop subsections, MATERIALS AND METHODS, DISCUSSION. All 268 pentapeptides are synthesised and characterised on the authors' own automated synthesiser and FTIR/AFM set-up; the ~18,000-pentapeptide database from their previous work is used as the screening pool, not as an independent test set; no other lab, instrument or literature dataset is used for evaluation.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "On the basis of a screening strategy (discussed in later sections), candidates were selected for experimental validation in the last step."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Results are shown for only those cases that were not part of the training data, i.e., R1 and R2 dataset for M1 model and R2 dataset for M2 model."
+     },
+     {
+      "section": "FIG",
+      "quote": "(A) Parity plot between the ML-predicted and the experimentally measured IR ratio of different pentapeptides for the M1 and M2 models."
+     }
+    ]
+   },
+   "S": {
+    "looked": "RESULTS and DISCUSSION. Separate full-data and non-valine models are trained on chemically defined subsets, but each is evaluated on its own sequence type, so there is no evaluation of a fixed model on a stated different distribution; no noise perturbation, no cross-instrument test, no stated extrapolation outside the training range.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "EP is strong and quantitative: M1 and M2 predictions are compared against experimentally measured IR ratios for the peptides synthesised in the later active-learning rounds, i.e. after those models were fixed. U is the borderline: GPR is one of the two model families, but nothing in the main article reports or operationally uses its per-prediction variance, so the codebook's 'A GP used only for its mean' exclusion applies and U stays at U0; an adjudicator who counts any AL acquisition as U2 would reach U2 instead. A defensible alternative on S1 would treat the deliberately unconventional R1/R2 candidates as an off-distribution test, but the paper frames them as active-learning acquisitions rather than as a stated distribution shift."
+ },
+ {
+  "pmcid": "PMC11095369",
+  "doi": "10.1039/d3sc06920f",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (predicted variability used for batch selection)",
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Then, based on the predicted mean expression and variability of the target variable in the design space, we select a new batch, which we call a BO round, of promising polymers to formulate and measure transfection efficacy."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Md_Cys_40 has the highest ratio of performance and uncertainty as estimated by BO"
+     }
+    ]
+   },
+   "E": {
+    "looked": "RESULTS AND DISCUSSION ('Polymer feature attribution through SHAP analysis', 'Batch Bayesian optimization', 'In vivo delivery of pDNA'), CONCLUSION. All 432 + 120 formulations are transfected in the authors' own cell assays; the in vivo mouse study tests the three selected polymers but no model prediction is made for or compared against the in vivo readout, so it is prospective validation of the selection rather than external validation of a fixed model. No second lab, public dataset or simulation-to-experiment transfer.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "We complete two additional rounds of transfections with the most promising polymer formulation subsets defined by the batch BO model."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Predicted by SHAP and BO models, we selected our three top performers, Sh_DiE_40, Sh_Cap_40, and Md_Cys_40, for pDNA delivery in vivo"
+     }
+    ]
+   },
+   "S": {
+    "looked": "RESULTS AND DISCUSSION and CONCLUSION. The only S-family regex candidate is the SHAP sentence 'used to extrapolate predictive importance', a homonym. Separate models are trained per payload (pDNA, RNP) and neither is transferred to the other; no cross-batch, cross-instrument, noise or out-of-range evaluation is reported.",
+    "quotes": []
+   }
+  },
+  "confidence": "high",
+  "notes": "Closed-loop batch BO over a polymer library: predicted variability is explicitly part of both the batch-selection rule and the final polymer choice, which is U2 internal. EP is met twice over (BO rounds 2-3 formulated and measured; the three model-selected top performers carried into a 20-day in vivo study). The in vitro-to-in vivo step is deliberately not coded E1, because the fixed model is never evaluated against in vivo data; the paper itself notes that cellular responses are 'not directly translatable' to in vivo outcomes."
+ },
+ {
+  "pmcid": "PMC11672474",
+  "doi": "10.1021/acsami.4c16614",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (expected-improvement utility using GP variance)",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "The uncertainty from GP prediction (i.e., the variance information σk(t)) enables the utility function to balance exploration and exploitation."
+     },
+     {
+      "section": "METHODS",
+      "quote": "Importantly, a GP provides a predictive distribution over f̂k(x)."
+     }
+    ]
+   },
+   "E": {
+    "looked": "MATERIALS AND METHODS ('Collaborative Learning via Consensus BO', 'High-Throughput Synthesis', 'High-Throughput Characterization'), RESULTS AND DISCUSSION, CONCLUSION. The four 'clients' are algorithmic agents inside one consensus-BO framework, all served by the same robotic dispensing and well-plate cantilever-rheometry platform in one laboratory, so they are not independent sites. No public or literature dataset and no simulation-to-experiment transfer is used for evaluation.",
+    "quotes": []
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Each client k then conducts a test (e.g., experiment) using the new formulation xk(t)new and observes yk(xk(t)new)."
+     },
+     {
+      "section": "ABSTRACT",
+      "quote": "After five iterations, four collaborating clients obtained notable material performance (i.e., composition discovery)."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The optimal formulation was identified in iteration 4 by client 1 in the collaborative learning group and iteration 8 by client 1 in the independent learning group."
+     }
+    ]
+   },
+   "S": {
+    "looked": "MATERIALS AND METHODS and RESULTS AND DISCUSSION. Reported evaluation is the trajectory of measured G' over eight iterations for collaborative versus independent learning, with a Student's t-test between the two groups. No cross-instrument, cross-batch, noise-perturbation or out-of-range evaluation of the surrogate is reported.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "U2 internal is explicit (the EI utility is written out and the text states that the GP variance drives exploration-exploitation). EP is the borderline: every consensus-BO recommendation is physically synthesised on the robotic platform and its G' measured and reported, which matches the codebook example 'synthesising the predicted optimum', but the paper never puts predicted against measured values, so the 'compared with its predictions' clause is satisfied only in the weak, closed-loop sense. A stricter adjudicator could code EP = 0. The +/- values in the Results (85.96 +/- 0.28 deg, 81.2 +/- 15.9 kPa) are spreads of measured material properties across iterations, not of a model-performance metric, so they do not carry U1."
+ },
+ {
+  "pmcid": "PMC13576497",
+  "doi": "10.1039/d5dd00171d",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "subcode": "internal (expected improvement with Thompson sampling)",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "the next data points for collection determined through maximising expected improvement using Thompson sampling"
+     },
+     {
+      "section": "METHODS",
+      "quote": "GPyOpt[CIT] was used to perform BO, training a Gaussian process regressor."
+     }
+    ]
+   },
+   "E": {
+    "looked": "MATERIALS AND METHODS ('Bayesian optimisation', 'Gaussian process modelling'), RESULTS, DISCUSSION. The set the paper itself calls an 'external validation set' is a random 80:20 split of the same 256 robot-collected formulations, which the codebook explicitly excludes from E1; the simulated 7776-point landscape is a synthetic benchmark of sampling strategies, not a source of evaluation data for the real model. No second laboratory, instrument, public dataset or simulation-to-experiment transfer.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Data was log-transformed, before being split 80 : 20 in a training and external validation set."
+     }
+    ]
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "To validate these lead formulations, the discovered mixtures were manually generated in triplicate, and characterised again using absorbance spectroscopy."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Lead medicines are identified by successful solubilisation of the target active (curcumin) which are then confirmed by a secondary manual batch preparation."
+     }
+    ]
+   },
+   "S": {
+    "looked": "RESULTS ('Bayesian optimisation is significantly more efficient...', 'Gaussian process regression predicts accurately...'), MATERIALS AND METHODS, DISCUSSION. Training and test data both come from the same robotic workflow and are separated by a random split; no cross-instrument, cross-operator, noise-perturbation or stated out-of-range evaluation, although the DISCUSSION does acknowledge high liquid-handler noise.",
+    "quotes": []
+   }
+  },
+  "confidence": "high",
+  "notes": "E0 despite the paper's own wording: its 'external validation set' is a random 80:20 hold-out of the same robot-collected dataset, which the codebook lists under 'Does not count' for E1. This is exactly the E_external regex false positive the frozen protocol reports at 0% hit precision. EP is clear and prospective: the BO-discovered lead formulations were re-made manually in triplicate and re-characterised, confirming three of seven. U1 is also incidentally satisfied (MSE distributions over 1000 repeated k-means versus random seed draws, compared with a t-test), but U takes the highest level, U2."
+ }
+]

@@ -1,0 +1,250 @@
+[
+ {
+  "pmcid": "PMC12587402",
+  "doi": "10.1021/acs.molpharmaceut.5c00591",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "where_looked": "METHODS 'Bayesian Optimization Algorithm'; RESULTS_DISCUSSION 'Sequential Experimental Design Using Bayesian Optimization', 'Accelerated Identification of Pareto Optimal Formulations'; Figure 1 legend; CONCLUSION. No per-prediction uncertainty is reported (no intervals or +- on predictions) and none is used in the selection rule: the GPs enter only through their mean (Pareto front + Kriging-Believer fantasies), the exploration route does not use them at all, and no variance-based acquisition function (EI/UCB) is used. The only 'acquisition function' sentence is cited background in INTRO. 95% CIs in Table S2 are measurement CIs and are in the SI.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Finally, the best Pareto point was selected based on its minimum distance to preexisting observations in objective and in variable space."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "For the explore route, the GPs are not utilized, and a new point is chosen solely on the basis of its distance from previous observations in the feature space."
+     }
+    ]
+   },
+   "E": {
+    "where_looked": "All METHODS subsections (antibody expression, formulation preparation, Tm, kD, agitation assay), all four RESULTS_DISCUSSION subsections including 'Correlation with High Protein Concentration Measurements', CONCLUSION. All data come from the authors' own screening platform; no second laboratory, site, instrument, cohort, public/literature dataset, and no simulation-to-experiment transfer.",
+    "quotes": []
+   },
+   "EP": {
+    "where_looked": "RESULTS_DISCUSSION 'Accelerated Identification of Pareto Optimal Formulations'. Each BO iteration proposes formulations that are then prepared and measured, and the paper explicitly compares the GP predictions with the outcomes of the subsequent iterations. The quantitative panel (MAE per iteration) is Figure S6 in the SI, so this code depends on an SI figure for its numbers (SI_dependency = true); the assessment and its qualitative result are stated in the main text.",
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "We also assessed how well the GP models predicted the outcomes of subsequent iterations using the mean absolute error (MAE) as the metric (Figure S6)."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "For k D, however, the prediction error rose again in the final two iterations, aligning with the comparatively slower convergence of this objective."
+     }
+    ]
+   },
+   "S": {
+    "where_looked": "All RESULTS_DISCUSSION subsections, METHODS, CONCLUSION. No evaluation with a stated distribution difference between training and test. The only shift-flavoured sentence ('extrapolating results from low to high protein concentrations should be approached with caution') is an interpretive caution about kD as an assay proxy, not an evaluation of the GP models under shift.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "BO with GP surrogates for multi-objective mAb formulation (33 experiments). U is the borderline call: the codebook excludes 'a GP used only for its mean', and this paper's selection rule is a Pareto front built from the GPs plus a distance-to-previous-observations criterion, with a random 75/25 exploit/explore coin flip; predictive variance is never reported and is never shown to enter the acquisition. I therefore code U0 rather than U2-internal. If an adjudicator reads 'BO with a GP surrogate' as automatically U2-internal, this becomes U2 (internal). SI_dependency = true (Figure S6, Table S2). acknowledged_gap: none for U/E/S phrased as a limitation of the model."
+ },
+ {
+  "pmcid": "PMC12157168",
+  "doi": "10.1371/journal.pone.0324205",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "where_looked": "METHODS 'Bayesian optimization algorithm' and 'ML model generation and validation'; RESULTS case 1 and case 2; Tables 1-2 (cross-validation metrics). U2 sub-code = internal: the GP posterior variance drives the LCB acquisition of the BO loop actually run in this study. U1 is also met (SD of RMSE across cross-validation). U3 is NOT met: 'provides well-calibrated uncertainties for every prediction' is an assertion about GPs with no calibration assessment anywhere, and the 'prediction error plot' (Fig 4a) is a predicted-vs-observed scatter, not a reliability/coverage assessment.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "The ChemAssistant® platform generated a GP model, and then suggested new experiments using a balance between exploration (designed to improve the GP accuracy) and exploitation (designed to find solutions to the optimization problem) strategies."
+     },
+     {
+      "section": "METHODS",
+      "quote": "higher κ favors exploration where uncertainty (or the posterior variance) is higher"
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The model cross-validation shows R2 = 0.87 and RMSE = 0.14 ± 0.02."
+     }
+    ]
+   },
+   "E": {
+    "where_looked": "METHODS 'ML model generation and validation'; RESULTS 'ML model validation' and case study 2; Table 3, Table 4; DISCUSSION. Both test sets are the authors' own additional experiments inside the same development programme and the same assays; no other laboratory, site, instrument or cohort, no public/literature dataset, no simulation-to-experiment transfer.",
+    "quotes": []
+   },
+   "EP": {
+    "where_looked": "RESULTS 'ML model validation' (case 1) and RESULTS case study 2; METHODS 'ML model generation and validation'.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "The model was tested by using a test set, consisting of 22 new experimental data points that were never used in any steps of model development."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "All Tg’ obtained from the model were accurate, with the average and maximum error of 0.33°C and 1.88°C, respectively."
+     }
+    ]
+   },
+   "S": {
+    "where_looked": "RESULTS case 1 (steps 1-5) and case 2; DISCUSSION 'Model generation and optimization for case 1', 'Model generation and comparison for case 2', 'Considerations of Bayesian optimization and ML models'; CONCLUSION. No evaluation with a stated difference between training and test distribution; the case-2 test set is described only by its Tg' range, with no claim that it lies outside the training range.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "Two BO case studies (viral vaccine formulations) run on the ChemAssistant platform; the deployed predictive models are Extra Trees (case 1) and XGBoost (case 2), the BO surrogate is a GP with an LCB acquisition. U2 is the sub-code 'internal' (no per-prediction interval is reported). EP rests on test sets described as 'new experimental data points that were never used in any steps of model development' (case 1) and '20 additional data points' measured by DSC and compared with predictions (case 2); the word 'holdout' leaves a residual chance that these were set aside from an existing pool rather than measured after the model was fixed, hence confidence med rather than high. SI_dependency = false for the main evaluation (Table 3, Table 4 are in the main text); supporting tables S1-S5 hold the raw data."
+ },
+ {
+  "pmcid": "PMC12356264",
+  "doi": "10.1126/sciadv.adx2299",
+  "U": "U2",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "where_looked": "METHODS 'BO pipeline' (Algorithm 1 legend, EI equations); RESULTS opening and 'Photothermal efficiency'. U2 sub-code = internal: the GP posterior variance feeds the expected-improvement acquisition that selects each next simulation. U1 is also met (mean and SD of the objective across five independent optimization runs per wavelength). No calibration, coverage or conformal assessment anywhere, so not U3.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "BO then constructs a surrogate model using Gaussian processes (GPs) that predicts outcomes for unobserved parameter sets and quantifies the uncertainty surrounding them."
+     },
+     {
+      "section": "METHODS",
+      "quote": "The acquisition function used in our BO approach is the expected improvement (EI), which is designed to prioritize parameter sets that are likely to surpass the current best performance."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The mean and SD of δT* (of five independent runs) were relatively high at the first 15 random sampling (Fig. 2B, vertical dashed line), followed by its drop at the onset of convergence (iteration 30)."
+     }
+    ]
+   },
+   "E": {
+    "where_looked": "RESULTS (all six subsections), DISCUSSION, METHODS ('Synthesis and geometrical constraints of AuBPs', 'Instrumentation', 'Parameter space', 'BO pipeline', 'Electrodynamics simulation method'). Every objective evaluation in the loop is a BEM electrodynamics simulation. The one simulation-versus-experiment check ('Benchmarking: spectral matching') is deferred entirely to the Supplementary Materials, so under the main-article construct it cannot raise E1; the 15 synthesised AuBPs were used to fix the parameter-space bounds and the rtip/L* regression, not to test the optimizer.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "Before its deployment, the pipeline was benchmarked by running a custom-made workflow of spectral matching, thus confirming its predictive accuracy"
+     }
+    ]
+   },
+   "EP": {
+    "where_looked": "RESULTS 'Optimized dimension space—The big picture'; DISCUSSION; METHODS 'Synthesis and geometrical constraints of AuBPs' and 'Synthesis of AuBPs'. No optimized design is synthesised and measured after the optimization: the synthesis reported precedes and constrains the design space, and the optimized dimensions are offered for future experimental evaluation.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "To ensure that the optimized AuBPs generated using BO are experimentally feasible, we established geometric constraints on their design AuBPs by synthesizing and characterizing 15 samples of varying dimensions using protocols available in literature."
+     },
+     {
+      "section": "DISCUSSION",
+      "quote": "Our framework, while based on numerical simulations, is intended to complement experimental efforts, either manual or automated"
+     }
+    ]
+   },
+   "S": {
+    "where_looked": "RESULTS (all subsections), METHODS 'Parameter space' and 'BO pipeline', DISCUSSION. No evaluation under a stated distribution difference. The only 'extrapolat*' sentence concerns extrapolating the tip radius from an empirical linear fit of length and width, which is a parameter-space construction, not a model-under-shift evaluation.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "BO (GP + expected improvement) over boundary-element electrodynamics simulations to design gold bipyramids for photothermal, SERS, PL, plexcitonic and colour-difference objectives. Biomedical-material relevance is by application framing (optical hyperthermia, neuromodulation, sensing). E is the borderline call: the main text asserts a spectral-matching benchmark against experimental spectra but places the entire evaluation in the Supplementary Materials, so I code E0 under the 'reported in the main article' construct and set SI_dependency = true. If an adjudicator admits the SI, that benchmark could support E1 (simulation-to-experiment). EP is 0 for the same reason plus the fact that the benchmark preceded deployment and did not test an optimized design."
+ },
+ {
+  "pmcid": "PMC11095369",
+  "doi": "10.1039/d3sc06920f",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "where_looked": "RESULTS_DISCUSSION 'Batch Bayesian optimization' (Fig. 5 legend) and 'In vivo delivery of pDNA'. U2 sub-code = internal: the GP's predicted variability is used both to pick each BO batch and to pick one of the three polymers taken forward. No spread of a performance metric is reported in the main text ('our cross-validated model' is stated without metrics; ML details are in the ESI), so U1 is not separately evidenced, and there is no calibration, coverage or conformal assessment (not U3).",
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Then, based on the predicted mean expression and variability of the target variable in the design space, we select a new batch, which we call a BO round, of promising polymers to formulate and measure transfection efficacy."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Md_Cys_40 has the highest ratio of performance and uncertainty as estimated by BO"
+     }
+    ]
+   },
+   "E": {
+    "where_looked": "All RESULTS_DISCUSSION subsections (polymer synthesis, polyplex characterisation, transfection, SHAP, batch BO, in vivo) and CONCLUSIONS; the article body has no Methods section (methods and ML details are in the ESI). All transfection data come from the authors' own in vitro assays; the in vivo mouse study reports biological outcomes for BO-selected polymers, not the performance of the fixed model on an independent dataset. No other laboratory, cohort, instrument or public dataset.",
+    "quotes": []
+   },
+   "EP": {
+    "where_looked": "RESULTS_DISCUSSION 'Batch Bayesian optimization' and 'In vivo delivery of pDNA'. BO rounds 2 and 3 are formulations chosen by the fixed model and then made and measured, and the three model-selected top performers were taken into mice.",
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "We complete two additional rounds of transfections with the most promising polymer formulation subsets defined by the batch BO model."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Predicted by SHAP and BO models, we selected our three top performers, Sh_DiE_40, Sh_Cap_40, and Md_Cys_40, for pDNA delivery in vivo"
+     }
+    ]
+   },
+   "S": {
+    "where_looked": "All RESULTS_DISCUSSION subsections and CONCLUSIONS. No evaluation with a stated distribution difference between training and test. The in vitro-to-in vivo step is a new biological setting, but no model prediction or model performance is reported for it, so it does not qualify as a shift test; the only 'extrapolat*' match is the SHAP description ('extrapolate predictive importance'), a homonym.",
+    "quotes": []
+   }
+  },
+  "confidence": "med",
+  "notes": "Clickable polymer library (432 formulations) with SHAP analysis and batch BO over 5790 combinations, followed by an in vivo pDNA delivery study of the three model-selected polymers. U2-internal is unambiguous (predicted variability drives both batch selection and the performance/uncertainty ratio used to pick Md_Cys_40). Confidence is med rather than high only because the article body carries no Methods section (all ML details are in the ESI), which weakens the negative codes E0/S0 and any U1 judgement. SI_dependency = true."
+ },
+ {
+  "pmcid": "PMC13576497",
+  "doi": "10.1039/d5dd00171d",
+  "U": "U2",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": {
+    "where_looked": "METHODS 'Bayesian optimisation' and 'Gaussian process modelling'; RESULTS 'Bayesian optimisation is significantly more efficient...' and 'Gaussian process regression predicts accurately...'; Fig. 4 and Fig. 5 legends. U2 sub-code = internal: the GP posterior drives expected improvement with Thompson sampling to pick each next batch. A performance spread is also shown (GPR error over 1000 repeated sampling runs, Fig. 4B), supporting U1. No calibration, coverage, interval-score or conformal assessment anywhere, so not U3; the parity plot is predicted-versus-observed only.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "the next data points for collection determined through maximising expected improvement using Thompson sampling"
+     },
+     {
+      "section": "RESULTS",
+      "quote": "A Gaussian process regressor (GPR) fit to 1000 repeats of k-means clustered vs. randomly determined sets of 96 datapoints generates significantly lower (Student's t-test p = 8.60 × 10−91) error models"
+     }
+    ]
+   },
+   "E": {
+    "where_looked": "METHODS 'Gaussian process modelling', 'Seed data selection', 'Solubility analysis', 'Lead formulation characterisation'; RESULTS 'Gaussian process regression predicts accurately from data collected during the workflow'; DISCUSSION. The only thing the paper calls 'external' is a random 80:20 split of the same 256 in-house formulations, which the codebook classes as a hold-out, not external validation. No second laboratory, instrument, cohort or public dataset.",
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Data was log-transformed, before being split 80 : 20 in a training and external validation set."
+     }
+    ]
+   },
+   "EP": {
+    "where_looked": "RESULTS 'Efficient discovery of seven novel curcumin formulations'; METHODS 'Lead formulation characterisation'. The seven lead formulations found by the BO loop were re-made by hand in triplicate and re-measured, and the outcome is compared with the model-predicted top-0.1% threshold.",
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "To validate these lead formulations, the discovered mixtures were manually generated in triplicate, and characterised again using absorbance spectroscopy."
+     },
+     {
+      "section": "METHODS",
+      "quote": "These formulations were prepared at a 1 mL volume by hand and excess curcumin added."
+     }
+    ]
+   },
+   "S": {
+    "where_looked": "All four RESULTS subsections, DISCUSSION (limitations: liquid-handling noise, single end-point), all METHODS subsections. No evaluation under a stated distribution difference; the 1000-repeat comparison varies the seed-sampling strategy within the same design space, which is a sampling-design comparison, not a shift test.",
+    "quotes": []
+   }
+  },
+  "confidence": "high",
+  "notes": "Semi-self-driving liquid-handling workflow: 96 k-means seed formulations plus five BO loops of 32 (256/7776 formulations) to maximise curcumin solubility. U2-internal from EI + Thompson sampling on a GP; U1 also supported by the 1000-repeat GPR error comparison in Fig. 4B. E0 despite the phrase 'external validation set' in the Methods, which is a random 80:20 hold-out of the same in-house dataset - a clean example of the E_external false positive the protocol anticipates. EP1 from the manual re-preparation and re-measurement of the seven discovered leads (three of seven confirmed at ~10 mg/mL). SI_dependency = false for the coded items."
+ }
+]

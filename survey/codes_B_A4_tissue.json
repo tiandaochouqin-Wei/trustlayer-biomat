@@ -1,0 +1,622 @@
+[
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 1,
+  "reliability_position": 0,
+  "pmcid": "PMC11468966",
+  "doi": "10.1002/adhm.202102508",
+  "year": 2022,
+  "journal": "Advanced healthcare materials",
+  "title": "Sublingual Boosting with a Novel Mucoadhesive Thermogelling Hydrogel Following Parenteral CAF01 Priming as a Strategy Against Chlamydia trachomatis.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Artificial Neural Network Design' ('The accuracy of the ANN models was assessed using the determination coefficient (R 2) (Equation 1), calculated for train and test data'), RESULTS and Table 2. Only single-valued train/test R2 per output; no SD/CI over folds, seeds or repeats; no per-prediction uncertainty. The only spread in the paper is wet-lab replicate SD.",
+   "E": "E0. Looked at METHODS ('Data were split into two sets, 16 records for training and 3 for error testing'), RESULTS and Table 2. The 19 records are one in-house DoE; no other lab, instrument, cohort or public dataset.",
+   "EP": [
+    {
+     "section": "RESULTS",
+     "quote": "The properties of the optimal hydrogel composition (OGEL) selected by INForm following Table 1 conditions, were close to those predicted, validating the obtained ANN model.",
+     "quote_check": "exact",
+     "n_words": 25
+    },
+    {
+     "section": "TABLE",
+     "quote": "Values predicted by the ANN model and experimental values for the parameters characterized for OGEL freshly prepared and after 1 year of storage",
+     "quote_check": "exact",
+     "n_words": 23
+    }
+   ],
+   "S": "S0. Looked at METHODS, RESULTS and DISCUSSION. No stated distribution difference between training and test conditions; no noise/perturbation test; no extrapolation test."
+  },
+  "confidence": "high",
+  "notes": "INForm ANN + genetic-algorithm optimisation of a ternary thermogelling mucoadhesive hydrogel (vaccine carrier). Clear EP: the ANN-predicted optimum was prepared and its properties measured against the predictions (Table 2). Caveat on independence: this paper appears in the pilot table of A6_survey_protocol.md section 10.2, which I had to read as the frozen protocol; I coded from the full text, and my codes happen to agree with the pilot verifier."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 3,
+  "reliability_position": 2,
+  "pmcid": "PMC10070414",
+  "doi": "10.1038/s41598-023-31677-7",
+  "year": 2023,
+  "journal": "Scientific reports",
+  "title": "Machine learning unifies flexibility and efficiency of spinodal structure generation for stochastic biomaterial design.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S1",
+  "evidence": {
+   "U": "U0. Looked at RESULTS 'Training of CNN', METHODS 'Architecture and training of CNN' and the figure legends. Training/validation MSE (1.45e-5 / 3.71e-5) and MAE (0.0344 GPa) are single values; no SD/CI over seeds or folds, no per-prediction uncertainty.",
+   "E": "E0. Looked at METHODS (phase-field and FFT-based mechanics dataset generation) and RESULTS. Training, validation and test sets all come from the same in-house phase-field / FFT simulation pipeline; no experimental or external data enter the evaluation.",
+   "EP": "EP0. Looked at RESULTS 'Application 1' and 'Application 2'. The designed structures are verified only by re-running the FFT-based mechanics solver, which section 7 excludes ('In-silico verification of a design'). No sample was fabricated or measured.",
+   "S": [
+    {
+     "section": "RESULTS",
+     "quote": "In this section, the spatial extrapolation of the as-trained CNN to modeling spinodal decomposition and thus deriving spinodal structure of large dimensions is demonstrated.",
+     "quote_check": "exact",
+     "n_words": 24
+    },
+    {
+     "section": "FIG",
+     "quote": "Spatial extrapolation of the as-trained CNN to generating large spinodal structures.",
+     "quote_check": "exact",
+     "n_words": 11
+    },
+    {
+     "section": "RESULTS",
+     "quote": "three groups of spinodal decomposition simulations are performed at the original modeling size of 64",
+     "quote_check": "exact",
+     "n_words": 15
+    }
+   ]
+  },
+  "confidence": "high",
+  "notes": "3D CNN surrogate of phase-field spinodal decomposition. S1 = extrapolation sub-code: the CNN trained at 64x64x64 is tested at 96x96x96 and 128x128x128 and the generated structures are compared by 2-point correlation statistics - section 7 lists input-size extrapolation under S1. Same independence caveat as PMC11468966 (paper listed in the protocol's pilot table; coded from full text)."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 5,
+  "reliability_position": 4,
+  "pmcid": "PMC11170757",
+  "doi": "10.1021/acsomega.4c01234",
+  "year": 2024,
+  "journal": "ACS omega",
+  "title": "Quantitative Evaluation of the Pore and Window Sizes of Tissue Engineering Scaffolds on Scanning Electron Microscope Images Using Deep Learning.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Training of the YOLO Object Detection Model' and RESULTS AND DISCUSSION. Precision, recall and mAP@0.5/@0.95 are single values per task; no SD/CI over folds, seeds or repeats; no per-detection confidence reported. The four blind assessors give measurement (human) spread, not model-performance spread.",
+   "E": "E0. Looked at METHODS and RESULTS AND DISCUSSION. Training images and test-group images are all SEM images of 4PCLMA PolyHIPEs made and imaged in the same laboratory on the same instrument; section 7 routes 'a separately collected batch from the same lab and set-up' away from E1.",
+   "EP": "EP0. Looked at METHODS 'Determining the Pore and Window Diameter Using a Deep Learning Technique' and Table 1. New PolyHIPE test groups were fabricated and the automated measurements compared with blind manual ones, but the model outputs an image measurement, not a forward prediction about a material that a new experiment then tests.",
+   "S": "S0. Looked at RESULTS AND DISCUSSION sections on surfactant, stirring speed and temperature. The test groups span 19-102 um pore sizes, but the paper never frames this as a distribution difference from the training images and reports no performance split by condition."
+  },
+  "confidence": "med",
+  "notes": "Borderline EP (flag for adjudication). METHODS says 'After training the model (Section 2.2.1), the weights were saved as a “.pt” file. The SEM images of the test groups were run through the model using the acquired weight' and Table 1 reports per-cent deviation between automated (Dauto) and blind manual (DmALL) measurements on scaffolds fabricated under seven conditions. Read literally ('new samples produced or measured after the model was fixed and compared with its predictions') this is EP=1; I coded EP=0 because the comparison is against human ground truth for a measurement tool, not a prospective experimental test of a forward prediction, and I applied the same rule to PMC11921027 and PMC8575943. Same protocol-pilot-overlap caveat as PMC11468966."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 7,
+  "reliability_position": 6,
+  "pmcid": "PMC10250676",
+  "doi": "10.3389/fbioe.2023.1105377",
+  "year": 2023,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Computational approaches for evaluating morphological changes in the corneal stroma associated with decellularization.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Machine learning models' and RESULTS 'Gray level co-occurrence matrix and wavelet analysis'. The 5-fold CV accuracy (82.67%) and AUC (~0.92) are pooled single values from cross_val_predict; no per-fold values, SD or CI of the metrics. The many +/- values in RESULTS are SD of GLCM/DWT image features across samples, not model performance.",
+   "E": "E0. Looked at METHODS ('Approximately 80% of the data was used for training the model, and 20% was used for testing') and RESULTS. All 1,000 ROIs come from the same in-house rabbit whole-eye decellularisation experiments and the same microscope.",
+   "EP": "EP0. Looked at RESULTS and DISCUSSION. The ML model classifies existing histology ROIs; no new scaffolds were made or measured to test a model prediction.",
+   "S": "S0. Looked at METHODS, RESULTS and DISCUSSION. No cross-instrument, cross-batch, noise or extrapolation evaluation; only random 5-fold CV."
+  },
+  "confidence": "high",
+  "notes": "Random-forest / SVM classification of GLCM and wavelet features of corneal-stroma histology. The comparison against subjective observer assessment (60.8% accuracy) is a human baseline, not an external or shifted test set."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 9,
+  "reliability_position": 8,
+  "pmcid": "PMC11855032",
+  "doi": "10.3390/gels11020141",
+  "year": 2025,
+  "journal": "Gels (Basel, Switzerland)",
+  "title": "The Optimization of Culture Conditions for Injectable Recombinant Collagen Hydrogel Preparation Using Machine Learning.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at RESULTS AND DISCUSSION 2.2.1-2.2.4, Table 1 and METHODS 4.3. Score and RMSE are single values per model on train and test; the cross-validation/grid-search heatmaps (Figures 3, 4) show scores per hyper-parameter combination, not spread of the final model's performance. No per-prediction uncertainty.",
+   "E": "E0. Looked at METHODS 4.3 ('The data obtained from all experimental tests were used to create a database, which was subsequently randomly split into two subsets: a training set (70%) and a test set (30%)'). One in-house single-factor experiment dataset, random hold-out only.",
+   "EP": "EP0. Looked at RESULTS AND DISCUSSION 2.3.2 and CONCLUSIONS. The optimum (15% substrate, 4 C, pH 7, 12 h) yields only a predicted modulus of 15,340 Pa; no hydrogel was prepared and measured under it.",
+   "S": "S0. Looked at RESULTS AND DISCUSSION and METHODS. No stated distribution difference, no perturbation and no extrapolation test."
+  },
+  "confidence": "high",
+  "notes": "Contradicts the title/abstract screening note in sample_A4_tissue.json, which says 'predicted optimum prepared and measured'. The full text does not report that: 'Under this optimized condition, the predicted elastic modulus of the hydrogels was 15,340 Pa' and 'the actual impact of RCHs prepared under these conditions on seed cell growth and cartilage repair remains to be explored'. EP=0."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 11,
+  "reliability_position": 10,
+  "pmcid": "PMC11939716",
+  "doi": "10.3390/bioengineering12030315",
+  "year": 2025,
+  "journal": "Bioengineering (Basel, Switzerland)",
+  "title": "Investigation of the Effects of 3D Printing Parameters on the Mechanical Properties of Bone Scaffolds: Experimental Study Integrated with Artificial Neural Networks.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.6, RESULTS AND DISCUSSION 3.4.5 and Table 3. Prediction errors (ANN height 5.13%, width 5.52%, Young's modulus 8.79%) are single values; no SD/CI over splits or seeds; dropout is used for regularisation only, not for MC-dropout uncertainty.",
+   "E": "E0. Looked at METHODS 2.3 and 2.6 ('The dataset (Section 2.3) was divided into a training set (80%) and a testing set (20%), with specific indices manually selected for testing'). One in-house DoE on one Prusa MINI+ printer.",
+   "EP": "EP0. Looked at RESULTS AND DISCUSSION 3.4.5 and CONCLUSIONS. The ANN-identified optimum (180 C, 500 mm/min, 29% feed) is only evaluated through the model: 'Under these conditions, the model predicted a height of 0.371 mm, a width of 0.445 mm ... and a Young's modulus of 0.381 GPa'. No scaffold was printed at the optimum and tested.",
+   "S": "S0. Looked at all RESULTS AND DISCUSSION subsections. Parameters were varied one at a time inside the training range; no stated shift, perturbation or extrapolation evaluation."
+  },
+  "confidence": "high",
+  "notes": "Three ANNs (height, width, Young's modulus) plus linear and quadratic regression baselines on a one-factor-at-a-time printing DoE."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 13,
+  "reliability_position": 12,
+  "pmcid": "PMC11921027",
+  "doi": "10.1021/acsabm.4c01509",
+  "year": 2025,
+  "journal": "ACS applied bio materials",
+  "title": "Collagen Hybridizing Peptides Promote Collagen Fibril Growth In Vitro.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S1",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Convolutional Neural Network Model Training and Evaluation' and RESULTS 'Utilizing Deep Learning to Recognize Collagen D-Banding'. Accuracy, precision, recall, F1 and MCC are single values (99.61% / 99.1% etc.); no SD/CI over folds or seeds and no per-image confidence distribution reported.",
+   "E": "E0. Looked at METHODS and RESULTS. Everything the paper calls an 'external data set' is AFM imagery acquired in this study on the same instrument - separately collected batches from the same lab and set-up, which section 7 explicitly routes away from E1. No other lab, institution, public or literature dataset is used.",
+   "EP": "EP0. Looked at RESULTS 'Utilizing Deep Learning' and 'Modulating Collagen Fibril Growth Using CHP'. The ColD model classifies AFM images; it makes no forward prediction about a material that a subsequent experiment tests.",
+   "S": [
+    {
+     "section": "RESULTS",
+     "quote": "The external data sets contain AFM images not used in the training and testing processes and other collagen sources in which the fibril morphology differs from the training data set, but the D-banding is conserved.",
+     "quote_check": "exact",
+     "n_words": 35
+    },
+    {
+     "section": "RESULTS",
+     "quote": "Similar performance was observed on rat tail tendon AFM images, in which the ColD model recognized the rat tail tendon collagen fibrils as 100%",
+     "quote_check": "exact",
+     "n_words": 24
+    },
+    {
+     "section": "RESULTS",
+     "quote": "The result showed that both reformed fibrils with double the fibril size from the training data set were recognized as D-banding",
+     "quote_check": "exact",
+     "n_words": 21
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "MobileNetV2 transfer-learning classifier of collagen D-banding in AFM images. S1 = natural sub-code: the fixed model is applied without retraining to collagen from a different source (rat tail tendon) and to reassembled films whose fibril size is about double the training data, with accuracy reported for each (99.6%, 98.6%). The paper's 'external validation' label does not meet the E1 definition (same lab and instrument), so E1=0 - flag this E1-vs-S1 split for adjudication."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 15,
+  "reliability_position": 14,
+  "pmcid": "PMC7076403",
+  "doi": "10.3390/pharmaceutics12020166",
+  "year": 2020,
+  "journal": "Pharmaceutics",
+  "title": "A 3D Bioprinted Pseudo-Bone Drug Delivery Scaffold for Bone Tissue Engineering.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.3 'Artificial Neural Network Design and Optimization', RESULTS AND DISCUSSION 3.1 and the training-algorithm table. R2 and MSE are single values per training algorithm; no SD/CI over repeats, no per-prediction uncertainty.",
+   "E": "E0. Looked at METHODS 2.3 ('a training percentage value of 70% was selected'; 'Validation of 15%'; 'A testing percentage of 15%'). One in-house 546-record formulation dataset, random three-way split only.",
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "The optimized 3D bioprinted scaffold displayed a controlled release of simvastatin over a 20-day duration, as seen in Figure 10, with significant correlation to the predicted release kinetics ascertained using ANN.",
+     "quote_check": "exact",
+     "n_words": 31
+    },
+    {
+     "section": "FIG",
+     "quote": "Correlation of in vitro simvastatin release analysis of the optimized 3D bioprinted scaffold with predicted release kinetics using ANN modeling.",
+     "quote_check": "exact",
+     "n_words": 20
+    }
+   ],
+   "S": "S0. Looked at METHODS and all RESULTS AND DISCUSSION subsections. No stated distribution difference, perturbation or extrapolation evaluation."
+  },
+  "confidence": "med",
+  "notes": "EP=1: the ANN-optimised polymeric ink was bioprinted and its in-vitro simvastatin release measured and compared with the ANN-predicted release kinetics (Figure 10). Confidence med because the agreement is reported qualitatively ('significant correlation', 'good correlation') with no error metric."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 17,
+  "reliability_position": 16,
+  "pmcid": "PMC11723248",
+  "doi": "10.3390/polym17010121",
+  "year": 2025,
+  "journal": "Polymers",
+  "title": "Artificial Intelligence-Driven Modeling for Hydrogel Three-Dimensional Printing: Computational and Experimental Cases of Study.",
+  "U": "U0",
+  "E": "E1",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.1.4, RESULTS AND DISCUSSION 4.1.1-4.1.2 and Tables 4-7. Sn, Sp, Ac and AUROC are single values per model and per series. The bootstrapping in 4.1.1 ('In order to analyze the quality of the model, bootstrapping with 100 iterations was performed') drives recursive feature elimination, and Figure 1 plots Sn/Sp across RFE iterations, i.e. across different models, not the spread of one model's performance. LDA posterior probabilities are class probabilities without any calibration assessment.",
+   "E": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Once a model was obtained to make the predictions (IFTPML-DTC), two hydrogel structures were printed to test the predictions made with the model and the actual results.",
+     "quote_check": "exact",
+     "n_words": 27
+    },
+    {
+     "section": "TABLE",
+     "quote": "Results obtained for ChiMA and ChiMA + PEGDA bioprint, including printing parameters, as well as observed and predicted classification using the model developed in this work.",
+     "quote_check": "exact",
+     "n_words": 26
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Once a model was obtained to make the predictions (IFTPML-DTC), two hydrogel structures were printed to test the predictions made with the model and the actual results.",
+     "quote_check": "exact",
+     "n_words": 27
+    },
+    {
+     "section": "METHODS",
+     "quote": "A bioprinter (INKREDIBLE + Cellink) (Cellink, Gothenburg, Sweeden) was used to print the hydrogel scaffolds",
+     "quote_check": "exact",
+     "n_words": 15
+    }
+   ],
+   "S": "S0. Looked at METHODS 2.1 and RESULTS AND DISCUSSION 4.1-4.2. The training/validation split of the >1200-assay database is random; no stated distribution difference with performance reported."
+  },
+  "confidence": "med",
+  "notes": "IFPTML (perturbation-theory) LDA / decision-tree / deep-ANN classifiers of bioprinting outcomes. Two separate points. (1) The 'external validation series' named in the abstract is a random hold-out split of the same database and does NOT support E1. (2) What does support E1 is that the model is trained on a literature-compiled database (>1200 tests from many published sources) and then evaluated on ChiMA and ChiMA+PEGDA scaffolds printed in the authors' own laboratory - a source independent of every training source - with observed vs predicted classification in Table 8 (5/6 property classifications correct). n is tiny (2 constructs), so E1 is coded med and flagged for adjudication. The same evidence supports EP=1 (new prints after the model was fixed, compared with its predictions)."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 19,
+  "reliability_position": 18,
+  "pmcid": "PMC8378215",
+  "doi": "10.3389/fbioe.2021.701778",
+  "year": 2021,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Towards the Experimentally-Informed In Silico Nozzle Design Optimization for Extrusion-Based Bioprinting of Shear-Thinning Hydrogels.",
+  "U": "U2",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS",
+     "quote": "The Gaussian Process model captures the sensitivity of all parameters, which is evident from the 90% confidence intervals (the grey region around the trend-lines in two upper rows of Figure 5).",
+     "quote_check": "exact",
+     "n_words": 31
+    },
+    {
+     "section": "METHODS",
+     "quote": "creates a machine-learning model (Gaussian Process, functions: “bgp()” and “sens()”), which enables quantification and visualization of the sensitivity of each parameter towards the model response",
+     "quote_check": "exact",
+     "n_words": 25
+    }
+   ],
+   "E": "E0. Looked at ABSTRACT, RESULTS 'Shear Stress as Predictor of Cell Viability', RESULTS 'Quantification and Trends Using Machine Learning' and DISCUSSION. The literature cell-viability comparison (Figure 2, Table 3, Figure 7) validates the CFD model and the use of maximum shear stress as a viability proxy; the Gaussian-process surrogate itself is never evaluated on data from an independent source. Its own check is a random re-division of the CFD dataset.",
+   "EP": "EP0. Looked at METHODS and RESULTS. The authors performed no experiments; all experimental viability values are taken from published studies and used to justify the shear-stress proxy, not to test a model prediction made in advance.",
+   "S": "S0. Looked at RESULTS 'Quantification and Trends Using Machine Learning' and Supplementary Figures S2/S3 as described in the text: 'randomly dividing the dataset and running GP for each material-nozzle combination yields identical results' is random splitting, which section 7 excludes."
+  },
+  "confidence": "med",
+  "notes": "U2 (sub-code reported): the tgp/bgp Gaussian-process surrogate of CFD maximum shear stress is displayed with 90% posterior credible bands around its predicted main-effect curves (Figure 5, grey regions), i.e. per-prediction uncertainty is reported, not just the GP mean. No calibration assessment anywhere, so not U3. E1 is arguable (sim-to-experiment is listed under E1) but the thing compared with experiment is the CFD model, not the ML surrogate - flag for adjudication."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 21,
+  "reliability_position": 20,
+  "pmcid": "PMC9104973",
+  "doi": "10.3390/polym14091802",
+  "year": 2022,
+  "journal": "Polymers",
+  "title": "Accelerated Discovery of the Polymer Blends for Cartilage Repair through Data-Mining Tools and Machine-Learning Algorithm.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.3 and RESULTS AND DISCUSSION 3.3. Only likelihood-ratio tests, p-values of coefficients and residual deviance are reported; section 7 excludes 'p-values of regression coefficients'. No SD/CI of any performance metric over splits and no per-prediction interval.",
+   "E": "E0. Looked at METHODS 2.2 (database built from the PoLyInfo library) and RESULTS AND DISCUSSION 3.3 ('Once the data is divided into 75% as training data and 25% as testing data'). Random hold-out of a single mined dataset.",
+   "EP": "EP0. Looked at RESULTS AND DISCUSSION 3.3-3.4. The predicted blends were checked only by searching PubMed and ScienceDirect for the polymer names; no material was made or measured.",
+   "S": "S0. Looked at METHODS and RESULTS AND DISCUSSION. No stated distribution difference, perturbation or extrapolation evaluation of the fitted model."
+  },
+  "confidence": "med",
+  "notes": "Multinomial logistic regression inverse design of cartilage-scaffold polymer blends. The literature check ('To confirm whether the predictions made by the MNLR model are accurate and relevant to cartilage tissue engineering, the predicted polymers/blends' names were chosen as the keywords in PubMed and ScienceDirect and searched') is a qualitative plausibility check, not a quantitative evaluation on an independent dataset, so E1=0; flag if the adjudicator reads E1 more loosely."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 23,
+  "reliability_position": 22,
+  "pmcid": "PMC11761273",
+  "doi": "10.3390/biomedicines13010208",
+  "year": 2025,
+  "journal": "Biomedicines",
+  "title": "Advancing Hydrogel-Based 3D Cell Culture Systems: Histological Image Analysis and AI-Driven Filament Characterization.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.3 and RESULTS AND DISCUSSION 3.2. Only raw confusion-matrix counts and per-class percentages are reported; no SD/CI over repeats and no per-image confidence distribution (a fixed 50% recognition threshold is mentioned but no calibration or interval).",
+   "E": "E0. Looked at METHODS 2.3 ('After training, forty-seven images, which were not used in the construction of this trained image dataset, were used for prediction'; likewise 49 images for the seven-class task). Held-out images from the same in-house histology set.",
+   "EP": "EP0. Looked at METHODS 2.1 and RESULTS AND DISCUSSION. The classifier labels existing histological cross-sections; no new filament was produced to test a model prediction.",
+   "S": "S0. Looked at METHODS and RESULTS AND DISCUSSION. No stated distribution difference between training and prediction images, no perturbation and no extrapolation test."
+  },
+  "confidence": "high",
+  "notes": "Google Teachable Machine image classifier on histological cross-sections of alginate/gelatin filaments; stretched-vs-unstretched task works (26+15 of 47), the seven-hydrogel task largely fails."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 25,
+  "reliability_position": 24,
+  "pmcid": "PMC11556762",
+  "doi": "10.22038/ijbms.2024.78958.17077",
+  "year": 2024,
+  "journal": "Iranian journal of basic medical sciences",
+  "title": "Zinc oxide nanoparticle-reinforced sodium alginate/hydroxyapatite scaffolds for osteoporosis treatment in fragility fracture patients: Development and characterization using artificial neural networks (ANNs) modeling.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Artificial neural networks (ANNs) modeling' and DISCUSSION. Accuracy is assessed only by 'comparing the fitted linear regression diagram to the y=x line' and by linear regression of normalised predictions; no SD/CI over folds, seeds or repeats, and no per-prediction uncertainty.",
+   "E": "E0. Looked at METHODS and DISCUSSION. The feedforward ANN is fitted to the four in-house scaffold samples and used to interpolate over pore size 0-100 um and porosity 0-85%; there is no held-out set at all, let alone an independent source.",
+   "EP": "EP0. Looked at RESULTS, DISCUSSION and CONCLUSION. The ANN predictions are compared with the same experimental results used to build the model; no new scaffold was made after the model was fixed.",
+   "S": "S0. Looked at METHODS, RESULTS and DISCUSSION. No stated distribution difference, no perturbation and no reported evaluation outside the fitted range."
+  },
+  "confidence": "high",
+  "notes": "Feedforward ANN (2 inputs, 5 hidden neurons, 3 outputs) over 4 experimental ZnO/alginate/hydroxyapatite scaffold samples. Extremely small fit; the paper reports only agreement with the data it was fitted to."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 27,
+  "reliability_position": 26,
+  "pmcid": "PMC9938698",
+  "doi": "10.1007/s42600-022-00257-5",
+  "year": 2023,
+  "journal": "Research on Biomedical Engineering",
+  "title": "Identification and ranking biomaterials for bone scaffolds using machine learning and PROMETHEE",
+  "U": "U1",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": [
+    {
+     "section": "METHODS",
+     "quote": "The final results are reported based on the average of the 5 folds and its standard deviation.",
+     "quote_check": "exact",
+     "n_words": 17
+    },
+    {
+     "section": "TABLE",
+     "quote": "Evolution of ANN efficiency model Features | ACC ± std (%) | Sen ± std (%) | Spec ± std (%) | FPR ± std (%) | Mean AUC ± std",
+     "quote_check": "exact",
+     "n_words": 31
+    },
+    {
+     "section": "FIG",
+     "quote": "ROC and AUC of each fold and the mean of all folds depicted for ANN",
+     "quote_check": "exact",
+     "n_words": 15
+    }
+   ],
+   "E": "E0. Looked at METHODS 'Dataset building' ('experimental data collected from the literature were consolidated into a single database and then used for training, validation, and testing') and 'Evaluation'. Only 5-fold cross-validation of that single compiled dataset; no separate independent source is held out.",
+   "EP": "EP0. Looked at RESULTS, DISCUSSION and CONCLUSION. The PROMETHEE ranking selects Brushite and Ti alloy from the same literature table; no material was fabricated or tested.",
+   "S": "S0. Looked at METHODS 'Evaluation' and RESULTS. Only random 5-fold cross-validation; no group, batch, source or range-extrapolation split and no perturbation test."
+  },
+  "confidence": "high",
+  "notes": "U1 is unambiguous: metrics are reported as mean +/- std over 5 folds and per-fold ROC/AUC curves are shown (Figures 1 and 2). No per-prediction uncertainty anywhere, so not U2."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 29,
+  "reliability_position": 28,
+  "pmcid": "PMC8575943",
+  "doi": "10.1038/s41598-021-01304-4",
+  "year": 2021,
+  "journal": "Scientific reports",
+  "title": "A deep learning approach to identify and segment alpha-smooth muscle actin stress fiber positive cells.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S1",
+  "evidence": {
+   "U": "U0. Looked at RESULTS 'Model training and evaluation' and Figure 4. Accuracy (65% -> 77% -> 78.5%), F1, FP/FN and IOU are single values per model iteration; no SD/CI over seeds or splits. METHODS 'Statistical analysis' ('All error bars and boxes represent ± standard deviation') refers to the biological measurements, not to model metrics.",
+   "E": "E0. Looked at RESULTS 'Model training and evaluation' ('These images were collected during the same experiments as the training set images; however, they were withheld during the training process') and 'Model application'. The application dataset is the same laboratory, cells and assay, so it is a separately collected batch rather than an independent source.",
+   "EP": "EP0. Looked at RESULTS 'Model application'. The network segments and classifies existing fluorescence images; no material or experiment was produced to test a prediction the model made beforehand.",
+   "S": [
+    {
+     "section": "RESULTS",
+     "quote": "However, the substrate stiffening dataset (Fig. 2d) was collected at a later time, under different microscope settings.",
+     "quote_check": "exact",
+     "n_words": 17
+    },
+    {
+     "section": "RESULTS",
+     "quote": "As a result, the mean intensities of each channel were significantly different than those of the training set.",
+     "quote_check": "exact",
+     "n_words": 18
+    },
+    {
+     "section": "FIG",
+     "quote": "Visualization of the difference between model and manual identification on an individual image scale. For 98/306 images, the results matched exactly.",
+     "quote_check": "exact",
+     "n_words": 21
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "Encoder-decoder network segmenting alpha-SMA stress-fibre-positive cardiac fibroblasts on methacrylated-hyaluronic-acid hydrogels of different moduli. S1 = natural sub-code: the model is applied to a dataset collected later under different microscope settings, and its per-condition and per-image agreement with manual analysis is reported (Figure 5a-c, Tables S1-S2). The intensity normalisation was re-fitted on a small subsample of the new images, which section 7 allows ('few-shot-adapted performance on the new domain is reported'); an adjudicator who counts that as adaptation rather than evaluation would code S0."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 31,
+  "reliability_position": 30,
+  "pmcid": "PMC12000562",
+  "doi": "10.1038/s41598-025-94608-8",
+  "year": 2025,
+  "journal": "Scientific reports",
+  "title": "Surrogate modeling of electrospun PVA/PLA nanofibers using artificial neural network for biomedical applications.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 'Artificial neural network (ANN) structure' and RESULTS 'Prediction results of ANN model' / 'Regression analysis'. R2_ANN = 95.13% and an overall score of 0.9925 are single values; no SD/CI over folds or seeds, no per-prediction interval. The '127.6 ± 19.8 nm' figures are SEM fibre-diameter measurement spread, not model performance.",
+   "E": "E0. Looked at METHODS ('The data, obtained using the orthogonal array DoE method, are divided into three groups: 80% for training, with the remaining 20% split evenly between validation and testing'). Random split of one in-house Taguchi DoE.",
+   "EP": "EP0. Looked at RESULTS 'Confirmation test' and Table 5. New nanofibres were indeed electrospun at the optimum and measured, but the prediction being tested is the Taguchi/ANOVA S/N-ratio prediction, not the ANN's: Table 5 is headed 'Predicted by Taguchi | Experiment result' and the text says the test validates 'the reliability and effectiveness of the Taguchi method used to optimize the design parameters'.",
+   "S": "S0. Looked at METHODS and all RESULTS subsections. No stated distribution difference, no perturbation and no extrapolation evaluation of the ANN."
+  },
+  "confidence": "med",
+  "notes": "Flag for adjudication: this paper does contain a genuine prospective confirmation experiment, but it validates the Taguchi DoE optimum rather than the ANN surrogate, and section 7 ties EP to the ML model's own predictions. If the adjudicator attributes the confirmation test to the paper as a whole, EP becomes 1."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 33,
+  "reliability_position": 32,
+  "pmcid": "PMC10512832",
+  "doi": "10.3389/fbioe.2023.1241151",
+  "year": 2023,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Inverse design of anisotropic bone scaffold based on machine learning and regenerative genetic algorithm.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.3 'Forward prediction using BPNN' and RESULTS 3.1-3.3. MAPE per architecture and relative error percentages of the designs are single values; no SD/CI over folds or seeds and no per-prediction uncertainty from the BPNNs.",
+   "E": "E0. Looked at METHODS 2.2 ('TPMS surface parameters and the results of FE calculation were used as the training set of neural networks') and RESULTS 3.1 ('7,000 configurations were used in the training set and 1,000 configurations in the test set'). Training and test data come from the same ANSYS FE pipeline; the bone stiffness matrices are design targets, not an evaluation set.",
+   "EP": "EP0. Looked at RESULTS 3.2-3.3 and the figure legend 'Verification of the design structure using the FE simulation'. Every check of the inverse-designed structures is an FE re-simulation, which section 7 excludes.",
+   "S": "S0. Looked at RESULTS 3.2-3.3. The designs for other porous bones stay inside the trained porosity (50-75%) and arrangement (3-8) ranges; no stated distribution difference with performance reported."
+  },
+  "confidence": "high",
+  "notes": "Two BPNNs on 8,000 FE-computed TPMS configurations plus a regenerative genetic algorithm for inverse design. Entirely in-silico."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 35,
+  "reliability_position": 34,
+  "pmcid": "PMC9551996",
+  "doi": "10.3389/fbioe.2022.973275",
+  "year": 2022,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Designing anisotropic porous bone scaffolds using a self-learning convolutional neural network model.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.3 and RESULTS 3.1 'Cross-validation and prediction power of the convolutional neural network'. MAE and R2 = 0.95 are single values; no SD/CI over folds, seeds or repeats and no per-prediction uncertainty.",
+   "E": "E0. Looked at METHODS 2.3 ('10,000 bone scaffolds were randomly generated, 8,000 of which were used for the training of the CNN model and the remaining 2,000 were used for the cross-validation') and RESULTS 3.1. Training and validation data are both heterogeneous-FE predictions from the same pipeline.",
+   "EP": "EP0. Looked at RESULTS 3.2-3.3 and DISCUSSION. The designed scaffolds are evaluated only by FE analysis; no scaffold was manufactured or mechanically tested.",
+   "S": "S0. Looked at METHODS 2.3 and RESULTS 3.1-3.3. Random split only; no stated distribution difference, perturbation or extrapolation evaluation."
+  },
+  "confidence": "high",
+  "notes": "Self-learning CNN designing anisotropic porous bone scaffolds against elasticity matrices derived from bone CT images; ground truth throughout is heterogeneous FE, and the comparison in 3.3 is against a conventional optimisation framework, not against an independent dataset."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 37,
+  "reliability_position": 36,
+  "pmcid": "PMC12656060",
+  "doi": "10.3390/polym17222973",
+  "year": 2025,
+  "journal": "Polymers",
+  "title": "Additive Manufacturing of Bead-Chain-Shaped Scaffolds with AI-Based Process Optimization.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 1,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.2 and RESULTS AND DISCUSSION 3.1. Section 7 excludes averaging without spread, and that is exactly what is reported: 'The average validation MSE and RMSE across all folds were reported as final indicators' and 'five-fold cross-validation yielded an average validation MSE of 0.000485 mm2, corresponding to an RMSE of approximately 0.022 mm'. No SD, no per-fold values, no per-prediction interval. The ± values in Tables 2-3 are replicate measurement SD of scaffold dimensions.",
+   "E": "E0. Looked at METHODS 2.2 (123 in-house data points, five-fold CV) and RESULTS AND DISCUSSION 3.1. One printer, one laboratory; no independent source.",
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "The scaffolds were fabricated based on the optimal printing conditions derived from the AI based prediction model for the fabrication of D1 and D2.",
+     "quote_check": "exact",
+     "n_words": 24
+    },
+    {
+     "section": "RESULTS_DISCUSSION",
+     "quote": "Figure 2e,f present a comparison of the dimensional error rates of D1 and D2 between samples fabricated using experimentally determined conditions and those produced using AI-recommended parameters.",
+     "quote_check": "exact",
+     "n_words": 27
+    },
+    {
+     "section": "TABLE",
+     "quote": "AI-recommended printing conditions for BCS scaffolds and the measured D1 and D2 values.",
+     "quote_check": "exact",
+     "n_words": 13
+    }
+   ],
+   "S": "S0. Looked at METHODS 2.2 and RESULTS AND DISCUSSION 3.1-3.6. The inverse grid search stays inside the trained parameter ranges; no stated distribution difference, perturbation or extrapolation evaluation."
+  },
+  "confidence": "high",
+  "notes": "Clear EP=1: the MLP was inverted to recommend printing conditions, scaffolds were then printed at those conditions and their D1/D2 measured, with error rates compared against conventionally chosen conditions (Figure 2e,f; Tables 2-3). U stays at 0 because only fold-averaged MSE/RMSE is given."
+ },
+ {
+  "coder": "B",
+  "area": "A4_tissue",
+  "eligible_index": 39,
+  "reliability_position": 38,
+  "pmcid": "PMC12607992",
+  "doi": "10.3390/ma18214893",
+  "year": 2025,
+  "journal": "Materials (Basel, Switzerland)",
+  "title": "NMR, FT-IR, XRD, SEM, and ANN Complex Characterization of Some Nonwoven Materials Produced by Electrospinning.",
+  "U": "U0",
+  "E": "E0",
+  "EP": 0,
+  "S": "S0",
+  "evidence": {
+   "U": "U0. Looked at METHODS 2.8 and RESULTS AND DISCUSSION 'Prediction of the Orientation of Bio-Nanofibers'. Only two example relative errors (~6.07% and ~1.82%) on held-out synthetic images and a training loss curve; no SD/CI over repeats and no model-produced per-prediction interval. The reported order-degree 'ranges' per sample are the spread of predictions across different SEM sub-images, not an uncertainty the ANN outputs.",
+   "E": "E0. Looked at RESULTS AND DISCUSSION 'Prediction of the Orientation of Bio-Nanofibers'. The ANN is trained on 800 of 1000 synthetic images and tested on the remaining 200 synthetic ones ('The accuracy of training was tested on other images not included in the training set of synthetic images (200 out of a total of 1000)'). It is then applied to the measured SEM images, but no ground truth and no performance are reported there, so there is no evaluation on an independent source.",
+   "EP": "EP0. Looked at METHODS 2.2 and all RESULTS AND DISCUSSION subsections. The electrospun mats were made and imaged before the ANN was applied; the ANN makes no forward prediction that a later experiment tests.",
+   "S": "S0. Looked at RESULTS AND DISCUSSION 'Prediction of the Orientation of Bio-Nanofibers'. The simulated-to-real transfer is the paper's whole use of the model, but it is an application with no reported performance on the real images, and section 7 requires that the shifted evaluation report performance."
+  },
+  "confidence": "med",
+  "notes": "Flag for adjudication: training on 1,000 synthetic fibre images and then applying the fixed ANN to real SEM micrographs is a textbook sim-to-real shift (and section 7 lists sim-to-real under both E1 and S1 natural), but the paper reports no accuracy, error or ground truth for the real images - only predicted order-degree ranges. I therefore coded E0/S0 on the 'performance reported' requirement."
+ }
+]

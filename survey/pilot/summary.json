@@ -1,0 +1,392 @@
+{
+ "ta": {
+  "A1_imaging": {
+   "v1": [
+    4,
+    12
+   ],
+   "v2": [
+    1,
+    12
+   ],
+   "reasons": {
+    "NOT_BIOMED": 11,
+    "WRONG_AREA": 4,
+    "NO_ML": 4
+   }
+  },
+  "A2_property": {
+   "v1": [
+    10,
+    12
+   ],
+   "v2": [
+    0,
+    0
+   ],
+   "reasons": {
+    "NO_ML": 2
+   }
+  },
+  "A3_sensors": {
+   "v1": [
+    2,
+    12
+   ],
+   "v2": [
+    8,
+    12
+   ],
+   "reasons": {
+    "NOT_BIOMED": 12,
+    "WRONG_AREA": 2
+   }
+  },
+  "A4_tissue": {
+   "v1": [
+    1,
+    12
+   ],
+   "v2": [
+    4,
+    12
+   ],
+   "reasons": {
+    "NOT_BIOMED": 8,
+    "NOT_RESEARCH": 3,
+    "WRONG_AREA": 4,
+    "NO_ML": 4
+   }
+  },
+  "A5_autonomous": {
+   "v1": [
+    4,
+    12
+   ],
+   "v2": [
+    1,
+    12
+   ],
+   "reasons": {
+    "NOT_BIOMED": 9,
+    "NO_ML": 10
+   }
+  }
+ },
+ "patterns": {
+  "E_external": {
+   "hits": 3,
+   "papers": 2,
+   "tp": 0,
+   "papers_tp": 0
+  },
+  "E_prospective": {
+   "hits": 13,
+   "papers": 6,
+   "tp": 9,
+   "papers_tp": 3
+  },
+  "S_group": {
+   "hits": 2,
+   "papers": 2,
+   "tp": 0,
+   "papers_tp": 0
+  },
+  "S_ood": {
+   "hits": 4,
+   "papers": 2,
+   "tp": 2,
+   "papers_tp": 1
+  },
+  "S_robust": {
+   "hits": 31,
+   "papers": 10,
+   "tp": 3,
+   "papers_tp": 2
+  },
+  "U1_spread": {
+   "hits": 14,
+   "papers": 5,
+   "tp": 10,
+   "papers_tp": 1
+  },
+  "U2_acquisition": {
+   "hits": 16,
+   "papers": 4,
+   "tp": 13,
+   "papers_tp": 3
+  },
+  "U2_gp": {
+   "hits": 33,
+   "papers": 3,
+   "tp": 32,
+   "papers_tp": 2
+  },
+  "U2_probabilistic": {
+   "hits": 2,
+   "papers": 2,
+   "tp": 2,
+   "papers_tp": 2
+  },
+  "U2_uq": {
+   "hits": 7,
+   "papers": 1,
+   "tp": 7,
+   "papers_tp": 1
+  },
+  "U3_calibration": {
+   "hits": 11,
+   "papers": 5,
+   "tp": 0,
+   "papers_tp": 0
+  }
+ },
+ "fp_categories": {
+  "HOMONYM": 16,
+  "NOT_AN_EVALUATION": 3,
+  "LIMITATION_OR_FUTURE_WORK": 2,
+  "TRANSFER_LEARNING_ADAPTATION": 16,
+  "ANALYTICAL_CALIBRATION_CURVE": 9,
+  "MEASUREMENT_REPLICATE_SPREAD": 3,
+  "SAMPLE_WISE_LOOCV": 1,
+  "OTHER_WORK_CITED": 1,
+  "GENERIC_DISCUSSION": 1,
+  "BACKGROUND_GENERAL": 3,
+  "NOT_ML": 1,
+  "CLAIM_WITHOUT_ASSESSMENT": 1,
+  "HYPERPARAMETER_BO": 1
+ },
+ "section_verdict": {
+  "RESULTS_DISCUSSION|TP": 24,
+  "METHODS|FP": 14,
+  "RESULTS|FP": 13,
+  "DISCUSSION|FP": 5,
+  "FIG|FP": 9,
+  "RESULTS|TP": 10,
+  "ABSTRACT|FP": 2,
+  "INTRO|FP": 8,
+  "RESULTS_DISCUSSION|FP": 5,
+  "TABLE|FP": 2,
+  "METHODS|TP": 22,
+  "FIG|TP": 5,
+  "ABSTRACT|TP": 4,
+  "TABLE|TP": 7,
+  "CONCLUSION|TP": 4,
+  "DISCUSSION|TP": 1,
+  "INTRO|TP": 1
+ },
+ "paper_agreement": {
+  "U": [
+   17,
+   25
+  ],
+  "E1": [
+   23,
+   25
+  ],
+  "EP": [
+   18,
+   25
+  ],
+  "S1": [
+   18,
+   25
+  ]
+ },
+ "paper_confusion": {
+  "U>=1": [
+   4,
+   5,
+   2,
+   14
+  ],
+  "U>=2": [
+   4,
+   4,
+   0,
+   17
+  ],
+  "U3": [
+   0,
+   5,
+   0,
+   20
+  ],
+  "E1": [
+   0,
+   1,
+   1,
+   23
+  ],
+  "EP": [
+   3,
+   2,
+   5,
+   15
+  ],
+  "S1": [
+   4,
+   7,
+   0,
+   14
+  ]
+ },
+ "prevalence": {
+  "A1_imaging": {
+   "U>=1": [
+    1,
+    5
+   ],
+   "U>=2": [
+    0,
+    5
+   ],
+   "U3": [
+    0,
+    5
+   ],
+   "E1": [
+    1,
+    5
+   ],
+   "EP": [
+    1,
+    5
+   ],
+   "S1": [
+    3,
+    5
+   ]
+  },
+  "A2_property": {
+   "U>=1": [
+    1,
+    5
+   ],
+   "U>=2": [
+    0,
+    5
+   ],
+   "U3": [
+    0,
+    5
+   ],
+   "E1": [
+    0,
+    5
+   ],
+   "EP": [
+    1,
+    5
+   ],
+   "S1": [
+    0,
+    5
+   ]
+  },
+  "A3_sensors": {
+   "U>=1": [
+    0,
+    5
+   ],
+   "U>=2": [
+    0,
+    5
+   ],
+   "U3": [
+    0,
+    5
+   ],
+   "E1": [
+    0,
+    5
+   ],
+   "EP": [
+    0,
+    5
+   ],
+   "S1": [
+    0,
+    5
+   ]
+  },
+  "A4_tissue": {
+   "U>=1": [
+    0,
+    5
+   ],
+   "U>=2": [
+    0,
+    5
+   ],
+   "U3": [
+    0,
+    5
+   ],
+   "E1": [
+    0,
+    5
+   ],
+   "EP": [
+    1,
+    5
+   ],
+   "S1": [
+    1,
+    5
+   ]
+  },
+  "A5_autonomous": {
+   "U>=1": [
+    4,
+    5
+   ],
+   "U>=2": [
+    4,
+    5
+   ],
+   "U3": [
+    0,
+    5
+   ],
+   "E1": [
+    0,
+    5
+   ],
+   "EP": [
+    5,
+    5
+   ],
+   "S1": [
+    0,
+    5
+   ]
+  },
+  "ALL": {
+   "U>=1": [
+    6,
+    25
+   ],
+   "U>=2": [
+    4,
+    25
+   ],
+   "U3": [
+    0,
+    25
+   ],
+   "E1": [
+    1,
+    25
+   ],
+   "EP": [
+    8,
+    25
+   ],
+   "S1": [
+    4,
+    25
+   ]
+  }
+ }
+}

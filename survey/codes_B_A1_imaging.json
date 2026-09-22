@@ -1,0 +1,994 @@
+[
+ {
+  "pmcid": "PMC10161767",
+  "doi": "10.1107/s205225252300204x",
+  "year": 2023,
+  "journal": "IUCrJ",
+  "title": "Fast extraction of three-dimensional nanofiber orientation from WAXD patterns using machine learning.",
+  "eligible_index": 1,
+  "subset_position": 0,
+  "U": 1,
+  "E": 1,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "TABLE (Table 1 caption, floats-group)",
+     "quote": "The results are the average of five repetitions together with corresponding the standard deviations in parentheses."
+    },
+    {
+     "section": "TABLE (Table 1 body)",
+     "quote": "Fully connected neural networks | 0.0265 (0.0024) | 0.9982/0.9731 (0.0002/0.0067) | 0.0902 (0.0025) | 0.9983/0.9349 (0.0012/0.0064)."
+    }
+   ],
+   "E": [
+    {
+     "section": "RESULTS_DISCUSSION (Machine-learning prediction performance)",
+     "quote": "Phase I: simulated data are used for both training and testing purposes; phase II: simulated data are used for model training whereas the real world experimental data are used for testing."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: ABSTRACT, METHODS 2.1-2.4, RESULTS_DISCUSSION 3.1-3.3, CONCLUSION",
+     "note": "No new samples made or measured after the model was fixed; the experimental WAXD data are pre-existing synchrotron measurements of one stomatopod telson cuticle, used as the phase-II test set (coded E1, not EP)."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS_DISCUSSION (Data corruption and orientation label transformation)",
+     "quote": "S4 shows that the model trained based on the Poisson noise applied simulated dataset is robust to Gaussian noise."
+    },
+    {
+     "section": "RESULTS_DISCUSSION (Machine-learning prediction performance)",
+     "quote": "Compared with phase I, the higher RMSE reveals the discrepancy between the experimental data and the simulated data."
+    }
+   ]
+  },
+  "confidence": "high",
+  "notes": "S1 type: natural (sim-to-real: trained on simulated I(chi) profiles, tested on real experimental patterns, RMSE reported for both phases) PLUS synthetic (model trained with Poisson-noise corruption evaluated under Gaussian noise). U1 rests on Table 1, which is inside <floats-group> and is therefore NOT parsed by s04_screen.paragraphs() and was missed by the regex screen; I recovered it by reading the raw JATS. Regex v1.1 gave only 2 candidates (S_robust, E_external) for this paper. This paper is one of the 25 pilot papers listed in A6 section 10.2, so my coding is not fully blind to the protocol's own pilot table; I coded from the full text and reached U1 where the pilot table records U0, because of the Table 1 standard deviations over five repetitions."
+ },
+ {
+  "pmcid": "PMC8665348",
+  "doi": "10.1016/j.bioactmat.2021.09.018",
+  "year": 2022,
+  "journal": "Bioactive materials",
+  "title": "A deep-learning-based workflow to deal with the defocusing problem in high-throughput experiments.",
+  "eligible_index": 3,
+  "subset_position": 2,
+  "U": 1,
+  "E": 0,
+  "EP": 1,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS (Five-fold cross-validation on the mixed dataset)",
+     "quote": "the accuracy of the model was quite robust on each fold with differences less than 0.003 (less than 0.0005 for AUC, Fig. 5B and C)"
+    },
+    {
+     "section": "FIG (Fig. 5C legend)",
+     "quote": "(C) The accuracy and AUC of different folds on training and validation sets."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS 4.1-4.6, RESULTS 2.1-2.7, DISCUSSION",
+     "note": "All images (18 conditions: cell types x magnifications x substrate materials) come from one laboratory and one microscope set-up; no independent laboratory, public dataset or simulation-to-experiment evaluation."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS (The performance of the workflow on the high-throughput cell microarray)",
+     "quote": "First, the sorting model trained in the five-fold cross-validation was used to sort the 120 images, and all the 8 images were successfully found and no focused images were wrongly classified as invalid data (Fig. 9A)."
+    },
+    {
+     "section": "FIG (Fig. 9B legend)",
+     "quote": "(B) The most blurry one in the 8 defocused images, the corresponding reconstructed image, and the ground truth image captured manually."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS (The generalization ability of the reconstruction model)",
+     "quote": "We directly applied the ResUNet model to EC and SMC images which were specifically collected for sorting experiments to test its generalization ability (Fig. 8)."
+    },
+    {
+     "section": "FIG (Fig. 8 legend)",
+     "quote": "The model was trained with 3T3 cell images collected specifically for reconstruction experiments on TCPS and accepted no further training before being applied to EC and SMC images."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "S1 type: natural (unadapted model applied to new cell types and substrate materials; the paper also reports the failure case 'not in all conditions could the model be directly applied to images with new features'). EP is coded on the codebook rule that a separately collected batch from the same laboratory is EP rather than E1: the 120 cell-microarray images (PDMS microarray, collected for a different experiment, never used in training) were processed by the fixed models and the reconstruction compared with a manually captured ground-truth image (SSIM). Confidence med because the microarray images were acquired in section 2.1, i.e. it is not stated that they were measured AFTER the model was fixed. Pilot-overlap caveat as for PMC10161767."
+ },
+ {
+  "pmcid": "PMC12796348",
+  "doi": "10.1038/s41467-025-67391-3",
+  "year": 2025,
+  "journal": "Nature communications",
+  "title": "MIDAS: rapid, multiplexed molecular profiling for integrated host-pathogen analysis.",
+  "eligible_index": 5,
+  "subset_position": 4,
+  "U": 0,
+  "E": 0,
+  "EP": 1,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: RESULTS (DL algorithm section), METHODS (Deep learning algorithms, Statistics & Reproducibility), FIG legends",
+     "note": "Only point estimates of model performance are given (~99.2% detection, ~94.1% classification test accuracy; average 5-fold CV accuracy ~100% and ~98.0%) with no SD/CI/per-fold values. All 'mean +/- s.d.' values are wet-lab assay replicates. Bayesian optimization is used only for hyper-parameter search, which the codebook excludes from U2."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: RESULTS (DL algorithm, MIDAS validation), METHODS (Swine samples for validation studies)",
+     "note": "No ML performance metric is reported on any data source independent of the training images; the swine study validates the assay (vs culture/qPCR/ELISA), not the deep-learning model. Coded E0 for that reason."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS (MIDAS validation)",
+     "quote": "Across the tested samples, MIDAS showed high concordance with culture and qPCR, accurately detecting bacterial presence and species in 30 out of 32 samples (93.8%)."
+    },
+    {
+     "section": "RESULTS (MIDAS validation)",
+     "quote": "In parallel, cytokine measurements by MIDAS correlated strongly with reference methods (Luminex/ELISA), with a Pearson correlation coefficient (r = 0.87)."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS (Deep learning (DL) algorithm for fast and accurate particle detection)",
+     "quote": "Furthermore, when we compared coverslips of different thicknesses (No. 1, 150 ± 20 µm; No. 1.5, 170 ± 20 µm), we observed no measurable impact on DL accuracy (Supplementary Fig. 4b, c)."
+    },
+    {
+     "section": "RESULTS (Deep learning (DL) algorithm for fast and accurate particle detection)",
+     "quote": "To further assess robustness, we evaluated the impact of z-position variability on classification accuracy, given that diffraction images can, in principle, be sensitive to particle height."
+    }
+   ]
+  },
+  "confidence": "low",
+  "notes": "S1 type: natural (acquisition-condition shift: particle z-position / coverslip thickness, DL accuracy reported under the varied condition). EP is the weak code here and confidence is low: the fixed MIDAS pipeline (whose readout includes the DL particle detector and shape-code classifier) was applied to banked porcine sepsis specimens never used in model development and its outputs compared quantitatively with independent reference assays, which fits 'new experiments never used in model development ... compared with its predictions'; against it, the specimens were collected and frozen before the model existed, and no DL-level metric is reported on them. An adjudicator may well prefer EP=0. Pilot-overlap caveat as for PMC10161767."
+ },
+ {
+  "pmcid": "PMC11538249",
+  "doi": "10.1038/s41746-024-01305-3",
+  "year": 2024,
+  "journal": "NPJ digital medicine",
+  "title": "Deep learning based highly accurate transplanted bioengineered corneal equivalent thickness measurement using optical coherence tomography.",
+  "eligible_index": 7,
+  "subset_position": 6,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS (Best model selection and quantitative comparison)",
+     "quote": "The specific values of mean, standard deviation, and standard error of the mean at each deep learning model (Fig. 1a) and each ophthalmologist (Fig. 1b) were shown in Table 1 and Table 2, respectively."
+    },
+    {
+     "section": "FIG (Fig. 1 legend)",
+     "quote": "a 10 different times averaged results of 4 different U-Net based model accuracy with standard deviation at 4 different date to select the suitable deep learning model."
+    },
+    {
+     "section": "TABLE (Table 1)",
+     "quote": "Attention U-Net | Mean ±SD | 93.54±0.086 | 90.96±0.226 | 93.42±0.099 | 91.71±0.147."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Datasets preparation, network training), RESULTS (all subsections), DISCUSSION",
+     "note": "All 15 OCT volumes come from one rabbit corneal-perforation study at one institution on one swept-source OCT system; the three annotator datasets are three label sets over the same images, not an independent data source."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS (Datasets preparation), RESULTS (3D segmentation results and quantitative thickness analysis)",
+     "note": "The OCT volumes were acquired in a previously published animal study; no samples were produced or measured after the model was fixed."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (Datasets preparation), RESULTS (Best model selection, Cross-sectional image outputs)",
+     "note": "A per-object grouped split is stated ('the data obtained from the same object was used exclusively for either training or testing, not both') but it is used to prevent leakage, not framed or analysed as generalisation to a named new condition; training covers all four post-operative days and all substrates. Coded S0 on that reading."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "U1 from Mean +/- SD and SEM of segmentation accuracy over 10 independent training/test repetitions (Tables 1-2, Fig. 1). S is the borderline: a literal reading of the codebook's 'group-, cluster- or scaffold-based split' under S1-natural would make the stated per-object split S1. I applied the rule that a grouped split counts as S1 only when the paper names the grouping factor as the shift being assessed and reports performance under it; this paper does not. Flagged for adjudication."
+ },
+ {
+  "pmcid": "PMC12322746",
+  "doi": "10.1117/1.jbo.30.6.065003",
+  "year": 2025,
+  "journal": "Journal of biomedical optics",
+  "title": "Efficient quality control of platelet-rich plasma preparation using computer vision and deep learning.",
+  "eligible_index": 9,
+  "subset_position": 8,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS_DISCUSSION (Generalization ability of the PRP QC model)",
+     "quote": "Across these experiments, the model achieved an average testing accuracy of ∼82.5%, with individual results as follows: 85.1%, 81.8%, 76.2%, 84.5%, 83.0%, 83.3%, 84.0%, 97.3%, 68.1%, and 82.2%."
+    },
+    {
+     "section": "FIG (Fig. 6c legend)",
+     "quote": "(c) Quantitative analysis of the model’s performance across 10 independent tests on the unavailable dataset, each using a different seed to realize dataset partition."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Image Acquisition and Preprocessing, Dataset-Splitting Strategy), RESULTS_DISCUSSION (Model Performance, Advantages and Limitations)",
+     "note": "All 5500 images come from 55 patients processed and photographed with one in-house imaging rig; no second site, instrument or public dataset."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS (Dataset-Splitting Strategy), RESULTS_DISCUSSION (both Model Performance subsections)",
+     "note": "Both evaluations are re-splits of the same 5500-image dataset; no new PRP samples were prepared or imaged after the model was fixed."
+    }
+   ],
+   "S": [
+    {
+     "section": "METHODS (Dataset-Splitting Strategy)",
+     "quote": "By contrast, the unavailable dataset strategy involved splitting the data at the patient level to ensure independence between training and testing sets."
+    },
+    {
+     "section": "METHODS (Dataset-Splitting Strategy)",
+     "quote": "This strategy ensures that the model evaluates generalization performance on previously unseen patients."
+    },
+    {
+     "section": "RESULTS_DISCUSSION (Generalization ability of the PRP QC model)",
+     "quote": "To evaluate the model’s generalization capability, the dataset was split at the patient level (i.e., using the unavailable dataset-splitting strategy)."
+    }
+   ]
+  },
+  "confidence": "high",
+  "notes": "Clear S1-natural: the paper contrasts a random sample-level split (~100% test accuracy) with a patient-independent split (82.5% average over 10 partitions) and names generalisation to unseen patients as the object of the test. U1 from the ten individually listed per-partition accuracies (Fig. 6c). Regex v1.1 produced ZERO candidates for this paper - both codes came from the evaluation digest, which confirms the protocol's point that regex recall alone is insufficient."
+ },
+ {
+  "pmcid": "PMC9785476",
+  "doi": "10.3390/ijms232416070",
+  "year": 2022,
+  "journal": "International journal of molecular sciences",
+  "title": "Deep Learning-Based Artificial Intelligence to Investigate Targeted Nanoparticles' Uptake in TNBC Cells.",
+  "eligible_index": 11,
+  "subset_position": 10,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "TABLE (Table 1, Cross-validation accuracy across all models)",
+     "quote": "Fold 1 | 98.37 | 97.01 | 98.64 | 99.18 | 98.91."
+    },
+    {
+     "section": "RESULTS (2. Results)",
+     "quote": "A 5-fold cross validation report was then generated for each model and for both the high and low classes."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS 4.1-4.4, RESULTS 2.1-2.2",
+     "note": "One confocal dataset of nanoparticle-treated TNBC cells from one laboratory; no external or public dataset."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS 4.1-4.4, RESULTS 2.1-2.2",
+     "note": "No new cells or nanoparticle batches were imaged after the models were fixed."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS 4.1.3 (Data Augmentation), 4.3 (Training Regime), 4.4 (Model 5-Fold Cross-Validation), RESULTS 2.1",
+     "note": "Only a random 80/20 split of augmented images plus random 5-fold cross-validation; augmentation is training-time only, which the codebook excludes. No stated shift."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "U1 rests on per-fold accuracies being tabulated for all five models (Table 1, folds 1-5), which the codebook counts ('per-fold values shown'); no SD or CI of the metrics is given anywhere, so confidence is med. Regex v1.1 produced zero candidates for this paper."
+ },
+ {
+  "pmcid": "PMC13128258",
+  "doi": "10.1016/j.actbio.2024.06.038",
+  "year": 2024,
+  "journal": "Acta biomaterialia",
+  "title": "Discovering 3D hidden elasticity in isotropic and transversely isotropic materials with physics-informed UNets.",
+  "eligible_index": 13,
+  "subset_position": 12,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: METHODS (3D El-UNet implementation, transversely isotropic formulation), RESULTS (all four subsections), FIG legends",
+     "note": "Only accuracy figures (mean absolute relative errors) are reported; the physics-informed UNet solves one inverse problem at a time and no per-prediction interval, ensemble spread or repeated-run spread is given."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Compressive loading simulation, cartilage simulation), RESULTS, DISCUSSION",
+     "note": "Ground truth throughout is finite-element simulation of brain tissue and articular cartilage; the paper states translation to experimental 3D characterisation as future work, so there is no simulation-to-experiment evaluation."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: RESULTS, DISCUSSION",
+     "note": "No physical experiment at all; the codebook explicitly excludes in-silico verification of a design."
+    }
+   ],
+   "S": [
+    {
+     "section": "METHODS (Compressive loading simulation of a heterogeneous brain)",
+     "quote": "As a separate experiment, to investigate the effect of input data noise on model estimations, we also included 5 % Gaussian noise in the input strains"
+    },
+    {
+     "section": "RESULTS (3D El-UNet resolves linear elastic parameter distributions)",
+     "quote": "Mean absolute relative errors for the model using noisy strains were 4.327 % for elastic modulus and 1.32 % for Poisson’s ratio."
+    },
+    {
+     "section": "RESULTS (Five transversely isotropic elasticity parameters)",
+     "quote": "Mean estimation errors from the noisy strains were: Exx:8.91%, Eyy:3.81%, vxy:7.43%, vyz:4.67%, Gxy:4.82%."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "S1 type: synthetic (5% Gaussian noise added to the input strain fields, with estimation errors reported for both the isotropic brain and the transversely isotropic cartilage case). Regex v1.1 produced zero candidates: the S_robust pattern requires '(added|additive|injected|synthetic|artificial) ... noise' and the paper writes 'we also included 5 % Gaussian noise', a recall miss worth recording for the full run."
+ },
+ {
+  "pmcid": "PMC11761273",
+  "doi": "10.3390/biomedicines13010208",
+  "year": 2025,
+  "journal": "Biomedicines",
+  "title": "Advancing Hydrogel-Based 3D Cell Culture Systems: Histological Image Analysis and AI-Driven Filament Characterization.",
+  "eligible_index": 15,
+  "subset_position": 14,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: METHODS 2.3 (Utilization of Artificial Intelligence), RESULTS_DISCUSSION 3.2 (AI-Based Class Prediction)",
+     "note": "No metric spread of any kind; only confusion-matrix counts. Teachable Machine reports a per-image 'confidence percentage (certainty)' and a 50% recognition threshold, but this is a plain softmax score used as a decision rule and is not reported or analysed as predictive uncertainty, so I did not code U2."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS 2.3, RESULTS_DISCUSSION 3.2",
+     "note": "All images are light-microscopy sections of the authors' own alginate/gelatin filaments; the 47 and 49 prediction images are held out from the same image pool."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS 2.3, RESULTS_DISCUSSION 3.2",
+     "note": "No new filaments were produced or imaged after training; the prediction images come from the same histological dataset."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS 2.3, RESULTS_DISCUSSION 3.2",
+     "note": "Plain held-out images from the same pool ('not used in the construction of this trained image dataset'); no stated difference between test and training conditions."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "Weakest ML in the subset (Google Teachable Machine, no code, no metrics beyond a confusion matrix). U0/E0/EP0/S0. The only near-miss is the per-image confidence percentage, noted under U."
+ },
+ {
+  "pmcid": "PMC11603200",
+  "doi": "10.1038/s41467-024-54267-1",
+  "year": 2024,
+  "journal": "Nature communications",
+  "title": "LungVis 1.0: an automatic AI-powered 3D imaging ecosystem unveils spatial profiling of nanoparticle delivery and acinar migration of lung macrophages.",
+  "eligible_index": 17,
+  "subset_position": 16,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "FIG (Fig. 1f-g legend)",
+     "quote": "f–g The Dice Score and centerline Dice Score were evaluated across three GT lungs in three AI iterations from the test datasets."
+    },
+    {
+     "section": "FIG (Fig. 1f-g legend)",
+     "quote": "Data are presented as mean ± SD, n = 3 biological replicates."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: RESULTS (LungVis 1.0 active learning section), METHODS (LungVis 1.0 AI pipelines, data acquisition)",
+     "note": "All 78 murine lung images come from one light-sheet microscope in one laboratory; the held-out test lungs are from the same acquisition campaign."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: RESULTS (all sections), METHODS (AI pipelines)",
+     "note": "The trained model is applied to >60 further lungs, but only qualitatively ('high-quality segmentations ... even in the presence of apparent imaging artifacts'); no ground truth is generated afterwards and no metric is reported on them."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (LungVis 1.0 AI pipelines: Active learning AI-driven airway segmentation), RESULTS (active learning section)",
+     "note": "Custom augmentations (slice illumination, blur, contrast, blank rectangles) mimic imaging artefacts but are applied at TRAINING time only, which the codebook excludes; the held-out three lungs are an ordinary test set with no stated shift factor."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "U1 from error bars (mean +/- SD, n = 3) on the Dice and clDice segmentation metrics in Fig. 1f,g. Confidence med because the SD is across three test lungs rather than over folds or seeds; the codebook's 'error bars on metrics' clause is what carries it."
+ },
+ {
+  "pmcid": "PMC10497969",
+  "doi": "10.3389/fbioe.2023.1225495",
+  "year": 2023,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Contributions of deep learning to automated numerical modelling of the interaction of electric fields and cartilage tissue based on 3D images.",
+  "eligible_index": 19,
+  "subset_position": 18,
+  "U": 2,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "METHODS (2.3 Uncertainty quantification)",
+     "quote": "We addressed potential inaccuracies of the deep learning prediction by Uncertainty Quantification (UQ) techniques."
+    },
+    {
+     "section": "RESULTS (3.3 Uncertainty quantification and sensitivity analysis)",
+     "quote": "The mean conductivity and permittivity of this configuration together with the 90% prediction interval are shown in Figure 9."
+    },
+    {
+     "section": "METHODS (2.3 Uncertainty quantification)",
+     "quote": "To obtain the 5th and 95th percentile, 104 samples were drawn from the PCE surrogate model."
+    },
+    {
+     "section": "RESULTS (3.3 Uncertainty quantification and sensitivity analysis)",
+     "quote": "On the other hand, the 90% prediction interval of the estimated relative permittivity ranges from about 200 to 1,800 before the β-dispersion narrows significantly at high frequencies."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS 2.1 (Model generation), RESULTS 3.1-3.2, DISCUSSION",
+     "note": "23 training/validation and 4 test 3D images of the same cartilage samples; the pre-trained StarDist weights come from an Arabidopsis dataset but that is transfer-learning initialisation, not an evaluation on independent data."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS 2.1-2.3, RESULTS 3.1-3.3",
+     "note": "No experimental impedance measurement is compared with the simulated dielectric properties; the Discussion states impedance sensing as motivation for further research."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS 2.1, RESULTS 3.1 (Image segmentation and mesh generation), DISCUSSION",
+     "note": "'validated with test images of varying quality' is not a stated, separately reported shift condition; the only explicit domain-shift mention ('our trained model could be tried but could suffer from domain shift issues') is a Discussion/future-work sentence, which never raises a code."
+    }
+   ]
+  },
+  "confidence": "low",
+  "notes": "This is the hardest call in the subset and the reason confidence is low. The reported uncertainty is a forward propagation, via a polynomial-chaos surrogate, of ASSUMED distributions over geometric error (cell position, volume, orientation) and dielectric parameters through the finite-element model, yielding 90% prediction intervals on the computed conductivity and permittivity. The StarDist segmentation network itself emits no per-prediction uncertainty, and no reliability diagram, empirical coverage, ECE, NLL or CRPS is reported, so U3 is definitely not met. I coded U2 (sub-code 'reported') because the paper explicitly frames the UQ as addressing deep-learning prediction inaccuracy and reports intervals on the pipeline's predicted quantity. A coder who insists that the uncertainty must be produced by the ML model would code U0. Flagged for adjudication."
+ },
+ {
+  "pmcid": "PMC10511398",
+  "doi": "10.1186/s40729-023-00498-8",
+  "year": 2023,
+  "journal": "International journal of implant dentistry",
+  "title": "Influence of exposure of customized dental implant abutments to different cleaning procedures: an in vitro study using AI-assisted SEM/EDS analysis.",
+  "eligible_index": 21,
+  "subset_position": 20,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: METHODS (Imaging acquisition (SEM) and image data processing and analysis), RESULTS, TABLES 3-4",
+     "note": "No ML performance metric is reported at all. The Kruskal-Wallis and Dunn tests are applied to measured contamination levels across cleaning regimens, i.e. experimental group differences, not model performance."
+    }
+   ],
+   "E": [
+    {
+     "section": "DISCUSSION (limitation; recorded as acknowledged_gap, does not raise a code)",
+     "quote": "While the agreement with previous manual expert annotations supports the reliability of the new AI-assisted detection and quantification method, robust validation on independent data and larger heterogeneous data sets currently needs to be improved"
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS (Sample preparation, Imaging acquisition), RESULTS, DISCUSSION",
+     "note": "The ilastik pixel classifier is a measurement tool applied to the 49 specimens of this study; nothing is predicted and then tested on new specimens."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (Imaging acquisition and image data processing), RESULTS, DISCUSSION",
+     "note": "No training/test structure is described for the interactive pixel classifier, so no shift evaluation exists. The Discussion limitation quoted under E also covers heterogeneous data."
+    }
+   ]
+  },
+  "confidence": "high",
+  "notes": "Interactive machine learning (ilastik) used purely as a segmentation/quantification tool; only two workflows (ML vs thresholding) are compared with each other against no ground truth in the main text. U0/E0/EP0/S0 with high confidence; the Discussion sentence is useful negative evidence (acknowledged_gap for E and S)."
+ },
+ {
+  "pmcid": "PMC10288606",
+  "doi": "10.1021/acsnanoscienceau.2c00055",
+  "year": 2023,
+  "journal": "ACS nanoscience Au",
+  "title": "Complex Dispersion of Detonation Nanodiamond Revealed by Machine Learning Assisted Cryo-TEM and Coarse-Grained Molecular Dynamics Simulations.",
+  "eligible_index": 23,
+  "subset_position": 22,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS_DISCUSSION (Aggregate Morphology and Size Distributions) - negative evidence",
+     "quote": "Each error bar represents the standard deviation of the aggregate distribution across the multiple images analyzed."
+    },
+    {
+     "section": "looked in: METHODS (Machine Learning for Aggregate Distribution from cryo-TEM), RESULTS_DISCUSSION",
+     "note": "The only error bars are the spread of the measured aggregate size distribution (data variability, excluded by the codebook). The single accuracy statement, '<3% errors' versus expert manual counting, carries no spread."
+    }
+   ],
+   "E": [
+    {
+     "section": "METHODS (Machine Learning for Aggregate Distribution from cryo-TEM)",
+     "quote": "The accuracy of the ML method has been verified through expert human manual counting of more than 10 representative images, giving <3% errors (in terms of the number of grid-cells)."
+    },
+    {
+     "section": "looked in: RESULTS_DISCUSSION (SAXS comparison)",
+     "note": "Verification is against human annotation of the same images, and the SAXS cross-check is an independent measurement technique applied to the same samples, not the model applied to an independent data source. Coded E0."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS, RESULTS_DISCUSSION (SAXS and SNAP simulation sections)",
+     "note": "No new nanodiamond samples were synthesised or measured after the method was fixed; SAXS and the coarse-grained simulations concern the same two DND samples."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (Machine Learning section), RESULTS_DISCUSSION (all subsections)",
+     "note": "Unsupervised clustering with no training set; the two samples (DND-pos, DND-neg) are both analysed by the same pipeline and no shifted test condition is evaluated."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "Unsupervised hierarchical agglomerative clustering on Gabor-type grid-cell features; there is no train/test structure, so U/E/S have little to attach to. The borderline is E: the ML-derived aggregate sizes and fractal dimensions are compared quantitatively with SAXS ('These SAXS analysis results are in excellent agreement with our quantitative analysis using the ML assisted method'), an independent measurement modality on the same samples. I did not count that as E1 because the model is not applied to data from an independent source. Regex v1.1 produced zero candidates."
+ },
+ {
+  "pmcid": "PMC10534500",
+  "doi": "10.3390/ph16091243",
+  "year": 2023,
+  "journal": "Pharmaceuticals (Basel, Switzerland)",
+  "title": "Comparing the Performance of Raman and Near-Infrared Imaging in the Prediction of the In Vitro Dissolution Profile of Extended-Release Tablets Based on Artificial Neural Networks.",
+  "eligible_index": 25,
+  "subset_position": 24,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "FIG (Fig. 3 legend, floats-group) - borderline, not counted",
+     "quote": "Green asterisks represent individual predicted values, black error bars show the standard deviation."
+    },
+    {
+     "section": "looked in: RESULTS_DISCUSSION 2.1-2.2, METHODS 3.3.1-3.3.2",
+     "note": "The error bars are on PREDICTED VALUES of HPMC concentration and particle size across replicate tablets, not on a performance metric; the performance figures themselves (average f2 62.7/57.8, RMSE 4.72/6.44, R2 0.95/0.93) are single numbers with no spread. Coded U0 on the codebook's 'error bars on metrics' wording."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS 3.2.2 (Preparation of Tablets), 3.3.1-3.3.2, RESULTS_DISCUSSION 2.1-2.2",
+     "note": "All 36 formulations were compressed on the same single-punch press and imaged on the same Raman and NIR instruments in one laboratory."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS 3.2.2, 3.3.2, RESULTS_DISCUSSION 2.2",
+     "note": "The eight validation formulations were prepared as part of the same designed tablet set, then held out; they are a held-out subset rather than a separate batch produced after the model was fixed."
+    }
+   ],
+   "S": [
+    {
+     "section": "TABLE (Table 1) - borderline, not counted",
+     "quote": "The concentration of components and particle size of HPMC in the tablets used to calibrate and validate the dissolution prediction models."
+    },
+    {
+     "section": "looked in: METHODS 3.3.1-3.3.2, RESULTS_DISCUSSION 2.2",
+     "note": "The validation formulations use HPMC concentrations (12, 15, 25, 28 w/w%) absent from the calibration set (10, 13.33, 16.66, 20, 23.33, 26.66, 30 w/w%), i.e. a composition-based rather than random split, but all values interpolate within the training range and the paper does not frame or analyse it as a shift test. Coded S0."
+    }
+   ]
+  },
+  "confidence": "low",
+  "notes": "Confidence low: two borderlines both went to 0. (i) U - error bars are on predictions, not metrics; (ii) S - the calibration/validation split is by formulation, which a literal reading of 'composition ... split' under S1-natural could count. The paper does discuss degraded prediction where training data were sparse ('Most likely there was not enough training data for the CNN to appropriately learn to quantify these larger particles'), which is the closest thing to a generalisation analysis. Flagged for adjudication."
+ },
+ {
+  "pmcid": "PMC10521712",
+  "doi": "10.34133/2022/9854084",
+  "year": 2022,
+  "journal": "BME frontiers",
+  "title": "Jointly Optimized Spatial Histogram UNET Architecture (JOSHUA) for Adipose Tissue Segmentation.",
+  "eligible_index": 27,
+  "subset_position": 26,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "METHODS (4.1 Experimental and Technical Design)",
+     "quote": "For each dataset, we ran three runs of random initialization for a total of 15 experimental runs."
+    },
+    {
+     "section": "METHODS (4.1 Experimental and Technical Design)",
+     "quote": "The results shown for SFBHI are averaged across the validation folds for each model, while the GlaS results are average performance metrics on the holdout test evaluated by each model trained and validated on each fold."
+    },
+    {
+     "section": "RESULTS_DISCUSSION (2.3 Application of Models to Benchmark Histological Dataset)",
+     "quote": "Our proposed approaches also have less variability (i.e., small standard deviations) than the UNET model across the metrics."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: RESULTS_DISCUSSION 2.3 (GlaS benchmark), METHODS 4.1",
+     "note": "The public GlaS benchmark is used to re-train and re-evaluate the same architectures on a different task, not to test the fixed SFBHI model on independent data, so it is architecture generalisation rather than external validation of a fixed model."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION (2.4 Applying Model on New Images) - considered, not counted",
+     "quote": "In addition to the original 117 images, we applied our model to 465 new images that were not labelled."
+    },
+    {
+     "section": "looked in: RESULTS_DISCUSSION 2.4",
+     "note": "Those 465 images are unlabelled, so no comparison of predictions with ground truth is possible; the adipose-area statistics are downstream biology, not a validation of the model."
+    }
+   ],
+   "S": [
+    {
+     "section": "METHODS (4.1 Experimental and Technical Design)",
+     "quote": "In this instance, each fold represents a specific week (e.g., train on 1-, 2-, and 4-weeks, validate on week 8)."
+    },
+    {
+     "section": "METHODS (4.1 Experimental and Technical Design)",
+     "quote": "By using this data split, we wanted to evaluate if the model(s) could learn sequentially (i.e., train on earlier weeks and predict later weeks)."
+    },
+    {
+     "section": "RESULTS_DISCUSSION (2.1 Data Selection Using UNET)",
+     "quote": "We investigated five training and validation splits of our novel Silk Fibroin Biomaterial Histology Images (SFBHI) dataset with the baseline UNET model: random, stratified 5-fold (time), stratified 5-fold (condition), 4-fold with time, and validate on week 8."
+    }
+   ]
+  },
+  "confidence": "high",
+  "notes": "Strongest S1 design in the subset: the paper explicitly compares five split strategies (random, stratified by time, stratified by condition, 4-fold with time, validate-on-week-8), reports six segmentation metrics for each with statistical tests, and interprets the drop under the time-based splits as a generalisation failure. S1 type: natural (time/post-implantation week). U1 from mean +/- SD over folds and three random initialisations."
+ },
+ {
+  "pmcid": "PMC8830423",
+  "doi": "10.3389/fbioe.2021.802794",
+  "year": 2021,
+  "journal": "Frontiers in bioengineering and biotechnology",
+  "title": "Morphology-Based Deep Learning Approach for Predicting Osteogenic Differentiation.",
+  "eligible_index": 29,
+  "subset_position": 28,
+  "U": 1,
+  "E": 0,
+  "EP": 1,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "ABSTRACT",
+     "quote": "OCNN successfully distinguished differentiated cells at a very early stage (24 h) with a high area under the curve (AUC) (0.94 ± 0.04)"
+    },
+    {
+     "section": "FIG (Fig. 2B legend)",
+     "quote": "The gray line represents each independent validation; the red line represents the average ROC; the light red area represents the 95% confidence interval."
+    }
+   ],
+   "E": [
+    {
+     "section": "RESULTS (Morphological Characteristics of rBMSCs Under LSCM) - considered, coded as EP instead",
+     "quote": "OCNN was further tested on an independent, external dataset from biological repeats at four-time points, which also showed satisfactory AUCs of 0.919, 0.850, and 0.906 on days 1, 4, and 7"
+    },
+    {
+     "section": "looked in: METHODS (Data Acquisition and Pre-processing, Development of CNNs), RESULTS, DISCUSSION",
+     "note": "The paper calls this dataset 'external', but it is biological repeats of the same rBMSC assay, imaged on the same Leica TCS SP8 in the same laboratory. The codebook routes a separately collected batch from the same lab and set-up to EP, not E1, so E is coded 0."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS (Morphological Characteristics of rBMSCs Under LSCM)",
+     "quote": "OCNN was further tested on an independent, external dataset from biological repeats at four-time points, which also showed satisfactory AUCs of 0.919, 0.850, and 0.906 on days 1, 4, and 7"
+    },
+    {
+     "section": "RESULTS (OCNN Prediction and OCNN-Based Online Learning for Cells on Biomaterials)",
+     "quote": "To examine this hypothesis, we fabricated titanium surfaces with different nanotopographies: smooth, micro, and nano, as described in our previous work."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS (OCNN Prediction and OCNN-Based Online Learning for Cells on Biomaterials)",
+     "quote": "Interestingly, the baseline OCNN also performed poorly in predictions on titanium surfaces, with AUCs of 0.740 (smooth, Figure 5F), 0.783 (micro, Figure 5I), and 0.401 (nano, Figure 5L)."
+    },
+    {
+     "section": "RESULTS (OCNN Prediction and OCNN-Based Online Learning for Cells on Biomaterials)",
+     "quote": "However, unlike on the glass coverslips, the baseline OCNN could not predict the phenotypes associated with the OS on Col-I (AUC = 0.460) but can moderately predict on HA (AUC = 0.797)"
+    },
+    {
+     "section": "RESULTS (OCNN Prediction and OCNN-Based Online Learning for Cells on Biomaterials)",
+     "quote": "The predictions of the baseline OCNN were acceptable in the amyloid fibrils (AUC = 0.698, Figure 6I) but performed poorly in DOPA (AUC = 0.424, Figure 6L)."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "Textbook S1-natural: the UNADAPTED baseline OCNN is evaluated on cells grown on seven new substrates (smooth/micro/nano titanium, Col-I, HA, amyloid fibrils, DOPA) with AUCs reported for each, and only then is few-shot 'online learning' applied and reported separately - exactly the case the codebook admits. EP=1 because those substrates were fabricated and the cells cultured and imaged specifically to test the fixed model. E=0 despite the paper's own word 'external', per the same-laboratory rule; this disagreement over the word 'external' is the item most worth adjudicating."
+ },
+ {
+  "pmcid": "PMC8575943",
+  "doi": "10.1038/s41598-021-01304-4",
+  "year": 2021,
+  "journal": "Scientific reports",
+  "title": "A deep learning approach to identify and segment alpha-smooth muscle actin stress fiber positive cells.",
+  "eligible_index": 31,
+  "subset_position": 30,
+  "U": 0,
+  "E": 0,
+  "EP": 1,
+  "S": 1,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: RESULTS (Model design, Model training and evaluation, Model application), METHODS (Statistical analysis)",
+     "note": "Model metrics are single values (accuracy 65%, 67%, 77%, 78.5%; F1 0.76-0.79; training IOU 0.654 vs validation IOU 0.644) with no spread. The blanket statement 'All error bars and boxes represent +/- standard deviation' applies to the cell-biology quantifications (percentage of alpha-SMA SF+ cells, cell area), not to model performance."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: RESULTS (Model training and evaluation, Model application), DISCUSSION",
+     "note": "Training, test and application images all come from the same laboratory and the same fluorescence microscope; the application set differs only in acquisition settings and time, which the codebook routes to EP rather than E1."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS (Model application)",
+     "quote": "To demonstrate the effectiveness of our model, we applied it to the dataset collected in Fig. 2 and compared the results to the manual analysis (Fig. 5a)."
+    },
+    {
+     "section": "FIG (Fig. 5 legend)",
+     "quote": "(b) Visualization of the difference between model and manual identification on an individual image scale. For 98/306 images, the results matched exactly."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS (Model application)",
+     "quote": "However, the substrate stiffening dataset (Fig. 2d) was collected at a later time, under different microscope settings."
+    },
+    {
+     "section": "RESULTS (Model application)",
+     "quote": "As a result, the mean intensities of each channel were significantly different than those of the training set."
+    },
+    {
+     "section": "RESULTS (Model application)",
+     "quote": "Although the model over-predicted the amount of α-SMA SF+ fibroblasts cultured on the soft substrate compared to the manual analysis, it captured the trend of increasing stress fiber organization on stiffer substrates compared to soft substrates."
+    }
+   ]
+  },
+  "confidence": "low",
+  "notes": "Confidence low because both positive codes are arguable. S1 type: natural (cross-acquisition/time: the application dataset was collected later under different microscope settings with significantly different channel intensities, and model-vs-manual agreement is reported per image and per condition). The model's INPUT NORMALISATION was re-tuned on a small subsample of the application images ('as a type of calibration'), which is a light adaptation; the codebook permits few-shot-adapted performance, so I kept S1. EP=1 because that separately collected batch was never used in development and the predictions were compared with manual ground truth; an adjudicator who requires 'measured after the model was fixed' to be stated explicitly would code EP=0."
+ },
+ {
+  "pmcid": "PMC12316057",
+  "doi": "10.1002/jbm.a.37515",
+  "year": 2023,
+  "journal": "Journal of biomedical materials research. Part A",
+  "title": "Label-free cleared tissue microscopy and machine learning for 3D histopathology of biomaterial implants.",
+  "eligible_index": 33,
+  "subset_position": 32,
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS (Utilizing autofluorescence to computationally reconstruct biomaterial implants)",
+     "quote": "The mean and standard deviation of the Dice coefficients are shown in Figure 5."
+    },
+    {
+     "section": "FIG (Figure 5D legend, floats-group)",
+     "quote": "(D) Mean and standard deviation of Dice coefficient."
+    },
+    {
+     "section": "RESULTS (Utilizing autofluorescence to computationally reconstruct biomaterial implants)",
+     "quote": "Muscle, scaffold, interstitum and blood vessel are manually labeled in 30 images as ground truth for quantitatively evaluation."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Data analysis and statistics), RESULTS (autofluorescence reconstruction section), DISCUSSION",
+     "note": "All light-sheet images come from the authors' own volumetric-muscle-loss and peritoneal samples on one microscope; no second source."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: METHODS (Volumetric muscle loss, Data analysis and statistics), RESULTS, DISCUSSION",
+     "note": "K-means segmentation is a readout applied to the study's own specimens; nothing is predicted and then tested on new specimens."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (Data analysis and statistics), RESULTS (autofluorescence reconstruction section)",
+     "note": "Unsupervised K-means with Gabor features applied to all images alike; the 30 manually labelled images are the evaluation set, with no stated difference in condition between them and the rest."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "U1 from mean and SD of the Dice coefficient over 30 manually labelled ground-truth images (Figure 5D) - error bars on a performance metric. Regex v1.1 produced zero candidates for this paper; both the metric and its SD came from the evaluation digest."
+ },
+ {
+  "pmcid": "PMC7615154",
+  "doi": "10.1002/smtd.202201695",
+  "year": 2023,
+  "journal": "Small methods",
+  "title": "Understanding Intracellular Biology to Improve mRNA Delivery by Lipid Nanoparticles.",
+  "eligible_index": 35,
+  "subset_position": 34,
+  "U": 0,
+  "E": 0,
+  "EP": 1,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: METHODS (Machine Learning), RESULTS, FIG 4 legend",
+     "note": "A single stratified 80/20 train/test split; performance is reported as a range across model families (F1 74-81%, class-specific 66-75%) rather than as a spread over folds or seeds. Gaussian Process appears only in the list of candidate classifiers that were screened and was not used for uncertainty, which the codebook excludes from U2."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Machine Learning, Confocal Image Analysis), RESULTS",
+     "note": "All 490 samples come from the same NCI-H358 imaging screen; no independent cohort, laboratory or public dataset."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS",
+     "quote": "As multiple models identified that changes in features of fluid-phase endocytosis were correlated with improved functional delivery of mRNA, we sought to test whether macropinocytosis may be an efficient way to deliver mRNA-LNP to NCI-H358 cells."
+    },
+    {
+     "section": "RESULTS",
+     "quote": "Indeed, although uptake of these particles was very similar to our standard LNP (Figure S5, Supporting Information), the 120 nm-LNP delivered mCherry mRNA to NCI-H358 cells more efficiently (Figure 5b,c), with a 6.3-fold improvement in protein expression."
+    },
+    {
+     "section": "ABSTRACT",
+     "quote": "With this new knowledge, MC3-LNP is re-engineered to target macropinocytosis, and this significantly improves mRNA delivery in vitro and in vivo."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (Machine Learning), RESULTS, DISCUSSION",
+     "note": "One stratified random split; no cross-cell-line, cross-batch or perturbed-input evaluation of the classifier is reported."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "EP is a design-loop case rather than a numeric prediction check: the ML feature-importance result (fluid-phase endocytosis) drove a new LNP design (120 nm particles targeting macropinocytosis) that was then synthesised and tested in vitro and in vivo, with a 6.3-fold delivery improvement. This matches the codebook's 'synthesising the predicted optimum' example in spirit, so EP=1; the model's own numeric predictions were not compared with new measurements, hence confidence med rather than high."
+ },
+ {
+  "pmcid": "PMC11321169",
+  "doi": "10.1186/s12951-024-02686-z",
+  "year": 2024,
+  "journal": "Journal of nanobiotechnology",
+  "title": "Crosslinked-hybrid nanoparticle embedded in thermogel for sustained co-delivery to inner ear.",
+  "eligible_index": 37,
+  "subset_position": 36,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "looked in: METHODS (Field emission scanning electron microscopy), RESULTS_DISCUSSION (FL- and HK-cHy-NPs embedded thermoresponsive hydrogel)",
+     "note": "The deep-learning semantic segmentation model has no reported performance metric at all, let alone a spread; it was trained by iterative manual correction 'until a segmentation with little to no visible issues remained'."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (FE-SEM), RESULTS_DISCUSSION (hydrogel section)",
+     "note": "The model was trained and applied on the same FE-SEM images of this study's own hydrogels; no independent data source."
+    }
+   ],
+   "EP": [
+    {
+     "section": "RESULTS_DISCUSSION (DoE-CCD based formulation parameter optimization) - considered, not counted",
+     "quote": "The size, PDI, encapsulation efficiency and loading values of the synthesized cHy-NPs were shown similar to the predicted values of prediction profiler."
+    },
+    {
+     "section": "looked in: METHODS (DoE-CCD), RESULTS_DISCUSSION",
+     "note": "This is a genuine synthesise-the-predicted-optimum confirmation, but it validates the central-composite-design standard least-squares response-surface model, which the protocol's own eligibility rule classes as DoE/RSM rather than ML (exclusion NO_ML). The eligible ML model in this paper is the DigiM I2S deep-learning segmenter, which received no prospective validation. Coded EP=0 on that reading."
+    }
+   ],
+   "S": [
+    {
+     "section": "looked in: METHODS (FE-SEM), RESULTS_DISCUSSION (hydrogel section)",
+     "note": "Segmentation is applied to hydrogels stored at 25 and 37 degrees C, but no per-condition model performance is reported, so there is no shift evaluation."
+    }
+   ]
+  },
+  "confidence": "low",
+  "notes": "Confidence low purely because of the EP decision. If an adjudicator accepts the DoE-CCD response-surface model as an ML model under I2 ('statistical-learning'), EP becomes 1 on the quoted sentence and on 'These results confirmed that the validity of the obtained predicted factor values by CCD were feasible to synthesize FL-cHy-NPs and HK-cHy-NPs.' I followed the protocol's NO_ML wording ('classical statistics or DoE/RSM only') and kept EP=0. Regex v1.1 produced zero candidates."
+ },
+ {
+  "pmcid": "PMC9483370",
+  "doi": "10.1007/s11095-022-03378-9",
+  "year": 2022,
+  "journal": "Pharmaceutical research",
+  "title": "Novel 3D Printed Modular Tablets Containing Multiple Anti-Viral Drugs: a Case of High Precision Drop-on-Demand Drug Deposition.",
+  "eligible_index": 39,
+  "subset_position": 38,
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": [
+    {
+     "section": "RESULTS_DISCUSSION (Solid-State Characterization)",
+     "quote": "OrsDiceLoss and OrsDiceCoefficient were used as loss function and metrics, respectively (Fig. S2)."
+    },
+    {
+     "section": "looked in: METHODS (Characterizations > Solid-State Characterization), RESULTS_DISCUSSION",
+     "note": "No numeric segmentation performance appears in the main article; the Dice curves are deferred to Supplementary Fig. S2, so SI_dependency = yes and the main-text construct gives U0."
+    }
+   ],
+   "E": [
+    {
+     "section": "looked in: METHODS (Solid-State Characterization), RESULTS_DISCUSSION",
+     "note": "Training and application slices come from the same micro-CT scan of the same hydroxychloroquine-sulfate tablet; no independent source."
+    }
+   ],
+   "EP": [
+    {
+     "section": "looked in: RESULTS_DISCUSSION (3D Printed Drug-Loaded Tablet Compartments, Solid-State Characterization, In Vitro Release Study)",
+     "note": "The U-Net is a characterisation tool; no property was predicted and then verified on newly printed tablets."
+    }
+   ],
+   "S": [
+    {
+     "section": "RESULTS_DISCUSSION (Solid-State Characterization)",
+     "quote": "After the deep learning-based model training and validation, the U-Net was successfully applied to the remaining 1281 XRCT images for image classification task."
+    },
+    {
+     "section": "looked in: METHODS, RESULTS_DISCUSSION",
+     "note": "Application to the remaining 1281 slices is reported without any quantitative performance, and those slices are from the same scan, so there is no stated shift with performance reported."
+    }
+   ]
+  },
+  "confidence": "med",
+  "notes": "Six manually labelled micro-CT slices, 10x augmentation, 80/20 train/validation split, then inference on the remaining 1281 slices of the same scan. SI_dependency = yes (the only model metric, the Dice coefficient curve, is in Fig. S2). Regex v1.1 produced zero candidates."
+ }
+]

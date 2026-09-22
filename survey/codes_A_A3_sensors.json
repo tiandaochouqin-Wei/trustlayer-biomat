@@ -1,0 +1,1441 @@
+[
+ {
+  "pmcid": "PMC11377509",
+  "doi": "10.1007/s00216-024-05444-0",
+  "year": 2024,
+  "journal": "Analytical and bioanalytical chemistry",
+  "title": "Enhancing electrochemical detection through machine learning-driven prediction for canine mammary tumor biomarker with green silver nanoparticles.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in METHODS (model training/metrics), RESULTS_DISCUSSION (accuracy paragraphs) and TABLE (feature-importance, metric tables). Only single-valued accuracies (RF 98%, XGBoost 96%, LightGBM 95%, ANN 97%; ANN 76% for grade) are given; no SD/CI/per-fold values and no per-prediction uncertainty. The 'standard deviation, kurtosis, skewness' mentioned are input features of the voltammogram, not model uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. All data are cyclic-voltammetry measurements of the authors' own clinical canine serum/tissue samples (18 samples); evaluation is leave-one-out cross-validation only. No second lab, cohort, instrument or public dataset."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. 'Post-validation, the models were integrated into a diagnostic framework that utilizes real-time CV data' is a statement of intent, with no new samples measured after the model was fixed and compared with predictions."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. Only LOOCV, which the codebook explicitly excludes (sample-wise leave-one-out is not a group split). No stated shift in the test distribution."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 produced 0 candidates for this paper; coded from the evaluation digest and full text. No SI dependency for the main ML results (accuracies are in the main text)."
+ },
+ {
+  "pmcid": "PMC10039194",
+  "doi": "10.1007/s40820-023-01054-0",
+  "year": 2023,
+  "journal": "Nano-micro letters",
+  "title": "Mechanoluminescent-Triboelectric Bimodal Sensors for Self-Powered Sensing and Intelligent Control.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (ML paragraph) and FIG (Fig. 5d legend). A single accuracy (96.87%) and one confusion matrix; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The RF was trained on 60,000 MNIST digits and 'the accuracy was later verified by using another 10,000 handwriting digits for test' - i.e. the standard MNIST held-out split, same generating process, so not E1."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Device-written digits 2, 4 and 6 were fed to the software to drive a trolley, but no ground-truth comparison or metric is reported for device-generated data."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The MNIST-trained model was applied to MTBS-generated handwriting images (a real domain shift), but no performance is reported on those images - only a three-digit qualitative demonstration - so the codebook requirement 'with performance reported' is not met."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for E1/S1. The model is trained on a public dataset (MNIST) and then applied to images produced by the paper's own device, which is a genuine train-test source change, but the paper reports no quantitative performance on the device data. Coded 0 on the 'performance reported' requirement; flag for adjudication."
+ },
+ {
+  "pmcid": "PMC10407620",
+  "doi": "10.1039/d3ra02900j",
+  "year": 2023,
+  "journal": "RSC advances",
+  "title": "Machine learning-assisted flexible wearable device for tyrosine detection.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in METHODS, RESULTS_DISCUSSION and TABLE. Main text reports single R2/RMSE/MAE/recovery values. 'Each model was tested five times to reduce the chance of error, as presented in Table S2' defers the repeated-run spread to the SI, so under the 'main article' construct this stays U0 with SI_dependency = true."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. A single 70/30 (also described as 80/20) random split of DPV measurements collected on the authors' own electrodes in artificial urine. No independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. 'Recovery' is computed on the 30% random test split of the same dataset, not on samples prepared after the model was fixed."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. pH and temperature enter as model *inputs*; there is no evaluation on a stated shifted test distribution."
+   }
+  },
+  "confidence": "high",
+  "notes": "SI_dependency = true (repeated-run results in Table S2). This paper was also in the A6 pilot (verified codes U0/E0/EP0/S0); my independent coding agrees."
+ },
+ {
+  "pmcid": "PMC12499495",
+  "doi": "10.1002/advs.202507605",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Strain-Sensitive Thermochromic Smart Electronic Skin for Joint and Spine Healthcare Applications.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS (CNN paragraphs), FIG (Fig. 4d-f legends) and METHODS. Single average accuracy 87.63% from one confusion matrix; no SD/CI/per-fold values. The SoftMax 'prediction probabilities' are ordinary classifier outputs, not reported per-prediction uncertainty (codebook U2 list: GP SD, ensembles, MC-dropout, BNN, quantile, evidential)."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS and METHODS. 'To train and evaluate the model, we collected electrical signal datasets from motion tests conducted with the iStretch device'; dataset partitioned 60/20/20. Single device, single lab."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS. No new samples measured after the model was fixed and compared with its predictions."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS and FIG. Random 60/20/20 partition. The batch-to-batch and 10,000-cycle tests in Fig. 2b,c are material/device durability tests, not ML evaluations."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Cervical-spine 'calibration curve for angle prediction' is an instrument calibration, not uncertainty calibration."
+ },
+ {
+  "pmcid": "PMC11348057",
+  "doi": "10.1002/advs.202401800",
+  "year": 2024,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "A Flexible Skin Bionic Thermally Comfortable Wearable for Machine Learning-Facilitated Ultrasensitive Sensing.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION, METHODS and FIG (Fig. 5h). Recognition accuracy reported as a single 100%; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS ('the dataset was split into 80% for training and 20% for testing') and RESULTS_DISCUSSION. Single device, own data."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None; the piano-tone demonstration uses the same data collection."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. Random 80/20 split only."
+   }
+  },
+  "confidence": "high",
+  "notes": "Also in the A6 pilot (verified U0/E0/EP0/S0); my independent coding agrees."
+ },
+ {
+  "pmcid": "PMC12369696",
+  "doi": "10.1002/adma.202502203",
+  "year": 2025,
+  "journal": "Advanced materials (Deerfield Beach, Fla.)",
+  "title": "Stretchable, Multiplexed, and Bimodal Sensing Electronic Armor for Colonoscopic Continuum Robot Enhanced by Triboelectric Artificial Synapse.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION, FIG (Fig. 2e) and METHODS. 99.31% average accuracy reported as a single value. METHODS states 'Error bars in graphical representations reflect variability across duplicate experimental measurements', which is wet-lab replicate spread and is explicitly excluded from U1."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. All tactile data come from the authors' own E-armor on the continuum robot; no independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The pipeline-navigation demonstration is a control demo, not a prediction-versus-outcome comparison for a fixed model."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The pH-variation and cyclic-loading 'robustness' tests (Text S6/S12) characterise the sensor signal, not ML performance under a shifted test distribution."
+   }
+  },
+  "confidence": "high",
+  "notes": "Model comparison against CNN, LSTM and SVM is deferred to Text S9/Figure S13b (SI_dependency for the baseline comparison, not for the headline accuracy)."
+ },
+ {
+  "pmcid": "PMC11220713",
+  "doi": "10.1002/advs.202401515",
+  "year": 2024,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Self-Powered Biomimetic Pressure Sensor Based on Mn-Ag Electrochemical Reaction for Monitoring Rehabilitation Training of Athletes.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Fig. 5f paragraph) and METHODS. ANN and RF 100%, SVM 92%; single values, no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS: 'The study integrated five types of action data, partitioning three-quarters for training and one-quarter for testing'. Own sensor, own subjects."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. Random 3:1 split; no stated shift."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates; the SVM result is deferred to Figure S14 (partial SI dependency)."
+ },
+ {
+  "pmcid": "PMC12639595",
+  "doi": "10.1016/j.mtbio.2025.102524",
+  "year": 2025,
+  "journal": "Materials today. Bio",
+  "title": "Multifunctional hydrogel sensors with dynamic covalent networks for machine learning-assisted Parkinson's disease diagnosis and encrypted human-computer interaction.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (ML section) and FIG (Fig. 8e-j). Five-fold CV is used, but accuracies are reported as single numbers (96.40%, 97.60%, 93.00%, 95.00%) and Fig. 8i,j show loss/accuracy curves 'on one representative fold' only. No SD/CI over folds and no per-fold table, so under the codebook ('trained N times and averaged with no spread' does not count) this is U0."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Signals recorded from the authors' own hydrogel sensor on healthy subjects; five-fold CV only."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and FIG. Five-fold CV with 80:20 splits rotated; no stated distribution shift."
+   }
+  },
+  "confidence": "med",
+  "notes": "acknowledged_gap for E and S: 'all current validations have been conducted with healthy subjects under controlled conditions' and 'Future studies will focus on clinical validation with specific patient populations' (RESULTS_DISCUSSION). U call is a judgement: 5-fold CV performed but no spread reported."
+ },
+ {
+  "pmcid": "PMC12606275",
+  "doi": "10.1038/s41598-025-22949-5",
+  "year": 2025,
+  "journal": "Scientific reports",
+  "title": "Plasmonic SPR biosensor with bayesian regression for non-invasive protein biomarker detection.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Bayesian ridge regressor section and Figs. 11/13 scatter plots). The model is Bayesian ridge regression and the methods exposition states it 'quantifies predictive uncertainty through posterior confidence intervals', but this is a generic, cited description of the estimator; the reported results are only R2, MAE and RMSE and scatter plots of predicted values. No interval is plotted or tabulated and no acquisition/abstention use. Per the codebook 'Does not count' column (generic statements that a model provides uncertainty; a probabilistic model used only for its mean) this stays U0."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. Simulation-only study: the dataset is generated by the authors' own electromagnetic simulations of the metasurface; train and test come from the same simulation sweep."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and CONCLUSION. No experiment at all; CONCLUSION states 'Future work should ... incorporate clinical validation with real biomarkers'."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Predictions are made across the same refractive-index (1.3341-1.42383) and incidence-angle (0-80 degrees) ranges used for fitting; no held-out shifted regime."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for U2: a genuinely Bayesian model whose predictive uncertainty is described in the methods but never reported or used. Coded U0 under the codebook's 'generic statements' exclusion; flag for adjudication. Simulation-only paper, so E1 is structurally impossible here."
+ },
+ {
+  "pmcid": "PMC11643587",
+  "doi": "10.3390/ma17235993",
+  "year": 2024,
+  "journal": "Materials (Basel, Switzerland)",
+  "title": "Multifunctional Sensor Array for User Interaction Based on Dielectric Elastomers with Sputtered Metal Electrodes.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS (section 3.5) and Table 1. Per-variant accuracies are tabulated but there is no SD/CI over folds, seeds or repeated splits, and the five stimulation variants are different test conditions rather than repeated splits. The softmax output layer is an ordinary classifier head."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS and DISCUSSION. All measurements come from the same array, electronics and laboratory; the shift is actuator-to-human, which the codebook assigns to S1 rather than E1 ('a separately collected batch from the same lab and set-up')."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS 3.4-3.5. The user-driven pattern campaigns are evaluation data rather than a prospective test of a prediction; the paper does not frame them as post-hoc validation of a fixed model."
+   },
+   "S": {
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "The training is performed with a linear motor, moving a piston into the array and holding the deformation for a certain time (compare Figure 9)."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The ML accuracy of the three different algorithms is very different and varies more for the hand-driven measurements than for the measurement with the linear motor (compare Table 1)."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The accuracy of the LDA is over 90 % for the user stimulation and even higher than for the motor measurement."
+     }
+    ],
+    "note": "S1 natural: models are trained on linear-motor single-element presses and then evaluated on five stimulation variants including two different human users and continuous finger sweeping, with per-variant accuracies reported in Table 1."
+   }
+  },
+  "confidence": "med",
+  "notes": "Regex v1.1 flagged only one sentence for this paper, and it was an E_external false positive ('All misinterpreted labels were either predicted wrongly to the class 0,0'). The real S1 evidence came from reading the Results. S1 sub-code: natural (actuator-to-human and cross-user)."
+ },
+ {
+  "pmcid": "PMC12622424",
+  "doi": "10.1002/advs.202505712",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Electron Transfer-Tailored D-Band Center to Boost Nanozyme Catalysis for Interpretable Machine Learning-Empowered Intelligent Biosensing.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (XGBoost/SHAP section), FIG (Fig. 5) and METHODS. Accuracy 95.83% and AUC 0.994 are single values. The pervasive 'mean +/- SD, with n = 3 independent samples' in the figure legends is wet-lab replicate spread, explicitly excluded from U1."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'After dividing the dataset into 70% training set and 30% test set'. One assay, one lab."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The spiked whole-milk recovery study (81.98-118.03%) is an analytical recovery test of the immunoassay reported before the ML section, not a comparison of post-hoc samples with model predictions."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Random 70/30 split; specificity and stability tests concern the assay, not the model under a shifted test distribution."
+   }
+  },
+  "confidence": "high",
+  "notes": "Baseline model comparison (RF, DT, KNN, SVM, NB, LDA, ANN) and the evaluation tables are partly in Table S2/S12 (SI dependency for details, not for headline numbers)."
+ },
+ {
+  "pmcid": "PMC12115265",
+  "doi": "10.3390/s25103011",
+  "year": 2025,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Real-Time Detection and Localization of Force on a Capacitive Elastomeric Sensor Array Using Image Processing and Machine Learning.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.6, RESULTS 3.5 and Table 2. GPR is one of four benchmarked models but is used only for its mean: results are RMSE, R2 and slope. The sentence 'GPR, being a probabilistic approach ... provides uncertainty estimates and predictions [CIT]' is a cited generic description, which the codebook excludes ('a GP used only for its mean'; 'generic statements that GPs provide uncertainty')."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS 3.5: 'Regression models were trained on 70% of the collected data and evaluated on the remaining 30% testing set'. All data come from the authors' own UR3e robot rig."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS and CONCLUSION. The robot-applied forces generate the training data itself; no post-model-fixing experiment."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS 3.5 and Table 2. Per-sensor models are trained and tested within each sensor; no cross-sensor or cross-condition transfer is evaluated. RESULTS notes 'Future work will include ... broader validation under dynamic loading conditions'."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 produced 9 candidates, all U2_gp/U2_interval hits on generic GPR description - exactly the false-positive class the pilot identified. acknowledged_gap for S (dynamic-loading validation deferred to future work)."
+ },
+ {
+  "pmcid": "PMC12565868",
+  "doi": "10.3390/mi16101132",
+  "year": 2025,
+  "journal": "Micromachines",
+  "title": "Wearable Flexible Wireless Pressure Sensor Based on Poly(vinyl alcohol)/Carbon Nanotube/MXene Composite for Health Monitoring.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (SVM + prototype learning section) and FIG (Fig. 6g,h). Accuracy 92.3%/98.33%, recall 88.7%, F1 90.4%, training accuracy 99.65% - all single values, no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Train/test confusion matrices from one gesture dataset collected with the authors' own glove; no independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. 'predicting unknown gestures' refers to the held-out test split."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and FIG. No stated shift between training and test conditions."
+   }
+  },
+  "confidence": "high",
+  "notes": "The single regex v1.1 candidate was a U3_conformal false positive on 'conformally attached to the wrist skin'. Main-text accuracies are internally inconsistent (92.3% vs 98.33%), noted but not coded."
+ },
+ {
+  "pmcid": "PMC12105526",
+  "doi": "10.1016/j.xinn.2025.100877",
+  "year": 2025,
+  "journal": "Innovation (Cambridge (Mass.))",
+  "title": "Multi-bioinspired electronic skins with on-demand adhesion and opto-electronic synergistic display capabilities.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Fig. 6 section). Only a predicted-vs-actual heatmap is shown ('data concentrated near the diagonal'); no metric spread and no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'The variable data ... were divided into a training set (~66.7%) and a test set (~33.3%)'. Data from the authors' own OE-skin."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The ex vivo and in vivo demonstrations concern the device, not model predictions checked against new measurements."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Random split over the same temperature/strain sweep; no held-out regime."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. The neural network maps (temperature, strain) to (dR/R0, wavelength shift) for signal decoupling."
+ },
+ {
+  "pmcid": "PMC12520506",
+  "doi": "10.1002/advs.202509400",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Solvent Replacement-Driven Ionic Liquid Thermoelectric Gel for Self-Powered Morse Code Communication Assisted by Machine Learning.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (ML section) and FIG (Fig. 6e-g). Accuracy/loss over training iterations and a single 100% accuracy; no spread over folds/seeds, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'The dataset was split into 80% training and 20% testing subsets'. The abstract's 'independent test set' is this random 20% split of the authors' own thermovoltage recordings, not an independent source - a classic E_external regex false positive."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The temperature-difference, strain and thermal-cycling tests characterise the gel device; the classifier is evaluated only on the random 20% split."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 flagged the abstract's 'independent test set' as E_external; verification against METHODS/Results shows it is an internal random split. Good example of why the protocol forbids regex-only coding."
+ },
+ {
+  "pmcid": "PMC11505716",
+  "doi": "10.3390/bios14100504",
+  "year": 2024,
+  "journal": "Biosensors",
+  "title": "A Machine Learning Assisted Non-Enzymatic Electrochemical Biosensor to Detect Urea Based on Multi-Walled Carbon Nanotube Functionalized with Copper Oxide Micro-Flowers.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Fig. 8 / regression-metrics paragraphs). MAE, MSE, RMSE and R2 given as single values per model (e.g. KNN and RF both at R2 0.979); no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. 'These data, resulting from more than 200 experiments, were utilized to train and evaluate the ML models' - one electrode set, one lab; the paper does not even state a split protocol."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The interferent spiking experiments are assay selectivity tests measured by CV, not predictions of a fixed model checked against new samples."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Different scan rates (50/75/100 mV/s) are measurement conditions feeding the feature set, not a shifted test distribution with performance reported."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Evaluation protocol is under-specified in the paper (no explicit train/test split description)."
+ },
+ {
+  "pmcid": "PMC12561418",
+  "doi": "10.1002/advs.202509658",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "A Wearable Electrochemical Biosensor for Salivary Detection of Periodontal Inflammation Biomarkers: Molecularly Imprinted Polymer Sensor with Deep Learning Integration.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (DL sections), FIG (Fig. 5) and METHODS. Model accuracies are single values (~99.5%, ~100%); the pervasive 'mean +/- standard deviation' from 'at least three independent replicates (n >= 3)' is wet-lab replicate spread, excluded from U1. No per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. '7600 sets of data were prepared for the preclinical DL model and 3800 sets for the diagnostic DL model, and each dataset was divided into training (80%) and validation (20%) sets.' The clinical cohorts (n = 20 per cohort, one hospital) are used to train the diagnostic model, not to test a fixed model. The ELISA/Parkes-grid comparison validates the *sensor*, not the ML model."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The spiked-saliva and clinical-cohort measurements are inputs to model training/validation, not post-hoc checks of a fixed model's predictions."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (TL section) and FIG (Fig. 5d,h). Transfer learning from lab-standard samples to clinical saliva is described, but the reported accuracies are after fine-tuning on clinical data (>=99% at epoch 1, ~100% by epoch 3); no unadapted cross-domain performance is reported, and the comparison with random initialisation is about convergence speed. The codebook requires unadapted or few-shot-adapted performance on the new domain, so this stays S0."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for S1 (lab-standards -> clinical-saliva transfer learning). Coded S0 because only fine-tuned performance is reported; flag for adjudication. SI_dependency = true (confusion matrices and ML-vs-DL comparison in Tables S12/S13, Figures S30/S31). acknowledged_gap for E/S: 'due to the relatively limited dataset size, further validation using extensive and diverse clinical cohorts is imperative to robustly establish the model's generalizability'."
+ },
+ {
+  "pmcid": "PMC12407276",
+  "doi": "10.1002/advs.202505873",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Bionic Multimodal Augmented Somatosensory Receptor Enabled by Thermogalvanic Hydrogel.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (deep-learning section), FIG (Fig. 5j,k) and METHODS. Accuracies 87.6%, 96.6% and 95.5% are single values; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. All signals come from the authors' own fingertip receptor; no independent source and no split protocol reported in the main text (deferred to Figure S21/S24)."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The worn-on-finger material-sensing demonstration uses the same acquisition setup."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. The humidity (30-80% RH), object-size and contact-position tests show that the *thermovoltage signal* is unaffected (Fig. 5f,g, Fig. S19); they are not evaluations of the deep-learning model's accuracy under a shifted test distribution. The claim of high accuracy 'under different pressures' rests on pressure-compensated features whose data are in the training set."
+   }
+  },
+  "confidence": "med",
+  "notes": "Three regex v1.1 candidates, all false positives (two U3_conformal on physical conformality, one S_robust on thermopower robustness). SI_dependency: DL architecture and several accuracy figures are in Figures S21-S24."
+ },
+ {
+  "pmcid": "PMC12591205",
+  "doi": "10.1002/advs.202509740",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Bio-Inspired SA-FA Bionic Dual Receptor Electronic Skin for Intelligent Gesture and Material Cognition Systems Enhanced by Static-Dynamic Mutual Interaction.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. 'the training round is 300 rounds, with a cross-validation accuracy of 99.3%' and 'the test accuracy is 96.2%' - single values, no spread over folds. Softmax output is an ordinary classifier head."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS: 'The model is based on 500 sets of experimental data (80% for training and 20% for testing)'. Own glove, own e-skin, one lab."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The robot-finger demonstration re-uses the same acquisition pipeline."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. 'The samples cover multiple time points and environmental variables' describes training coverage, not a shift test. The claim that the system 'still has high material cognition accuracy under different pressures' carries no number in the main text and points to Note S9, so the codebook's 'with performance reported' condition is not met in the main article."
+   }
+  },
+  "confidence": "med",
+  "notes": "SI_dependency = true: the pressure-varied cognition result is in Note S9 and the per-modality confusion matrices in Figures S5/S10. Borderline S1 if the SI were in scope; under the 'main article' construct it is S0."
+ },
+ {
+  "pmcid": "PMC11593876",
+  "doi": "10.3390/gels10110720",
+  "year": 2024,
+  "journal": "Gels (Basel, Switzerland)",
+  "title": "Alkali Ion-Accelerated Gelation of MXene-Based Conductive Hydrogel for Flexible Sensing and Machine Learning-Assisted Recognition.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (ResNet18 section) and Table S2 reference. Recognition accuracy 93.5% given as a single value; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'we took data on different people writing different letters and created a complete data set (1002), dividing the training set and the test set in an 8:2 ratio'. Random split pooling all writers."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Random 8:2 split; writers are pooled across train and test, so no cross-subject split."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Algorithm comparison and confusion matrices are in Table S2 and Figures S16-S21 (SI dependency for details)."
+ },
+ {
+  "pmcid": "PMC12293215",
+  "doi": "10.3390/bios15070461",
+  "year": 2025,
+  "journal": "Biosensors",
+  "title": "3D-Printed PLA Hollow Microneedles Loaded with Chitosan Nanoparticles for Colorimetric Glucose Detection in Sweat Using Machine Learning.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 1,
+  "E": 0,
+  "EP": 1,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The corresponding average values from 5-fold cross-validation were R2 = 0.85 ± 0.02, MAE = 0.0267 ± 0.0015 mM, and RMSE = 0.0324 ± 0.0022 mM."
+     },
+     {
+      "section": "TABLE",
+      "quote": "Test set | 0.89 | 0.0245 | 0.0292. 5-fold cross-validation | 0.85 ± 0.02 | 0.0267 ± 0.0015 | 0.0324 ± 0.0022."
+     }
+    ],
+    "note": "U1: SD of R2, MAE and RMSE across the five cross-validation folds, reported in text and in Table 3. No per-prediction uncertainty, so not U2."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.6-2.8 and RESULTS_DISCUSSION 3.6. 'A dataset of 109 samples ... was created to train the model using a single feature' with an 80:20 random split and 5-fold CV; all samples are the authors' own CNP-MN patches in artificial sweat. No second lab, cohort or public dataset."
+   },
+   "EP": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Following model development, a spiking study was performed in artificial sweat to evaluate whether the proposed biosensing methodology could serve as an accurate alternative for glucose detection in sweat."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The predicted glucose concentrations were equal to 0.110, 0.180, and 0.320 mM for artificial sweat solutions spiked with 0.100, 0.200, and 0.375 mM of glucose, respectively (Table 4)."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The corresponding recovery rates were 112 ± 3%, 89 ± 2%, and 86 ± 1%, a result that highlights the high accuracy of the developed biosensor and the predictive capacity of the ML model."
+     }
+    ],
+    "note": "EP1: new samples were prepared and measured after the model was fixed ('Following model development') and the model's predictions were compared with the known spiked concentrations. Real sweat from a volunteer before and after glucose intake was also measured with the trained model."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. The training dataset is itself in artificial sweat, so the spiking study is the same matrix, not a shift. The real-sweat measurement (predicted 0.103 +/- 0.002 mM) is a different matrix but no ground-truth concentration is available, so no performance under shift is reported."
+   }
+  },
+  "confidence": "high",
+  "notes": "Screen note flags this as borderline eligibility (single-feature RANSAC linear regression, effectively a robust calibration curve), but it is trained/validated as a supervised model with held-out evaluation, so I coded it. The real-sweat application is the only matrix shift and carries no metric."
+ },
+ {
+  "pmcid": "PMC12652324",
+  "doi": "10.1126/sciadv.ady2661",
+  "year": 2025,
+  "journal": "Science advances",
+  "title": "An intelligent, compact wearable pressure-strain combo sensor system for continuous fetal movement monitoring.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS (clinical-studies and ML sections), FIG (Figs. 2H,I and 5A-G) and METHODS. AUROCs (89.51%, 84.55%, 92.18%, 84.65%, 76.70%), mean distances and MAEs are all single values; Figs. 2H,I show the distribution of per-point errors, not the spread of a metric over folds or seeds. No per-prediction uncertainty is reported (the two-sensor fusion uses a weighted sum of detection probabilities, which is ordinary classifier fusion, not uncertainty used operationally)."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS and METHODS. Both the artificial-abdomen rig and the 59-participant clinical study are from the authors' own site (Monash Health Day Assessment Unit); the cross-subject evaluation is a group split and is coded under S1, since the codebook excludes k-fold CV/LOOCV from E1."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS and METHODS. Ultrasound video and sensor signals were recorded in parallel as ground truth for both training and evaluation; no samples were produced or measured after the model was fixed."
+   },
+   "S": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "The experiment followed a leave-one-subject-out cross-validation setup, with separate models trained for each sensor type."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Sixteen of 41 collected points were used as an independent test."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "However, for “unseen” locations, the accuracy decreased with a mean distance of 26.5 mm, although force detection remained reliable with an MAE of 0.44 N (Fig. 2I), suggesting increased data points could improve generalizability."
+     }
+    ],
+    "note": "S1 natural: (i) leave-one-subject-out cross-validation across 59 pregnant participants with AUROC reported; (ii) on the artificial abdomen, 16 of 41 kick locations were held out as unseen and the degraded localisation accuracy (26.5 mm vs 1.2 mm) is reported."
+   }
+  },
+  "confidence": "high",
+  "notes": "S1 sub-code natural (cross-subject group split plus unseen-location extrapolation). The temperature/humidity robustness test in RESULTS characterises the sensors, not the model, and was not used as S1 evidence."
+ },
+ {
+  "pmcid": "PMC9028188",
+  "doi": "10.3390/s22082825",
+  "year": 2022,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Detection of Human Gait Phases Using Textile Pressure Sensors: A Low Cost and Pervasive Approach.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [
+     {
+      "section": "RESULTS",
+      "quote": "In the case of the individual datasets (participants 1–3), it can be noted that the precision of random forest (RF) combined with the textile sensors was 2.28 ± 1.23% less than that of the IMU."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Here, “RSTLST” was similarly confused by the model with the classes “RSWLST” and “RSTLSW”, obtaining an average error among the three models for “RSWLST” of 8.79 ± 2.49, and 9.03 ± 1.61 for “RSTLSW”."
+     }
+    ],
+    "note": "U1: quantitative spread (SD) of classification performance, reported across the three participant datasets and across the three classification models, plus per-dataset precision values in Table 4."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.4-2.5 and RESULTS 3.3. Three volunteers in one laboratory; the IMU is a reference sensor recorded on the same pants, not an external dataset. Each of the eight databases is split 80/20 internally."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS. None; all data come from a single walking trial per participant."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.5 and RESULTS 3.3. Four datasets per sensor (three per-participant and one pooled) are each split 80/20 at random; there is no train-on-some-subjects/test-on-another evaluation, so the individual-vs-pooled comparison is not a shift test."
+   }
+  },
+  "confidence": "med",
+  "notes": "U call is a judgement: the SDs are over participants and over models rather than over folds/seeds, but they do quantify variability of model performance. acknowledged_gap for S and E: 'The study protocol ... was limited to a laboratory having a ceramic floor and a regular walk, so the results did not include other types of contexts' and 'our study's participants were approximately 27-year-old healthy men. A more varied population should be considered' (DISCUSSION 4.2)."
+ },
+ {
+  "pmcid": "PMC8434643",
+  "doi": "10.3390/s21175964",
+  "year": 2021,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Plantar Pressure Detection System Based on Flexible Hydrogel Sensor Array and WT-RF.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS and FIG (Fig. 8). The WT-RF accuracy is a single 91.9% (SVM 90.7%, RF 90.6%); no spread, no per-prediction uncertainty. The only '+/-' in the paper is in the INTRO describing a cited study (93.07 +/- 3.84%), which cannot raise a code."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS: 'We randomly selected 500 sets of data as the training set ... and the remaining 100 sets of data were used for testing'. Own hydrogel array, own volunteers."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS. The Pearson analysis of accuracy against age, gender and weight is a covariate analysis within the same test set; it does not evaluate the model on a distribution that differs from training in a stated way."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for S1: the age/gender/weight correlation analysis probes performance heterogeneity across subjects but is not an explicit shifted-distribution evaluation. Coded S0; flag if the adjudicator reads subgroup analyses as S1."
+ },
+ {
+  "pmcid": "PMC12436258",
+  "doi": "10.1007/s40820-025-01924-9",
+  "year": 2025,
+  "journal": "Nano-micro letters",
+  "title": "Flexible Monolithic 3D-Integrated Self-Powered Tactile Sensing Array Based on Holey MXene Paste.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (access-control section) and METHODS. A single confusion-matrix accuracy of 98.67%; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'Among 500 random samples per user, 400 were used as the training set, and the remaining 100 were used as the validation set for user identification.' One device, own users."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. Random 400/100 split per user; no stated shift."
+   }
+  },
+  "confidence": "high",
+  "notes": "Screen note flags borderline eligibility (biometric access control rather than a health application); kept as eligible per the sample file. Regex v1.1 gave 0 candidates."
+ },
+ {
+  "pmcid": "PMC11940286",
+  "doi": "10.3390/bios15030152",
+  "year": 2025,
+  "journal": "Biosensors",
+  "title": "Machine Learning-Driven D-Glucose Prediction Using a Novel Biosensor for Non-Invasive Diabetes Management.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS (ML evaluation section) and Table 2. Accuracy, F1, precision and recall are single values per model/preprocessing combination (e.g. CNN and LSTM 0.6778; RF+SMOTE 0.7197); INTRO mentions 'Model performance was assessed through cross-validation' but no fold-wise spread is given."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS. All resistance signals come from the authors' own MIP gas sensors; no second lab, cohort or public dataset."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS. None; the healthy-participant trials feed the same dataset."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS (preprocessing pipeline) and RESULTS. Inter-sensor variability is handled by baseline correction and normalisation rather than evaluated: there is no held-out-sensor or cross-device split reported."
+   }
+  },
+  "confidence": "med",
+  "notes": "acknowledged_gap for S: 'the limited number of high-concentration glucose samples restricted the models' capacity to generalize to unseen data' and 'further emphasis on inter-sensor calibration and sensor-specific preprocessing will be crucial for achieving consistent, reliable predictions across different biosensor devices' (DISCUSSION). Regex v1.1 gave 0 candidates."
+ },
+ {
+  "pmcid": "PMC12412577",
+  "doi": "10.1002/advs.202414732",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "Soft Bioelectronic Interfaces for Continuous Peripheral Neural Signal Recording and Robust Cross-Subject Decoding.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 1,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": {
+    "quotes": [
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "These results demonstrated a significant advantage for WhiskerNet over WhiskerNet‐1 (CCC: WhiskerNet: 0.68 ± 0.07 vs WhiskerNet‐1: 0.23 ± 0.16, P < 0.001; Figure 6B)."
+     },
+     {
+      "section": "METHODS",
+      "quote": "For each train‐test run, ten different random seeds (ranging from 1 to 10) were used for initialization to ensure robustness."
+     }
+    ],
+    "note": "U1: the decoding metric (CCC) is reported as mean +/- SD across cross-validation folds/subjects, with paired significance tests, and models are re-initialised over ten random seeds. No per-prediction uncertainty, so not U2."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. All recordings are from the authors' own PEDOT:PSS electrode arrays implanted on rat facial nerve in one laboratory; the cross-subject evaluation is a leave-one-subject-out group split, which the codebook assigns to S1 (k-fold CV/LOOCV does not count as E1)."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION and METHODS. No new samples produced or measured after model fixing; all evaluations are on held-out portions of the recorded dataset."
+   },
+   "S": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "In each fold, one individual was used as the test subject, and the model was trained on the remaining individuals."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "To evaluate its cross‐subject performance, we developed a control model, WhiskerNet‐1, in which both encoder and decoder parameters were shared across all subjects without adaptation."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "Across ten subjects, WhiskerNet required, on average, 28.6% less training data to reach this benchmark compared to WhiskerNet‐2 (WhiskerNet: 200.00 ± 119.60 vs WhiskerNet‐2: 280.00 ± 141.30, P = 0.007; Figure 6D)."
+     }
+    ],
+    "note": "S1 natural (cross-subject): tenfold leave-one-subject-out CV, with both the unadapted shared model (WhiskerNet-1, CCC 0.23 +/- 0.16) and the few-shot-adapted model (WhiskerNet, CCC 0.68 +/- 0.07) evaluated on held-out subjects. This satisfies the codebook's transfer-learning proviso."
+   }
+  },
+  "confidence": "high",
+  "notes": "Strongest S1 case in the area: cross-subject generalisation is the paper's stated contribution and the unadapted baseline is reported. acknowledged_gap for robustness: 'the current neural network framework lacks sufficient robustness against small-scale variances in the input'."
+ },
+ {
+  "pmcid": "PMC11852995",
+  "doi": "10.3390/bios15020122",
+  "year": 2025,
+  "journal": "Biosensors",
+  "title": "A Wide-Range, Highly Stable Intelligent Flexible Pressure Sensor Based on Micro-Wrinkled SWCNT/rGO-PDMS with Efficient Thermal Shrinkage.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Figs. 6 and 7 sections). Accuracies 96.3455%/98.3333% and 96.9027%/99.1111% are single values; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: 'The dataset, which consisted of a total of 900 samples, was randomly partitioned, with three-fourths of it designated as the training set.' Four volunteers, one sensor, one lab."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Random 3:1 split with all four volunteers pooled; the temperature-stability tests (20-100 C) characterise the sensor, not the classifier."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates."
+ },
+ {
+  "pmcid": "PMC11621509",
+  "doi": "10.1073/pnas.2412684121",
+  "year": 2024,
+  "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+  "title": "Symmetry engineering in 2D bioelectronics facilitating augmented biosensing interfaces.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in the body sections on pathological prediction, gait analysis and wireless mapping, and in the figure legends. Metrics are precision-recall curves, confusion matrices and single accuracies (training 89.4%, testing 84.5% for the porcine CNN-GRU); no SD/CI over folds or seeds and no per-prediction uncertainty. The 8-way-1-shot protocol is evaluated 'in all possible cases' but no spread is reported in the main text."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in the body sections and CONCLUSION. Rodent, porcine and human-gait datasets are all collected by the authors, and a separate model is trained for each; no fixed model is transferred between them and no external dataset is used."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in the body sections. None; no post-model-fixing measurement compared with predictions."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in the body sections. The 13 gait labels are subject identities (a classification task, not a shift test); for the eight-class sinus/MI task the models are 'separately trained' per sensor location rather than transferred across locations. No stated shift with performance reported."
+   }
+  },
+  "confidence": "med",
+  "notes": "Section classification is poor for this PNAS article (most body text falls in BODY_OTHER), so I read the body paragraphs directly. SI_dependency = true: much of the ML evaluation is in SI Appendix Figs. S13 and S22. Confidence med because the SI may contain shift analyses outside the main-article construct."
+ },
+ {
+  "pmcid": "PMC12431005",
+  "doi": "10.3390/s25175365",
+  "year": 2025,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Evaluating Machine Learning-Based Classification of Human Locomotor Activities for Exoskeleton Control Using Inertial Measurement Unit and Pressure Insole Data.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.5, RESULTS_DISCUSSION and Tables 2-4. Validation and test F1/R2 scores are single values (e.g. LGBM activity F1 0.87 validation, 0.94 test); random-search cross-validation is used for tuning only and no fold-wise spread is reported. No per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.5 and DISCUSSION. All 16 participants were recorded in one lab-based treadmill session with the authors' own IMUs and e-textile insoles; the held-out-participant test set is a group split, coded under S1."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [
+     {
+      "section": "METHODS",
+      "quote": "Data from 14 participants were used for training and validating the models, while the data from the remaining 2 participants were reserved as the test set."
+     },
+     {
+      "section": "METHODS",
+      "quote": "We deliberately reserved these two subjects to provide a deployment-like, untouched test set."
+     },
+     {
+      "section": "RESULTS_DISCUSSION",
+      "quote": "The test scores suggest that the LGBM model is well-generalised, with a score of 0.94."
+     }
+    ],
+    "note": "S1 natural: a subject-wise (group) split, with performance on the two unseen participants reported alongside validation performance, including the LR model's failure on the held-out subjects."
+   }
+  },
+  "confidence": "high",
+  "notes": "S1 sub-code natural (held-out subjects). The paper explicitly discusses LOSOCV as a complementary method it did not run. acknowledged_gap: 'This might best be achieved with a larger dataset, including data collected outside the lab' and the Limitations note that IMUs mounted on an exoskeleton rather than the person would need re-testing."
+ },
+ {
+  "pmcid": "PMC12843744",
+  "doi": "10.3390/mi17010003",
+  "year": 2025,
+  "journal": "Micromachines",
+  "title": "Self-Assembled MXene/MWCNTs Pressure Sensors Combined with Novel Hollow Microstructures for High Sensitivity.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (HMM section) and the Fig. 6 legends. Accuracies 98.5% (letters) and >99.2% (digits) are single values; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Signals from the authors' own three-electrode sensor; no independent source and no split protocol given beyond the confusion matrices."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. No stated shift; the claim about 'strong generalization capability' is an assertion about the reported accuracies, not a shift evaluation."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates."
+ },
+ {
+  "pmcid": "PMC9313071",
+  "doi": "10.3390/bios12070506",
+  "year": 2022,
+  "journal": "Biosensors",
+  "title": "Full Soft Capacitive Omnidirectional Tactile Sensor Based on Micro-Spines Electrode and Hemispheric Dielectric Structure.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS 4.2-4.3 and the Fig. 4 legends. Classification accuracies 99.83% (naive Bayes and Gaussian SVM) and 98% (ANN) are single values. The only '+/-' figures (sensitivity 0.306 +/- 0.001 kPa-1) are measurement spread of the sensor, not of model performance."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS 4.2. 600 sets of loading-angle data collected on the authors' own sensor; no independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS 4.3. The human-motion and cup-gripping demonstrations are device demonstrations, not comparisons of predictions with new measurements."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS 4.2-4.3. The different-temperature tests characterise the sensor response; the classifier is evaluated only on the loading-angle dataset with no stated shift."
+   }
+  },
+  "confidence": "high",
+  "notes": "The abstract's word 'prospective' ('a prospective technical routing') triggered the EPx scan but means 'promising', not prospective validation - a homonym false positive."
+ },
+ {
+  "pmcid": "PMC12526629",
+  "doi": "10.3390/s25196080",
+  "year": 2025,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Passive Brain-Computer Interface Using Textile-Based Electroencephalography.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 1,
+  "E": 1,
+  "EP": 0,
+  "S": 1,
+  "evidence": {
+   "U": {
+    "quotes": [
+     {
+      "section": "TABLE",
+      "quote": "Cross-validation results (mean ± standard deviation) using linear kernel SVM."
+     },
+     {
+      "section": "TABLE",
+      "quote": "Initial model selection cross-validation scores (mean ± standard deviation)."
+     }
+    ],
+    "note": "U1: accuracy, precision, recall and F1 are tabulated as mean +/- SD over the ten cross-validation folds, and between-model comparisons use the per-fold scores. No per-prediction uncertainty, so not U2."
+   },
+   "E": {
+    "quotes": [
+     {
+      "section": "ABSTRACT",
+      "quote": "The SVM was applied to each EEG system separately and in a combined setting, where the classifier was trained on dry EEG data and tested on textile EEG data."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "The generalizability assessment, which used the dry-electrode data to train the model and textile-electrode data to test the model, resulted in 92% accuracy and an F1 score of 92%, indicating strong cross-platform performance."
+     }
+    ],
+    "note": "E1: the fixed classifier is trained on dry-electrode recordings and evaluated on textile-electrode recordings, i.e. a different instrument, which the codebook lists under E1 ('another lab, institution, cohort, site or instrument'). The data are also a secondary analysis of an existing dataset acquired by another group (Lopez-Larraz et al.)."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS 2.3-2.5 and RESULTS. This is a secondary analysis of already-recorded EEG; no new recordings were made after the model was fixed."
+   },
+   "S": {
+    "quotes": [
+     {
+      "section": "ABSTRACT",
+      "quote": "The cross-sensor generalizability assessment resulted in a 91% classification accuracy."
+     },
+     {
+      "section": "RESULTS",
+      "quote": "Although MRMR selection was applied to both dry- and textile-electrode data, only dry EEG features were used for model evaluation for both consistency and to examine generalizability."
+     }
+    ],
+    "note": "S1 natural (cross-instrument): the test distribution differs from training in a stated way (textile electrodes rather than dry electrodes, with systematically lower band power) and the accuracy under that shift is reported."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for E1. The cross-sensor test is on the same 10 participants in the same session with a different headband, so it is 'another instrument' but not another cohort or site. The codebook lists 'instrument' under both E1 and S1-natural (as with the pilot's sim-to-real case PMC10161767, coded E1 and S1 together), so I coded both and flag it for adjudication. Reported accuracies differ between abstract (96/92/91%) and Results (94/94/92%); I quoted the Results values."
+ },
+ {
+  "pmcid": "PMC11845634",
+  "doi": "10.1007/s40820-025-01656-w",
+  "year": 2025,
+  "journal": "Nano-micro letters",
+  "title": "A Flexible-Integrated Multimodal Hydrogel-Based Sensing Patch.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (sleep-monitoring section) and METHODS. 'The final model achieved an accuracy of 97.6%' - a single value. The five outputs are class probabilities from a softmax, which is an ordinary classifier head, not reported per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Training, validation and test details are deferred to Note S2; all data come from the authors' own pillow-integrated patches. No independent source is mentioned."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The robotic-hand grasping demonstration validates the sensor, not model predictions against new measurements."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. The temperature (25-45 C) and humidity (40/60/80% RH) tests characterise the sensor layers; the 1D CNN is not evaluated under any stated shift in the main text."
+   }
+  },
+  "confidence": "med",
+  "notes": "SI_dependency = true: the train/validation/test protocol for the 1D CNN is in Note S2, so the main article gives only the headline accuracy."
+ },
+ {
+  "pmcid": "PMC11803620",
+  "doi": "10.1021/acsami.4c17369",
+  "year": 2025,
+  "journal": "ACS applied materials & interfaces",
+  "title": "Full Body-Worn Textile-Integrated Nanomaterials and Soft Electronics for Real-Time Continuous Motion Recognition Using Cloud Computing.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (Fig. 5 section) and METHODS. A single confusion-matrix accuracy of 95.27%; hyperparameters chosen by Keras Tuner random search but no metric spread over folds or seeds; softmax output only."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in METHODS: 'We strategically divided our data set: 60% was allocated for training, 20% for validation, and the remaining 20% for testing.' Multiple subjects are pooled into one random split; no independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Real-time cloud prediction is a deployment demonstration on the same data-collection protocol."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. Random 60/20/20 split with subjects pooled; no cross-subject or cross-condition evaluation."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Despite 'multiple human subjects', the split is random rather than subject-wise, so no S1."
+ },
+ {
+  "pmcid": "PMC12122957",
+  "doi": "10.1007/s40820-025-01780-7",
+  "year": 2025,
+  "journal": "Nano-micro letters",
+  "title": "Machine Learning Enabled Reusable Adhesion, Entangled Network-Based Hydrogel for Long-Term, High-Fidelity EEG Recording and Attention Assessment.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (attention-assessment section) and FIG (Fig. 6f,g). 'Tenfold cross-validation was performed using all the data' and 'a tenfold average accuracy reaching 91.38%' - an average with no SD/CI and no per-fold values shown (Fig. 6f is a training-curve plot). The codebook excludes averaged repeats without spread, so U0."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. EEG recorded with the authors' own PGEH headband; tenfold CV on that data only. The 6-hour comparison with commercial electrodes is a signal-quality comparison, not an ML evaluation on independent data."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Tenfold CV over pooled data; the 14-day SNR measurement characterises the electrode, not model accuracy under shift."
+   }
+  },
+  "confidence": "med",
+  "notes": "Borderline U1: tenfold CV is run but only the average accuracy is given. Classifier baselines and per-fold detail are in the SI (SI_dependency)."
+ },
+ {
+  "pmcid": "PMC8840666",
+  "doi": "10.3390/s22030759",
+  "year": 2022,
+  "journal": "Sensors (Basel, Switzerland)",
+  "title": "Neural Network-Enabled Flexible Pressure and Temperature Sensor with Honeycomb-like Architecture for Voice Recognition.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS, DISCUSSION, FIG and TABLE. The ANN result is a single test confusion matrix with CCR = 93.4%; the 'best validation performance is at epoch 604' concerns early stopping, not metric spread. No per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS and DISCUSSION. Waveforms recorded from the authors' own neck-attached sensor; conventional train/validation/test partition of that data."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS and DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS and DISCUSSION. No stated shift between training and test conditions."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Section classification puts much body text in BODY_OTHER; I read those paragraphs directly."
+ },
+ {
+  "pmcid": "PMC12561432",
+  "doi": "10.1002/advs.202510894",
+  "year": 2025,
+  "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+  "title": "MXene-Integrated Printed Piezoresistive Flexible Sensors: A Breakthrough in Real-Time Monitoring for Medical and Smart Applications.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (CNN section) and the Fig. 6 legends. Recognition accuracies reported as a flat 100% for both Greek letters and standing postures; no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Data from the authors' own WSM-A8 sensor array; only 'training and validating by CNN classification algorithm' is stated, with no independent source."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. No stated shift; the bending-cycle, oxidation and 2000-cycle tests characterise the sensor."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. The evaluation protocol is under-specified (no split ratio reported)."
+ },
+ {
+  "pmcid": "PMC9755227",
+  "doi": "10.1038/s41598-022-24640-5",
+  "year": 2022,
+  "journal": "Scientific reports",
+  "title": "Texture recognition based on multi-sensory integration of proprioceptive and tactile signals.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS and the Fig. 3/5 legends. Fivefold cross-validation is used and 'the average performance across all 5 trials for each subset was computed and reported in Fig. 5', but the reported accuracies (99.9%, 88%, 92%, 82%, 72%) are single averaged values with no SD/CI or per-fold values in the text or legends."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS and METHODS. All 600 scans (6 speeds x 10 textures x 10 repetitions) come from the authors' own biomimetic fingertip on one rig."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in RESULTS and METHODS. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS, CONCLUSION and METHODS. The six scanning speeds are all pooled into the training data with random 8:2 splits and fivefold CV, so the claim of 'generalized texture discrimination ... irrespective of the scanning speed' rests on pooled accuracy, not on a held-out-speed evaluation. No train-on-some-speeds/test-on-others test is reported."
+   }
+  },
+  "confidence": "med",
+  "notes": "BORDERLINE for S1: speed variation is present in the data and is the paper's headline robustness claim, but it is a training-coverage claim rather than a shift evaluation. Coded S0; flag for adjudication."
+ },
+ {
+  "pmcid": "PMC11686128",
+  "doi": "10.1038/s41598-024-82274-1",
+  "year": 2024,
+  "journal": "Scientific reports",
+  "title": "The assessment of sports performance by grip pressure using flexible piezoresistive pressure sensors in seven sports events.",
+  "area": "A3_sensors",
+  "coder": "A",
+  "U": 0,
+  "E": 0,
+  "EP": 0,
+  "S": 0,
+  "evidence": {
+   "U": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION (KNN section), FIG (Figs. 5 and 6) and METHODS. Train and test accuracies are single values (expert 95.0%/92.5%, amateur 84.6%/74.2%); no spread, no per-prediction uncertainty."
+   },
+   "E": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION: '30% of the samples as the test set and 70% of the samples as the train set are randomly selected by KNN intelligence algorithm.' 400 strokes from the authors' own instrumented racket."
+   },
+   "EP": {
+    "quotes": [],
+    "note": "Looked in METHODS and RESULTS_DISCUSSION. None."
+   },
+   "S": {
+    "quotes": [],
+    "note": "Looked in RESULTS_DISCUSSION. Separate models for the expert and the amateur player, each with a random 70/30 split; no cross-player or cross-condition evaluation."
+   }
+  },
+  "confidence": "high",
+  "notes": "Regex v1.1 gave 0 candidates. Independent-samples t-tests are on grip-pressure indicators, not on model performance."
+ }
+]

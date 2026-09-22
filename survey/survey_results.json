@@ -1,0 +1,2862 @@
+{
+  "meta": {
+    "title": "Systematic survey behind the revised Figure 2 (BMEMat Perspective, R2 comment 13)",
+    "protocol": "revision/audit/A6_survey_protocol.md (frozen)",
+    "source": "Europe PMC REST, TITLE_ABS search, 2020-2025, English, research articles, open access",
+    "frozen_query_version_per_area": {
+      "A1_imaging": "v1",
+      "A2_property": "v1",
+      "A3_sensors": "v2",
+      "A4_tissue": "v2",
+      "A5_autonomous": "v1"
+    },
+    "frame_seed": "numpy.random.default_rng(20260919 + area_index)",
+    "generated_by": "revision/survey/s07_aggregate.py",
+    "coders": {
+      "A": "primary LLM coder, all eligible papers",
+      "B": "second LLM coder, blind 50% subset",
+      "adjudicator": "third reader; re-read the cached JATS full text of every disputed paper"
+    }
+  },
+  "prisma": {
+    "A1": {
+      "area": "A1 imaging-based characterisation",
+      "query_version": "v1",
+      "identified_epmc_topic_all_types": 657,
+      "removed_tagged_reviews": 185,
+      "removed_preprints": 68,
+      "research_only_records": 397,
+      "open_access_frame": 199,
+      "frame_by_year": {
+        "2020": 5,
+        "2021": 29,
+        "2022": 27,
+        "2023": 42,
+        "2024": 37,
+        "2025": 59
+      },
+      "screened_in_random_order": 116,
+      "frame_exhausted": false,
+      "full_text_retrieved": 48,
+      "excluded_total": 76,
+      "excluded_by_reason": {
+        "NOT_BIOMED": 50,
+        "WRONG_AREA": 12,
+        "NO_ML": 9,
+        "NOT_RESEARCH": 5
+      },
+      "excluded_by_stage_and_reason": {
+        "title_abstract": {
+          "NOT_BIOMED": 48,
+          "WRONG_AREA": 9,
+          "NO_ML": 7,
+          "NOT_RESEARCH": 4
+        },
+        "full_text": {
+          "WRONG_AREA": 3,
+          "NO_ML": 2,
+          "NOT_RESEARCH": 1,
+          "NOT_BIOMED": 2
+        }
+      },
+      "eligible": 40,
+      "coded_coder_A": 40,
+      "dual_coded_coder_B": 20
+    },
+    "A2": {
+      "area": "A2 property prediction / inverse design",
+      "query_version": "v1",
+      "identified_epmc_topic_all_types": 761,
+      "removed_tagged_reviews": 203,
+      "removed_preprints": 61,
+      "research_only_records": 495,
+      "open_access_frame": 198,
+      "frame_by_year": {
+        "2020": 8,
+        "2021": 11,
+        "2022": 26,
+        "2023": 26,
+        "2024": 44,
+        "2025": 83
+      },
+      "screened_in_random_order": 62,
+      "frame_exhausted": false,
+      "full_text_retrieved": 46,
+      "excluded_total": 22,
+      "excluded_by_reason": {
+        "NO_ML": 7,
+        "NOT_BIOMED": 8,
+        "NOT_RESEARCH": 3,
+        "WRONG_AREA": 4
+      },
+      "excluded_by_stage_and_reason": {
+        "title_abstract": {
+          "NO_ML": 5,
+          "NOT_BIOMED": 6,
+          "NOT_RESEARCH": 2,
+          "WRONG_AREA": 3
+        },
+        "full_text": {
+          "NOT_RESEARCH": 1,
+          "NO_ML": 2,
+          "NOT_BIOMED": 2,
+          "WRONG_AREA": 1
+        }
+      },
+      "eligible": 40,
+      "coded_coder_A": 40,
+      "dual_coded_coder_B": 20
+    },
+    "A3": {
+      "area": "A3 biosensors and bioelectronics",
+      "query_version": "v2",
+      "identified_epmc_topic_all_types": 765,
+      "removed_tagged_reviews": 172,
+      "removed_preprints": 49,
+      "research_only_records": 542,
+      "open_access_frame": 189,
+      "frame_by_year": {
+        "2020": 9,
+        "2021": 12,
+        "2022": 33,
+        "2023": 19,
+        "2024": 38,
+        "2025": 78
+      },
+      "screened_in_random_order": 79,
+      "frame_exhausted": false,
+      "full_text_retrieved": 46,
+      "excluded_total": 39,
+      "excluded_by_reason": {
+        "NOT_BIOMED": 23,
+        "WRONG_AREA": 3,
+        "NO_ML": 13
+      },
+      "excluded_by_stage_and_reason": {
+        "title_abstract": {
+          "NOT_BIOMED": 23,
+          "WRONG_AREA": 2,
+          "NO_ML": 8
+        },
+        "full_text": {
+          "WRONG_AREA": 1,
+          "NO_ML": 5
+        }
+      },
+      "eligible": 40,
+      "coded_coder_A": 40,
+      "dual_coded_coder_B": 20
+    },
+    "A4": {
+      "area": "A4 tissue engineering, scaffolds, hydrogels",
+      "query_version": "v2",
+      "identified_epmc_topic_all_types": 639,
+      "removed_tagged_reviews": 281,
+      "removed_preprints": 51,
+      "research_only_records": 302,
+      "open_access_frame": 140,
+      "frame_by_year": {
+        "2020": 9,
+        "2021": 18,
+        "2022": 16,
+        "2023": 24,
+        "2024": 22,
+        "2025": 51
+      },
+      "screened_in_random_order": 116,
+      "frame_exhausted": false,
+      "full_text_retrieved": 51,
+      "excluded_total": 76,
+      "excluded_by_reason": {
+        "NO_ML": 28,
+        "NOT_BIOMED": 23,
+        "NOT_RESEARCH": 10,
+        "WRONG_AREA": 15
+      },
+      "excluded_by_stage_and_reason": {
+        "title_abstract": {
+          "NO_ML": 24,
+          "NOT_BIOMED": 19,
+          "NOT_RESEARCH": 10,
+          "WRONG_AREA": 12
+        },
+        "full_text": {
+          "NO_ML": 4,
+          "NOT_BIOMED": 4,
+          "WRONG_AREA": 3
+        }
+      },
+      "eligible": 40,
+      "coded_coder_A": 40,
+      "dual_coded_coder_B": 20
+    },
+    "A5": {
+      "area": "A5 autonomous and sequential discovery",
+      "query_version": "v1",
+      "identified_epmc_topic_all_types": 375,
+      "removed_tagged_reviews": 27,
+      "removed_preprints": 64,
+      "research_only_records": 282,
+      "open_access_frame": 145,
+      "frame_by_year": {
+        "2020": 6,
+        "2021": 14,
+        "2022": 17,
+        "2023": 25,
+        "2024": 27,
+        "2025": 56
+      },
+      "screened_in_random_order": 145,
+      "frame_exhausted": true,
+      "full_text_retrieved": 28,
+      "excluded_total": 136,
+      "excluded_by_reason": {
+        "WRONG_AREA": 9,
+        "NOT_BIOMED": 78,
+        "NO_ML": 46,
+        "NOT_RESEARCH": 3
+      },
+      "excluded_by_stage_and_reason": {
+        "full_text": {
+          "WRONG_AREA": 6,
+          "NOT_BIOMED": 13
+        },
+        "title_abstract": {
+          "NOT_BIOMED": 65,
+          "NO_ML": 46,
+          "WRONG_AREA": 3,
+          "NOT_RESEARCH": 3
+        }
+      },
+      "eligible": 9,
+      "coded_coder_A": 9,
+      "dual_coded_coder_B": 5
+    },
+    "_totals": {
+      "research_only_area_records": 2018,
+      "oa_frame_area_records": 871,
+      "screened_area_records": 518,
+      "eligible_area_records": 169,
+      "coded_area_records": 169,
+      "coded_unique_papers": 153,
+      "papers_in_two_areas": 16,
+      "dual_coded_area_records": 85
+    }
+  },
+  "reliability": {
+    "design": {
+      "dual_coded_area_records": 85,
+      "dual_coded_unique_papers": 81,
+      "coded_area_records_total": 169,
+      "coded_unique_papers_total": 153,
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20260919,
+      "bootstrap_unit": "paper (a paper dual-coded in two areas is resampled as one cluster)",
+      "note": "Statistics are computed on the raw coder-A vs coder-B codes, before adjudication. Four papers sit in two area subsets, so 85 dual-coded area-records cover 81 unique papers."
+    },
+    "overall": {
+      "U_4level": {
+        "n": 85,
+        "percent_agreement": 0.9882352941176471,
+        "kappa": 0.9733291496705366,
+        "percent_agreement_ci": [
+          0.963855421686747,
+          1.0
+        ],
+        "kappa_ci": [
+          0.9079492720367812,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 2000
+      },
+      "U_4level_linear_weighted": {
+        "n": 85,
+        "percent_agreement": 0.9882352941176471,
+        "kappa": 0.9782775364170714,
+        "percent_agreement_ci": [
+          0.963855421686747,
+          1.0
+        ],
+        "kappa_ci": [
+          0.9246865600610181,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 2000
+      },
+      "U_ge1": {
+        "n": 85,
+        "percent_agreement": 0.9882352941176471,
+        "kappa": 0.9713322091062395,
+        "table": {
+          "both_1": 24,
+          "A1_B0": 0,
+          "A0_B1": 1,
+          "both_0": 60
+        },
+        "pabak": 0.9764705882352942,
+        "ppos": 0.9795918367346939,
+        "pneg": 0.9917355371900827,
+        "n_positive_A": 24,
+        "n_positive_B": 25,
+        "percent_agreement_ci": [
+          0.963855421686747,
+          1.0
+        ],
+        "kappa_ci": [
+          0.899990931076179,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 2000
+      },
+      "U_ge2": {
+        "n": 85,
+        "percent_agreement": 1.0,
+        "kappa": 1.0,
+        "table": {
+          "both_1": 6,
+          "A1_B0": 0,
+          "A0_B1": 0,
+          "both_0": 79
+        },
+        "pabak": 1.0,
+        "ppos": 1.0,
+        "pneg": 1.0,
+        "n_positive_A": 6,
+        "n_positive_B": 6,
+        "percent_agreement_ci": [
+          1.0,
+          1.0
+        ],
+        "kappa_ci": [
+          1.0,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 1998
+      },
+      "U_ge3": {
+        "n": 85,
+        "percent_agreement": 1.0,
+        "kappa": null,
+        "table": {
+          "both_1": 0,
+          "A1_B0": 0,
+          "A0_B1": 0,
+          "both_0": 85
+        },
+        "pabak": 1.0,
+        "ppos": null,
+        "pneg": 1.0,
+        "n_positive_A": 0,
+        "n_positive_B": 0,
+        "percent_agreement_ci": [
+          1.0,
+          1.0
+        ],
+        "kappa_ci": null,
+        "kappa_ci_valid_draws": 0
+      },
+      "E1": {
+        "n": 85,
+        "percent_agreement": 1.0,
+        "kappa": 1.0,
+        "table": {
+          "both_1": 4,
+          "A1_B0": 0,
+          "A0_B1": 0,
+          "both_0": 81
+        },
+        "pabak": 1.0,
+        "ppos": 1.0,
+        "pneg": 1.0,
+        "n_positive_A": 4,
+        "n_positive_B": 4,
+        "percent_agreement_ci": [
+          1.0,
+          1.0
+        ],
+        "kappa_ci": [
+          1.0,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 1967
+      },
+      "EP": {
+        "n": 85,
+        "percent_agreement": 0.9529411764705882,
+        "kappa": 0.859038142620232,
+        "table": {
+          "both_1": 16,
+          "A1_B0": 2,
+          "A0_B1": 2,
+          "both_0": 65
+        },
+        "pabak": 0.9058823529411764,
+        "ppos": 0.8888888888888888,
+        "pneg": 0.9701492537313433,
+        "n_positive_A": 18,
+        "n_positive_B": 18,
+        "percent_agreement_ci": [
+          0.9036144578313253,
+          0.9886363636363636
+        ],
+        "kappa_ci": [
+          0.6931242831655411,
+          0.9699233839968021
+        ],
+        "kappa_ci_valid_draws": 2000
+      },
+      "S1": {
+        "n": 85,
+        "percent_agreement": 0.9882352941176471,
+        "kappa": 0.960556844547564,
+        "table": {
+          "both_1": 15,
+          "A1_B0": 1,
+          "A0_B1": 0,
+          "both_0": 69
+        },
+        "pabak": 0.9764705882352942,
+        "ppos": 0.967741935483871,
+        "pneg": 0.9928057553956835,
+        "n_positive_A": 16,
+        "n_positive_B": 15,
+        "percent_agreement_ci": [
+          0.963855421686747,
+          1.0
+        ],
+        "kappa_ci": [
+          0.859053467818368,
+          1.0
+        ],
+        "kappa_ci_valid_draws": 2000
+      }
+    },
+    "by_area": {
+      "A1": {
+        "U_4level": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.9078341013824885,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.6875000000000002,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 2000
+        },
+        "U_4level_linear_weighted": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.9159663865546221,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.6999999999999996,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 2000
+        },
+        "U_ge1": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.8999999999999999,
+          "table": {
+            "both_1": 9,
+            "A1_B0": 0,
+            "A0_B1": 1,
+            "both_0": 10
+          },
+          "pabak": 0.8999999999999999,
+          "ppos": 0.9473684210526315,
+          "pneg": 0.9523809523809523,
+          "n_positive_A": 9,
+          "n_positive_B": 10,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.6875000000000002,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 2000
+        },
+        "U_ge2": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1293
+        },
+        "U_ge3": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "E1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1301
+        },
+        "EP": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.857142857142857,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 0,
+            "A0_B1": 1,
+            "both_0": 15
+          },
+          "pabak": 0.8999999999999999,
+          "ppos": 0.8888888888888888,
+          "pneg": 0.967741935483871,
+          "n_positive_A": 4,
+          "n_positive_B": 5,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.45945945945945976,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1995
+        },
+        "S1": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.8979591836734695,
+          "table": {
+            "both_1": 8,
+            "A1_B0": 1,
+            "A0_B1": 0,
+            "both_0": 11
+          },
+          "pabak": 0.8999999999999999,
+          "ppos": 0.9411764705882353,
+          "pneg": 0.9565217391304348,
+          "n_positive_A": 9,
+          "n_positive_B": 8,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.6153846153846154,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 2000
+        }
+      },
+      "A2": {
+        "U_4level": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1998
+        },
+        "U_4level_linear_weighted": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1993
+        },
+        "U_ge1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 5,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 15
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 5,
+          "n_positive_B": 5,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1992
+        },
+        "U_ge2": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "U_ge3": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "E1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1312
+        },
+        "EP": {
+          "n": 20,
+          "percent_agreement": 0.95,
+          "kappa": 0.857142857142857,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 1,
+            "A0_B1": 0,
+            "both_0": 15
+          },
+          "pabak": 0.8999999999999999,
+          "ppos": 0.8888888888888888,
+          "pneg": 0.967741935483871,
+          "n_positive_A": 5,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            0.85,
+            1.0
+          ],
+          "kappa_ci": [
+            0.45945945945945976,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1994
+        },
+        "S1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 2,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 18
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 2,
+          "n_positive_B": 2,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1756
+        }
+      },
+      "A3": {
+        "U_4level": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1971
+        },
+        "U_4level_linear_weighted": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1976
+        },
+        "U_ge1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 16
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 4,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1965
+        },
+        "U_ge2": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "U_ge3": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "E1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1261
+        },
+        "EP": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1316
+        },
+        "S1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 2,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 18
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 2,
+          "n_positive_B": 2,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1760
+        }
+      },
+      "A4": {
+        "U_4level": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1765
+        },
+        "U_4level_linear_weighted": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1767
+        },
+        "U_ge1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 2,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 18
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 2,
+          "n_positive_B": 2,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1775
+        },
+        "U_ge2": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1270
+        },
+        "U_ge3": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 20
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "E1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 1,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 19
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 1,
+          "n_positive_B": 1,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1290
+        },
+        "EP": {
+          "n": 20,
+          "percent_agreement": 0.9,
+          "kappa": 0.6874999999999999,
+          "table": {
+            "both_1": 3,
+            "A1_B0": 1,
+            "A0_B1": 1,
+            "both_0": 15
+          },
+          "pabak": 0.8,
+          "ppos": 0.75,
+          "pneg": 0.9375,
+          "n_positive_A": 4,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            0.75,
+            1.0
+          ],
+          "kappa_ci": [
+            0.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1994
+        },
+        "S1": {
+          "n": 20,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 3,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 17
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 3,
+          "n_positive_B": 3,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1934
+        }
+      },
+      "A5": {
+        "U_4level": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1337
+        },
+        "U_4level_linear_weighted": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1384
+        },
+        "U_ge1": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 1
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 4,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1352
+        },
+        "U_ge2": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 1
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 4,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1329
+        },
+        "U_ge3": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 5
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "E1": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 5
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        },
+        "EP": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": 1.0,
+          "table": {
+            "both_1": 4,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 1
+          },
+          "pabak": 1.0,
+          "ppos": 1.0,
+          "pneg": 1.0,
+          "n_positive_A": 4,
+          "n_positive_B": 4,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci_valid_draws": 1320
+        },
+        "S1": {
+          "n": 5,
+          "percent_agreement": 1.0,
+          "kappa": null,
+          "table": {
+            "both_1": 0,
+            "A1_B0": 0,
+            "A0_B1": 0,
+            "both_0": 5
+          },
+          "pabak": 1.0,
+          "ppos": null,
+          "pneg": 1.0,
+          "n_positive_A": 0,
+          "n_positive_B": 0,
+          "percent_agreement_ci": [
+            1.0,
+            1.0
+          ],
+          "kappa_ci": null,
+          "kappa_ci_valid_draws": 0
+        }
+      }
+    }
+  },
+  "disagreements_raw": [
+    {
+      "area": "A1",
+      "pmcid": "PMC10161767",
+      "item": "U",
+      "coder_A": 0,
+      "coder_B": 1
+    },
+    {
+      "area": "A1",
+      "pmcid": "PMC12796348",
+      "item": "EP",
+      "coder_A": 0,
+      "coder_B": 1
+    },
+    {
+      "area": "A1",
+      "pmcid": "PMC11538249",
+      "item": "S",
+      "coder_A": 1,
+      "coder_B": 0
+    },
+    {
+      "area": "A2",
+      "pmcid": "PMC9513834",
+      "item": "EP",
+      "coder_A": 1,
+      "coder_B": 0
+    },
+    {
+      "area": "A4",
+      "pmcid": "PMC11170757",
+      "item": "EP",
+      "coder_A": 1,
+      "coder_B": 0
+    },
+    {
+      "area": "A4",
+      "pmcid": "PMC7076403",
+      "item": "EP",
+      "coder_A": 0,
+      "coder_B": 1
+    }
+  ],
+  "coder_A_cross_area_inconsistencies": [
+    {
+      "pmcid": "PMC11921027",
+      "item": "E",
+      "coder_A_by_area": {
+        "A1": 1,
+        "A4": 0
+      }
+    },
+    {
+      "pmcid": "PMC8575943",
+      "item": "EP",
+      "coder_A_by_area": {
+        "A1": 1,
+        "A4": 0
+      }
+    },
+    {
+      "pmcid": "PMC7076403",
+      "item": "EP",
+      "coder_A_by_area": {
+        "A2": 1,
+        "A4": 0
+      }
+    }
+  ],
+  "adjudication": [
+    {
+      "pmcid": "PMC10161767",
+      "areas": [
+        "A1_imaging"
+      ],
+      "item": "U",
+      "coder_A": 0,
+      "coder_B": 1,
+      "final": 1,
+      "type": "A_vs_B",
+      "decision": "U1",
+      "reason": "Coder B is right. The Results text of the paper states 'Table 1 summarizes the performance metrics of various algorithms under two phases together with the corresponding standard deviations in parentheses', and the Methods state the models are 'trained five times' over random weight initialisations and dataset splits. That is the SD of a performance metric over repeated runs/splits, which section 7 lists under U1. Coder A applied the 'trained 5 times and averaged with no spread' exclusion but missed the Table 1 spread, which sits in <floats-group> and was not reached by the regex screen."
+    },
+    {
+      "pmcid": "PMC12796348",
+      "areas": [
+        "A1_imaging"
+      ],
+      "item": "EP",
+      "coder_A": 0,
+      "coder_B": 1,
+      "final": 0,
+      "type": "A_vs_B",
+      "decision": "EP0",
+      "reason": "Coder A is right. The paper itself calls the swine work a 'retrospective validation study'; the specimens were collected and frozen before the model existed, and the Discussion lists 'larger-scale prospective swine studies' as future work. The reported concordance (30/32 samples; Pearson r = 0.87) is between the MIDAS assay readout and reference assays, not between a model prediction and a newly produced measurement. Section 7 requires samples produced or measured AFTER the model was fixed."
+    },
+    {
+      "pmcid": "PMC11538249",
+      "areas": [
+        "A1_imaging"
+      ],
+      "item": "S",
+      "coder_A": 1,
+      "coder_B": 0,
+      "final": 1,
+      "type": "A_vs_B",
+      "decision": "S1 (natural)",
+      "reason": "Coder A is right on the frozen codebook. Section 7 lists 'group-, cluster- or scaffold-based split' under the S1 natural sub-code without any additional requirement that the paper frame the grouping factor as the shift under study. The Methods state 'the data obtained from the same object was used exclusively for either training or testing, not both ... the objects used for training were different from those used for validation and testing', i.e. an animal-level grouped split, and segmentation performance on the held-out animals is reported (Tables 1-2). Coder B applied a stricter rule that the frozen protocol does not contain."
+    },
+    {
+      "pmcid": "PMC9513834",
+      "areas": [
+        "A2_property"
+      ],
+      "item": "EP",
+      "coder_A": 1,
+      "coder_B": 0,
+      "final": 1,
+      "type": "A_vs_B",
+      "decision": "EP1",
+      "reason": "Coder A is right. Section 7 gives 'synthesising the predicted optimum' as the leading EP example. The Results state 'Using this design as a guide, we synthesized aligned nanofibers using a standard rotating drum electrospinning method, producing nanofibers with four distinct diameters (including the diameters that were projected to be ideal by our radar charts)', and the measured axonal alignment at ~200 nm 'fits the estimation in the radar charts'. New material was made on a different platform after the GPR-derived maps were fixed and compared with them. Coder B's stated reason addresses U and E (hold-out CV, one lab), not the EP definition. The comparison is qualitative, which section 7 does not forbid; confidence is medium."
+    },
+    {
+      "pmcid": "PMC11170757",
+      "areas": [
+        "A1_imaging",
+        "A4_tissue"
+      ],
+      "item": "EP",
+      "coder_A": 1,
+      "coder_B": 0,
+      "final": 0,
+      "type": "A_vs_B",
+      "decision": "EP0",
+      "reason": "Coder B is right. The Introduction gives the chronology explicitly: (i) seven PolyHIPE groups were fabricated, (ii) four users blind-quantified their pores and windows, (iii) only afterwards was the Pore D2 YOLOv5 detector developed. The test-group scaffolds and their manual ground truth therefore pre-date the model, so section 7's requirement of samples 'produced or measured AFTER the model was fixed' is not met. The comparison is automated versus manual measurement on the same SEM images, and the Conclusions state 'it is not applicable to assume one way as a gold standard'. The single-verifier pilot (protocol section 10.2) also recorded EP=0 for this paper."
+    },
+    {
+      "pmcid": "PMC7076403",
+      "areas": [
+        "A2_property",
+        "A4_tissue"
+      ],
+      "item": "EP",
+      "coder_A": "1 in A2, 0 in A4",
+      "coder_B": 1,
+      "final": 1,
+      "type": "A_vs_B_and_A_cross_area",
+      "decision": "EP1",
+      "reason": "Coder B and coder A's A2 coding are right; coder A's A4 coding was inconsistent with its own A2 coding of the same paper. The Results state 'The optimized 3D bioprinted scaffold formulation, resulting in the highest factor of response ... was thus synthesized incorporating 14% w/v PPF and 16% w/v PF127. The optimized 3D bioprinted scaffold displayed a controlled release of simvastatin over a 20-day duration ... with significant correlation to the predicted release kinetics ascertained using ANN', and Figure 10's legend is 'Correlation of in vitro simvastatin release analysis of the optimized 3D bioprinted scaffold with predicted release kinetics using ANN modeling'. That is the predicted optimum synthesised and its measured behaviour compared with the model prediction. Agreement is reported qualitatively, so confidence is medium."
+    },
+    {
+      "pmcid": "PMC11921027",
+      "areas": [
+        "A1_imaging",
+        "A4_tissue"
+      ],
+      "item": "E",
+      "coder_A": "1 in A1, 0 in A4",
+      "coder_B": 0,
+      "final": 0,
+      "type": "A_cross_area",
+      "decision": "E0",
+      "reason": "Coder A's A4 coding and coder B are right. What the paper calls its 'external data sets' are AFM images the authors acquired themselves on their own JPK Nanowizard4; no other laboratory, instrument, cohort, site, or public/literature dataset is involved. Section 7's E1 exclusions route 'a separately collected batch from the same lab and set-up' away from E1. The different collagen source (rat-tail tendon, reformed fibrils) is a distribution shift and is already captured as S1 natural, which both coders gave."
+    },
+    {
+      "pmcid": "PMC8575943",
+      "areas": [
+        "A1_imaging",
+        "A4_tissue"
+      ],
+      "item": "EP",
+      "coder_A": "1 in A1, 0 in A4",
+      "coder_B": "1 in A1, 0 in A4",
+      "final": 0,
+      "type": "cross_area_both_coders",
+      "decision": "EP0",
+      "reason": "Both coders coded this paper EP=1 in its A1 record and EP=0 in its A4 record, so the paper needed a single adjudicated code. EP=0. The substrate-stiffening data set is part of the study's own Fig. 2 experiments; the Results say it 'was collected at a later time, under different microscope settings' relative to the training images, but it was collected before the model was applied and the model is run on it retrospectively and compared with a manual analysis. Moreover the model was not fixed for that set: 'the experimental images were normalized by a different set of values than the training set ... optimizing these normalization parameters until the model best matched the manual analysis'. Section 7 requires samples produced or measured after the model was fixed. The changed microscope settings are a shift and stay coded S1 natural in both areas."
+    }
+  ],
+  "flagged_single_coder_borderline": [
+    {
+      "pmcid": "PMC10265106",
+      "areas": [
+        "A4_tissue"
+      ],
+      "item": "U",
+      "coder_A": 3,
+      "coder_B": null,
+      "final": 3,
+      "upheld": true,
+      "reason": "Only U3 in the whole survey; coder A flagged it borderline with low confidence and it is outside coder B's 50% subset, so it is not an adjudicable disagreement. On re-reading, the main text does report a coverage-style assessment of the GPR's own predictive intervals: 'the rationality of the GPR model in this research was confirmed by comparing the confidence interval and the evaluated scores. As demonstrated in Figure S5 (Supporting Information), all evaluated scores were within the 95% confidence interval'. That is empirical coverage against a nominal level, which section 7 lists under U3, and is different from the pilot's U3 false positive (an untested 'well-calibrated' claim). Two weaknesses are recorded and the code is left at U3: the supporting plot is in the SI (SI_dependency = true) and the main text does not state whether the compared scores are the held-out 2.5 w/v% test set or all 40 points. A stricter adjudicator would return U2, which would make U3 = 0/153 overall; both figures are reported."
+    }
+  ],
+  "estimates": {
+    "by_area": {
+      "A1": {
+        "n": 40,
+        "U_ge1": {
+          "k": 15,
+          "n": 40,
+          "proportion": 0.375,
+          "wilson95": [
+            0.24222979167233266,
+            0.5296756086269889
+          ]
+        },
+        "U_ge2": {
+          "k": 2,
+          "n": 40,
+          "proportion": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ]
+        },
+        "U3": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        },
+        "E1": {
+          "k": 2,
+          "n": 40,
+          "proportion": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ]
+        },
+        "EP": {
+          "k": 6,
+          "n": 40,
+          "proportion": 0.15,
+          "wilson95": [
+            0.07061187717320358,
+            0.2907232436648971
+          ]
+        },
+        "S1": {
+          "k": 16,
+          "n": 40,
+          "proportion": 0.4,
+          "wilson95": [
+            0.2634832568429192,
+            0.5540410633965381
+          ]
+        },
+        "U_ge2_and_E1_and_S1": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        }
+      },
+      "A2": {
+        "n": 40,
+        "U_ge1": {
+          "k": 9,
+          "n": 40,
+          "proportion": 0.225,
+          "wilson95": [
+            0.12316091323540743,
+            0.37503096742310027
+          ]
+        },
+        "U_ge2": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        },
+        "U3": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        },
+        "E1": {
+          "k": 1,
+          "n": 40,
+          "proportion": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "EP": {
+          "k": 10,
+          "n": 40,
+          "proportion": 0.25,
+          "wilson95": [
+            0.14187118639096302,
+            0.40193961420768026
+          ]
+        },
+        "S1": {
+          "k": 5,
+          "n": 40,
+          "proportion": 0.125,
+          "wilson95": [
+            0.05459500250945401,
+            0.261121198388511
+          ]
+        },
+        "U_ge2_and_E1_and_S1": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        }
+      },
+      "A3": {
+        "n": 40,
+        "U_ge1": {
+          "k": 4,
+          "n": 40,
+          "proportion": 0.1,
+          "wilson95": [
+            0.03957952868260638,
+            0.23051775227522298
+          ]
+        },
+        "U_ge2": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        },
+        "U3": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        },
+        "E1": {
+          "k": 1,
+          "n": 40,
+          "proportion": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "EP": {
+          "k": 1,
+          "n": 40,
+          "proportion": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "S1": {
+          "k": 5,
+          "n": 40,
+          "proportion": 0.125,
+          "wilson95": [
+            0.05459500250945401,
+            0.261121198388511
+          ]
+        },
+        "U_ge2_and_E1_and_S1": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        }
+      },
+      "A4": {
+        "n": 40,
+        "U_ge1": {
+          "k": 10,
+          "n": 40,
+          "proportion": 0.25,
+          "wilson95": [
+            0.14187118639096302,
+            0.40193961420768026
+          ]
+        },
+        "U_ge2": {
+          "k": 2,
+          "n": 40,
+          "proportion": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ]
+        },
+        "U3": {
+          "k": 1,
+          "n": 40,
+          "proportion": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ]
+        },
+        "E1": {
+          "k": 2,
+          "n": 40,
+          "proportion": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ]
+        },
+        "EP": {
+          "k": 6,
+          "n": 40,
+          "proportion": 0.15,
+          "wilson95": [
+            0.07061187717320358,
+            0.2907232436648971
+          ]
+        },
+        "S1": {
+          "k": 9,
+          "n": 40,
+          "proportion": 0.225,
+          "wilson95": [
+            0.12316091323540743,
+            0.37503096742310027
+          ]
+        },
+        "U_ge2_and_E1_and_S1": {
+          "k": 0,
+          "n": 40,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ]
+        }
+      },
+      "A5": {
+        "n": 9,
+        "U_ge1": {
+          "k": 7,
+          "n": 9,
+          "proportion": 0.7777777777777778,
+          "wilson95": [
+            0.45258896910698887,
+            0.9367748928821533
+          ]
+        },
+        "U_ge2": {
+          "k": 7,
+          "n": 9,
+          "proportion": 0.7777777777777778,
+          "wilson95": [
+            0.45258896910698887,
+            0.9367748928821533
+          ]
+        },
+        "U3": {
+          "k": 0,
+          "n": 9,
+          "proportion": 0.0,
+          "wilson95": [
+            0.0,
+            0.2991450484195441
+          ]
+        },
+        "E1": {
+          "k": 1,
+          "n": 9,
+          "proportion": 0.1111111111111111,
+          "wilson95": [
+            0.019890887638544907,
+            0.434999705576656
+          ]
+        },
+        "EP": {
+          "k": 8,
+          "n": 9,
+          "proportion": 0.8888888888888888,
+          "wilson95": [
+            0.5650002944233439,
+            0.9801091123614551
+          ]
+        },
+        "S1": {
+          "k": 1,
+          "n": 9,
+          "proportion": 0.1111111111111111,
+          "wilson95": [
+            0.019890887638544907,
+            0.434999705576656
+          ]
+        },
+        "U_ge2_and_E1_and_S1": {
+          "k": 1,
+          "n": 9,
+          "proportion": 0.1111111111111111,
+          "wilson95": [
+            0.019890887638544907,
+            0.434999705576656
+          ]
+        }
+      }
+    },
+    "overall_unique_papers": {
+      "n": 153,
+      "U_ge1": {
+        "k": 42,
+        "n": 153,
+        "proportion": 0.27450980392156865,
+        "wilson95": [
+          0.20997331842860484,
+          0.3500919824247693
+        ]
+      },
+      "U_ge2": {
+        "k": 11,
+        "n": 153,
+        "proportion": 0.0718954248366013,
+        "wilson95": [
+          0.04061660892210966,
+          0.1241450492198033
+        ]
+      },
+      "U3": {
+        "k": 1,
+        "n": 153,
+        "proportion": 0.006535947712418301,
+        "wilson95": [
+          0.0011546884951885508,
+          0.03608966554625311
+        ]
+      },
+      "E1": {
+        "k": 7,
+        "n": 153,
+        "proportion": 0.0457516339869281,
+        "wilson95": [
+          0.022336215104613748,
+          0.09141852139711071
+        ]
+      },
+      "EP": {
+        "k": 29,
+        "n": 153,
+        "proportion": 0.1895424836601307,
+        "wilson95": [
+          0.1353379757071056,
+          0.2589548298156557
+        ]
+      },
+      "S1": {
+        "k": 30,
+        "n": 153,
+        "proportion": 0.19607843137254902,
+        "wilson95": [
+          0.14094252590178913,
+          0.2661020100310193
+        ]
+      },
+      "U_ge2_and_E1_and_S1": {
+        "k": 1,
+        "n": 153,
+        "proportion": 0.006535947712418301,
+        "wilson95": [
+          0.0011546884951885508,
+          0.03608966554625311
+        ]
+      }
+    },
+    "overall_area_records": {
+      "n": 169,
+      "U_ge1": {
+        "k": 45,
+        "n": 169,
+        "proportion": 0.26627218934911245,
+        "wilson95": [
+          0.20536711764648874,
+          0.3375666174711103
+        ]
+      },
+      "U_ge2": {
+        "k": 11,
+        "n": 169,
+        "proportion": 0.0650887573964497,
+        "wilson95": [
+          0.03672990367085314,
+          0.11277970471252713
+        ]
+      },
+      "U3": {
+        "k": 1,
+        "n": 169,
+        "proportion": 0.005917159763313609,
+        "wilson95": [
+          0.0010452887665312535,
+          0.03275134116560824
+        ]
+      },
+      "E1": {
+        "k": 7,
+        "n": 169,
+        "proportion": 0.04142011834319527,
+        "wilson95": [
+          0.02020640927672203,
+          0.08301800772616194
+        ]
+      },
+      "EP": {
+        "k": 31,
+        "n": 169,
+        "proportion": 0.1834319526627219,
+        "wilson95": [
+          0.13234277109856726,
+          0.2485927941872946
+        ]
+      },
+      "S1": {
+        "k": 36,
+        "n": 169,
+        "proportion": 0.21301775147928995,
+        "wilson95": [
+          0.15802369228612162,
+          0.28076836222536067
+        ]
+      },
+      "U_ge2_and_E1_and_S1": {
+        "k": 1,
+        "n": 169,
+        "proportion": 0.005917159763313609,
+        "wilson95": [
+          0.0010452887665312535,
+          0.03275134116560824
+        ]
+      }
+    },
+    "U3_sensitivity_strict": {
+      "description": "U3 count if the single low-confidence U3 (PMC10265106, coverage check reported in the main text but plotted in Supporting Fig. S5, held-out status not stated) is demoted to U2.",
+      "k": 0,
+      "n": 153,
+      "proportion": 0.0,
+      "wilson95": [
+        1.734723475976807e-18,
+        0.024492623631394532
+      ]
+    },
+    "S1_sub_codes": {
+      "note": "Coder A recorded the S1 sub-code for A1 and A2 only; for A3-A5 the field is absent, so the synthetic share cannot be reported for those areas.",
+      "by_area": {
+        "A1": {
+          "n_S1": 16,
+          "sub_codes": {
+            "natural+synthetic": 1,
+            "natural": 12,
+            "synthetic": 2,
+            "extrapolation": 1
+          }
+        },
+        "A2": {
+          "n_S1": 5,
+          "sub_codes": {
+            "extrapolation": 1,
+            "natural": 3,
+            "synthetic": 1
+          }
+        },
+        "A3": {
+          "n_S1": 5,
+          "sub_codes": {
+            "not_recorded": 5
+          }
+        },
+        "A4": {
+          "n_S1": 9,
+          "sub_codes": {
+            "not_recorded": 9
+          }
+        },
+        "A5": {
+          "n_S1": 1,
+          "sub_codes": {
+            "not_recorded": 1
+          }
+        }
+      }
+    },
+    "by_year_band": {
+      "overall_unique_papers": {
+        "2020_2022": {
+          "n": 31,
+          "U_ge1": {
+            "k": 7,
+            "n": 31,
+            "proportion": 0.22580645161290322,
+            "wilson95": [
+              0.11395135561262493,
+              0.3981241838334205
+            ]
+          },
+          "U_ge2": {
+            "k": 1,
+            "n": 31,
+            "proportion": 0.03225806451612903,
+            "wilson95": [
+              0.005717221525416816,
+              0.16194105164724906
+            ]
+          },
+          "U3": {
+            "k": 0,
+            "n": 31,
+            "proportion": 0.0,
+            "wilson95": [
+              0.0,
+              0.11025539546043596
+            ]
+          },
+          "E1": {
+            "k": 0,
+            "n": 31,
+            "proportion": 0.0,
+            "wilson95": [
+              0.0,
+              0.11025539546043596
+            ]
+          },
+          "EP": {
+            "k": 6,
+            "n": 31,
+            "proportion": 0.1935483870967742,
+            "wilson95": [
+              0.09187008361586096,
+              0.36280257811795463
+            ]
+          },
+          "S1": {
+            "k": 5,
+            "n": 31,
+            "proportion": 0.16129032258064516,
+            "wilson95": [
+              0.070926244433653,
+              0.3263435395879326
+            ]
+          },
+          "U_ge2_and_E1_and_S1": {
+            "k": 0,
+            "n": 31,
+            "proportion": 0.0,
+            "wilson95": [
+              0.0,
+              0.11025539546043596
+            ]
+          }
+        },
+        "2023_2025": {
+          "n": 122,
+          "U_ge1": {
+            "k": 35,
+            "n": 122,
+            "proportion": 0.28688524590163933,
+            "wilson95": [
+              0.21409749424773222,
+              0.3726841555574208
+            ]
+          },
+          "U_ge2": {
+            "k": 10,
+            "n": 122,
+            "proportion": 0.08196721311475409,
+            "wilson95": [
+              0.045130842790386066,
+              0.14432547028895257
+            ]
+          },
+          "U3": {
+            "k": 1,
+            "n": 122,
+            "proportion": 0.00819672131147541,
+            "wilson95": [
+              0.0014483909512207002,
+              0.044970800906824746
+            ]
+          },
+          "E1": {
+            "k": 7,
+            "n": 122,
+            "proportion": 0.05737704918032787,
+            "wilson95": [
+              0.02806844241353642,
+              0.11370883025870449
+            ]
+          },
+          "EP": {
+            "k": 23,
+            "n": 122,
+            "proportion": 0.1885245901639344,
+            "wilson95": [
+              0.12903713953343293,
+              0.26702834864332914
+            ]
+          },
+          "S1": {
+            "k": 25,
+            "n": 122,
+            "proportion": 0.20491803278688525,
+            "wilson95": [
+              0.14282957933809592,
+              0.28502193577673135
+            ]
+          },
+          "U_ge2_and_E1_and_S1": {
+            "k": 1,
+            "n": 122,
+            "proportion": 0.00819672131147541,
+            "wilson95": [
+              0.0014483909512207002,
+              0.044970800906824746
+            ]
+          }
+        }
+      },
+      "by_area_records": {
+        "A1": {
+          "2020_2022": {
+            "n": 9,
+            "U_ge1": {
+              "k": 4,
+              "n": 9,
+              "proportion": 0.4444444444444444,
+              "wilson95": [
+                0.18877852109766452,
+                0.733348706504507
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 9,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2991450484195441
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 9,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2991450484195441
+              ]
+            },
+            "E1": {
+              "k": 0,
+              "n": 9,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2991450484195441
+              ]
+            },
+            "EP": {
+              "k": 2,
+              "n": 9,
+              "proportion": 0.2222222222222222,
+              "wilson95": [
+                0.06322510711784671,
+                0.5474110308930111
+              ]
+            },
+            "S1": {
+              "k": 4,
+              "n": 9,
+              "proportion": 0.4444444444444444,
+              "wilson95": [
+                0.18877852109766452,
+                0.733348706504507
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 9,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2991450484195441
+              ]
+            }
+          },
+          "2023_2025": {
+            "n": 31,
+            "U_ge1": {
+              "k": 11,
+              "n": 31,
+              "proportion": 0.3548387096774194,
+              "wilson95": [
+                0.21116659093865403,
+                0.5305204593563113
+              ]
+            },
+            "U_ge2": {
+              "k": 2,
+              "n": 31,
+              "proportion": 0.06451612903225806,
+              "wilson95": [
+                0.017874783521914572,
+                0.20718636736298127
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 31,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11025539546043596
+              ]
+            },
+            "E1": {
+              "k": 2,
+              "n": 31,
+              "proportion": 0.06451612903225806,
+              "wilson95": [
+                0.017874783521914572,
+                0.20718636736298127
+              ]
+            },
+            "EP": {
+              "k": 4,
+              "n": 31,
+              "proportion": 0.12903225806451613,
+              "wilson95": [
+                0.051342843746291486,
+                0.28852406256306423
+              ]
+            },
+            "S1": {
+              "k": 12,
+              "n": 31,
+              "proportion": 0.3870967741935484,
+              "wilson95": [
+                0.23733101420380254,
+                0.5617589138033927
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 31,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11025539546043596
+              ]
+            }
+          }
+        },
+        "A2": {
+          "2020_2022": {
+            "n": 11,
+            "U_ge1": {
+              "k": 1,
+              "n": 11,
+              "proportion": 0.09090909090909091,
+              "wilson95": [
+                0.016232172885884855,
+                0.37735843645159567
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            },
+            "E1": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            },
+            "EP": {
+              "k": 3,
+              "n": 11,
+              "proportion": 0.2727272727272727,
+              "wilson95": [
+                0.09746059290024889,
+                0.5656453011761291
+              ]
+            },
+            "S1": {
+              "k": 1,
+              "n": 11,
+              "proportion": 0.09090909090909091,
+              "wilson95": [
+                0.016232172885884855,
+                0.37735843645159567
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            }
+          },
+          "2023_2025": {
+            "n": 29,
+            "U_ge1": {
+              "k": 8,
+              "n": 29,
+              "proportion": 0.27586206896551724,
+              "wilson95": [
+                0.14698755102087954,
+                0.45717132416865935
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 29,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11696979849974075
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 29,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11696979849974075
+              ]
+            },
+            "E1": {
+              "k": 1,
+              "n": 29,
+              "proportion": 0.034482758620689655,
+              "wilson95": [
+                0.006113214292762653,
+                0.17175521879320288
+              ]
+            },
+            "EP": {
+              "k": 7,
+              "n": 29,
+              "proportion": 0.2413793103448276,
+              "wilson95": [
+                0.12218422442520088,
+                0.42107601617811335
+              ]
+            },
+            "S1": {
+              "k": 4,
+              "n": 29,
+              "proportion": 0.13793103448275862,
+              "wilson95": [
+                0.05497439964111964,
+                0.30558993720352023
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 29,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11696979849974075
+              ]
+            }
+          }
+        },
+        "A3": {
+          "2020_2022": {
+            "n": 5,
+            "U_ge1": {
+              "k": 1,
+              "n": 5,
+              "proportion": 0.2,
+              "wilson95": [
+                0.03622410863243014,
+                0.6244653702374747
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            },
+            "E1": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            },
+            "EP": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            },
+            "S1": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 5,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.43448246478317476
+              ]
+            }
+          },
+          "2023_2025": {
+            "n": 35,
+            "U_ge1": {
+              "k": 3,
+              "n": 35,
+              "proportion": 0.08571428571428572,
+              "wilson95": [
+                0.02958236826696982,
+                0.22379273965896496
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 35,
+              "proportion": 0.0,
+              "wilson95": [
+                6.938893903907228e-18,
+                0.09890099232440402
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 35,
+              "proportion": 0.0,
+              "wilson95": [
+                6.938893903907228e-18,
+                0.09890099232440402
+              ]
+            },
+            "E1": {
+              "k": 1,
+              "n": 35,
+              "proportion": 0.02857142857142857,
+              "wilson95": [
+                0.005061491855444203,
+                0.14533087233613673
+              ]
+            },
+            "EP": {
+              "k": 1,
+              "n": 35,
+              "proportion": 0.02857142857142857,
+              "wilson95": [
+                0.005061491855444203,
+                0.14533087233613673
+              ]
+            },
+            "S1": {
+              "k": 5,
+              "n": 35,
+              "proportion": 0.14285714285714285,
+              "wilson95": [
+                0.06260231079433715,
+                0.29375554086595146
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 35,
+              "proportion": 0.0,
+              "wilson95": [
+                6.938893903907228e-18,
+                0.09890099232440402
+              ]
+            }
+          }
+        },
+        "A4": {
+          "2020_2022": {
+            "n": 11,
+            "U_ge1": {
+              "k": 2,
+              "n": 11,
+              "proportion": 0.18181818181818182,
+              "wilson95": [
+                0.05136768974608513,
+                0.4769805619608442
+              ]
+            },
+            "U_ge2": {
+              "k": 1,
+              "n": 11,
+              "proportion": 0.09090909090909091,
+              "wilson95": [
+                0.016232172885884855,
+                0.37735843645159567
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            },
+            "E1": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            },
+            "EP": {
+              "k": 2,
+              "n": 11,
+              "proportion": 0.18181818181818182,
+              "wilson95": [
+                0.05136768974608513,
+                0.4769805619608442
+              ]
+            },
+            "S1": {
+              "k": 2,
+              "n": 11,
+              "proportion": 0.18181818181818182,
+              "wilson95": [
+                0.05136768974608513,
+                0.4769805619608442
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 11,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2588329669680317
+              ]
+            }
+          },
+          "2023_2025": {
+            "n": 29,
+            "U_ge1": {
+              "k": 8,
+              "n": 29,
+              "proportion": 0.27586206896551724,
+              "wilson95": [
+                0.14698755102087954,
+                0.45717132416865935
+              ]
+            },
+            "U_ge2": {
+              "k": 1,
+              "n": 29,
+              "proportion": 0.034482758620689655,
+              "wilson95": [
+                0.006113214292762653,
+                0.17175521879320288
+              ]
+            },
+            "U3": {
+              "k": 1,
+              "n": 29,
+              "proportion": 0.034482758620689655,
+              "wilson95": [
+                0.006113214292762653,
+                0.17175521879320288
+              ]
+            },
+            "E1": {
+              "k": 2,
+              "n": 29,
+              "proportion": 0.06896551724137931,
+              "wilson95": [
+                0.019121266169433354,
+                0.21964580150275695
+              ]
+            },
+            "EP": {
+              "k": 4,
+              "n": 29,
+              "proportion": 0.13793103448275862,
+              "wilson95": [
+                0.05497439964111964,
+                0.30558993720352023
+              ]
+            },
+            "S1": {
+              "k": 7,
+              "n": 29,
+              "proportion": 0.2413793103448276,
+              "wilson95": [
+                0.12218422442520088,
+                0.42107601617811335
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 29,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.11696979849974075
+              ]
+            }
+          }
+        },
+        "A5": {
+          "2020_2022": {
+            "n": 0,
+            "U_ge1": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "U_ge2": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "E1": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "EP": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "S1": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 0,
+              "n": 0,
+              "proportion": null,
+              "wilson95": [
+                null,
+                null
+              ]
+            }
+          },
+          "2023_2025": {
+            "n": 9,
+            "U_ge1": {
+              "k": 7,
+              "n": 9,
+              "proportion": 0.7777777777777778,
+              "wilson95": [
+                0.45258896910698887,
+                0.9367748928821533
+              ]
+            },
+            "U_ge2": {
+              "k": 7,
+              "n": 9,
+              "proportion": 0.7777777777777778,
+              "wilson95": [
+                0.45258896910698887,
+                0.9367748928821533
+              ]
+            },
+            "U3": {
+              "k": 0,
+              "n": 9,
+              "proportion": 0.0,
+              "wilson95": [
+                0.0,
+                0.2991450484195441
+              ]
+            },
+            "E1": {
+              "k": 1,
+              "n": 9,
+              "proportion": 0.1111111111111111,
+              "wilson95": [
+                0.019890887638544907,
+                0.434999705576656
+              ]
+            },
+            "EP": {
+              "k": 8,
+              "n": 9,
+              "proportion": 0.8888888888888888,
+              "wilson95": [
+                0.5650002944233439,
+                0.9801091123614551
+              ]
+            },
+            "S1": {
+              "k": 1,
+              "n": 9,
+              "proportion": 0.1111111111111111,
+              "wilson95": [
+                0.019890887638544907,
+                0.434999705576656
+              ]
+            },
+            "U_ge2_and_E1_and_S1": {
+              "k": 1,
+              "n": 9,
+              "proportion": 0.1111111111111111,
+              "wilson95": [
+                0.019890887638544907,
+                0.434999705576656
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    {
+      "id": "coverage",
+      "text": "Europe PMC coverage. With the same boolean logic, only 23-28% of the article DOIs that OpenAlex returns are present in the Europe PMC research-only set (A1 26%, 363/1380; A2 26%, 455/1755; A3 23%, 1105/4790; A4 28%, 771/2778); in the other direction 92-96% of Europe PMC DOIs are in OpenAlex. Materials and engineering journals that Europe PMC does not index (Chemical Engineering Journal, Nano Energy, Advanced Functional Materials, IEEE Sensors Journal, Sensors and Actuators A/B, Int. J. Bioprinting and others) are therefore absent, and part of the gap is OpenAlex noise that the pilot could not separate. The proportions reported here therefore describe the Europe PMC open-access literature, not the whole field."
+    },
+    {
+      "id": "oa_only",
+      "text": "Open-access only. The sampling frame is the open-access subset, because full text is needed for coding. It over-represents open-access biomedical and multidisciplinary venues (Scientific Reports, Advanced Science, MDPI and Frontiers titles). The non-PMC sensitivity sample of protocol section 6.4 was not drawn."
+    },
+    {
+      "id": "keyword_queries",
+      "text": "Keyword queries. Identification is a title/abstract boolean search, frozen per area after one refinement round (A1 v1, A2 v1, A3 v2, A4 v2, A5 v1). Papers that describe their ML or their material in other words are missed, and title/abstract precision was low in some areas, so the screen-until-quota sample is a random sample of what the query retrieves, not of the field. Areas are non-exclusive frames: 16 papers were sampled in two areas."
+    },
+    {
+      "id": "llm_coding",
+      "text": "LLM-assisted coding. Both coders are large language models working from a regex candidate screen plus an evaluation digest over the parsed JATS full text, with a verbatim quote required for every positive code. One coder covered all eligible papers, a second, independent coder a blind 50% subset, and a third reader adjudicated every disagreement against the full text. The human-versus-LLM blind check of protocol section 9 (20 papers coded by a domain-expert author) has not been done, so errors shared by both coders would not be detected here."
+    },
+    {
+      "id": "main_text_only",
+      "text": "Main article only. The construct is 'reported in the main article'; supplementary files were not screened. Evaluation detail that lives only in the SI is therefore coded absent, which biases the proportions downwards to an unknown degree."
+    },
+    {
+      "id": "a5_census",
+      "text": "A5 is a census, not a 40-paper sample. The whole A5 open-access frame (145 records) was screened and yielded only 9 eligible papers, so the A5 confidence intervals are wide and the pre-specified frame extension of protocol section 6.3 was not run."
+    },
+    {
+      "id": "pooling",
+      "text": "Pooling. Per-area proportions are unweighted. The pooled figure is computed over the 153 unique papers (each paper once); the area-record version (169) is given for comparison. Neither is weighted by frame size, so the pooled value is descriptive."
+    },
+    {
+      "id": "power",
+      "text": "Precision. With about 40 papers per area, a 0/40 observation has a 95% Wilson upper bound of 8.8%, which supports or refutes 'rarely reported' (<10%) per area but is not enough for fine between-area contrasts unless the differences are large."
+    }
+  ]
+}
