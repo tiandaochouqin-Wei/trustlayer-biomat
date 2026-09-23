@@ -36,7 +36,8 @@ plt.rcParams.update({
 CM = style.CM
 PAD = 0.254                      # cm; savefig(bbox_inches='tight') adds 0.1 in back
 CW = style.WIDTH_2COL / CM - 2 * PAD    # content width  = 16.99 cm
-CH = 9.46                               # content height (figure = CH + 2*PAD)
+DH = 1.50                               # extra row height for the material grid
+CH = 9.46 + DH                          # content height (figure = CH + 2*PAD)
 
 # ---------------------------------------------------------------- colours ----
 GREEN = style.ROLE["recal"]        # bluish green - target-recalibrated / trust layer
@@ -102,9 +103,150 @@ X_MODL, W_MODL = 3.02, 2.25
 X_BAND = 5.72                      # left edge of prediction box / trust-layer band
 W_BAND = CW - X_BAND
 
-DATA_LINES = ["composition", "microstructure images", "spectra",
-              "mechanical tests", "device signals"]
+DATA_LINES = []                    # superseded by the material glyph grid below
 MODEL_LINES = ["random forest", "GNN · CNN", "transformer"]
+
+# ---- biomaterial glyphs: drawn from primitives, no icons or raster assets ----
+# Fills avoid the five reserved role hues (blue, bluish green, vermillion, orange,
+# purple) so that no material reads as a calibration state.
+MAT_FILL = {"scaffold": "#EFE2C4", "hydrogel": "#CFE7F6", "bioglass": "#F7F1BE",
+            "implant": "#C7CCD2", "electrode": "#E9E4DA", "carrier": "#D9ECF7"}
+
+
+def _ln(ax, xs, ys, ink, lw=0.6, z=5):
+    ax.add_line(Line2D(xs, ys, color=ink, lw=lw, zorder=z, solid_capstyle="round",
+                       solid_joinstyle="round"))
+
+
+def g_scaffold(ax, cx, cy, s, ink, fill):
+    """3D-printed porous bone scaffold: a strut lattice seen from above."""
+    w = s * 0.92
+    ax.add_patch(FancyBboxPatch((cx - w / 2, cy - w / 2), w, w,
+                                boxstyle=f"round,pad=0,rounding_size={0.08 * s}",
+                                fc=fill, ec=ink, lw=0.6, zorder=4))
+    for k in range(1, 4):
+        t = -w / 2 + k * w / 4
+        _ln(ax, [cx - w / 2, cx + w / 2], [cy + t] * 2, ink, 0.9)
+        _ln(ax, [cx + t] * 2, [cy - w / 2, cy + w / 2], ink, 0.5)
+
+
+def g_hydrogel(ax, cx, cy, s, ink, fill):
+    """Hydrogel: a swollen droplet holding a cross-linked polymer network."""
+    import numpy as np
+    ax.add_patch(Circle((cx, cy), s * 0.47, fc=fill, ec=ink, lw=0.6, zorder=4))
+    nodes = [(-0.22, 0.20), (0.18, 0.24), (0.26, -0.10), (-0.04, -0.26),
+             (-0.28, -0.08), (0.02, 0.04)]
+    edges = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (5, 0), (5, 2), (5, 3), (5, 1)]
+    for a, b in edges:
+        (x0, y0), (x1, y1) = nodes[a], nodes[b]
+        t = np.linspace(0, 1, 20)
+        nx, ny = -(y1 - y0), (x1 - x0)
+        wig = 0.035 * np.sin(t * np.pi * 3)
+        _ln(ax, cx + s * (x0 + (x1 - x0) * t + nx * wig),
+            cy + s * (y0 + (y1 - y0) * t + ny * wig), ink, 0.5)
+    for x, y in nodes:
+        ax.add_patch(Circle((cx + x * s, cy + y * s), s * 0.055, fc=ink, ec="none",
+                            zorder=6))
+
+
+def g_bioglass(ax, cx, cy, s, ink, fill):
+    """Bioactive glass: an amorphous network of corner-sharing SiO4 units."""
+    ax.add_patch(FancyBboxPatch((cx - 0.46 * s, cy - 0.46 * s), 0.92 * s, 0.92 * s,
+                                boxstyle=f"round,pad=0,rounding_size={0.22 * s}",
+                                fc=fill, ec=ink, lw=0.6, zorder=4))
+    tris = [((-0.28, 0.22), (-0.06, 0.30), (-0.18, 0.06)),
+            ((-0.06, 0.30), (0.20, 0.24), (0.08, 0.06)),
+            ((0.20, 0.24), (0.32, 0.00), (0.08, 0.06)),
+            ((-0.18, 0.06), (0.08, 0.06), (-0.04, -0.16)),
+            ((0.32, 0.00), (0.22, -0.24), (0.08, 0.06)),
+            ((-0.04, -0.16), (-0.30, -0.22), (-0.18, 0.06))]
+    for tri in tris:
+        xs = [cx + p[0] * s for p in tri] + [cx + tri[0][0] * s]
+        ys = [cy + p[1] * s for p in tri] + [cy + tri[0][1] * s]
+        _ln(ax, xs, ys, ink, 0.55)
+    # network-modifier cations (Ca2+ / Na+) sitting in the open network
+    for x, y in [(0.02, -0.30), (0.26, -0.34), (-0.34, 0.00)]:
+        ax.add_patch(Circle((cx + x * s, cy + y * s), s * 0.06, fc="white", ec=ink,
+                            lw=0.5, zorder=6))
+
+
+def g_implant(ax, cx, cy, s, ink, fill):
+    """Metallic bone screw: head, threaded shank, tip."""
+    import numpy as np
+    x0, x1 = cx - 0.46 * s, cx + 0.46 * s
+    hh = 0.20 * s                                   # shank half-height
+    ax.add_patch(FancyBboxPatch((x0, cy - 0.30 * s), 0.18 * s, 0.60 * s,
+                                boxstyle=f"round,pad=0,rounding_size={0.05 * s}",
+                                fc=fill, ec=ink, lw=0.6, zorder=5))
+    xs = [x0 + 0.18 * s, x1 - 0.14 * s, x1, x1 - 0.14 * s, x0 + 0.18 * s]
+    ys = [cy + hh * 0.6, cy + hh * 0.6, cy, cy - hh * 0.6, cy - hh * 0.6]
+    ax.fill(xs, ys, fc=fill, ec=ink, lw=0.6, zorder=4)
+    tx = np.linspace(x0 + 0.24 * s, x1 - 0.18 * s, 7)
+    for i, x in enumerate(tx):
+        _ln(ax, [x, x + 0.07 * s], [cy + hh, cy - hh], ink, 0.6)
+
+
+def g_electrode(ax, cx, cy, s, ink, fill):
+    """Flexible bioelectronic patch with a serpentine interconnect."""
+    import numpy as np
+    t = np.linspace(-0.46, 0.46, 40)
+    bend = 0.10 * np.cos(t * np.pi)
+    top, bot = cy + s * (0.24 + bend), cy + s * (-0.24 + bend)
+    ax.fill(np.r_[cx + t * s, cx + t[::-1] * s], np.r_[top, bot[::-1]],
+            fc=fill, ec=ink, lw=0.6, zorder=4)
+    u = np.linspace(-0.34, 0.34, 80)
+    _ln(ax, cx + u * s, cy + s * (0.13 * np.sign(np.sin(u * np.pi / 0.17)) *
+                                  np.abs(np.sin(u * np.pi / 0.17)) ** 0.4
+                                  + 0.10 * np.cos(u * np.pi)), ink, 0.7)
+    for x in (-0.40, 0.40):
+        ax.add_patch(Circle((cx + x * s, cy + s * 0.10 * np.cos(x * np.pi)), s * 0.07,
+                            fc=ink, ec="none", zorder=6))
+
+
+def g_carrier(ax, cx, cy, s, ink, fill):
+    """Drug-delivery nanocarrier: core-shell particle, payload and ligands."""
+    import numpy as np
+    for a in np.linspace(0, 2 * np.pi, 10, endpoint=False):
+        x0, y0 = cx + 0.34 * s * np.cos(a), cy + 0.34 * s * np.sin(a)
+        x1, y1 = cx + 0.47 * s * np.cos(a), cy + 0.47 * s * np.sin(a)
+        _ln(ax, [x0, x1], [y0, y1], ink, 0.5, z=3)
+        ax.add_patch(Circle((x1, y1), s * 0.035, fc=ink, ec="none", zorder=3))
+    ax.add_patch(Circle((cx, cy), s * 0.34, fc=fill, ec=ink, lw=0.6, zorder=4))
+    ax.add_patch(Circle((cx, cy), s * 0.21, fc="white", ec=ink, lw=0.45, zorder=5))
+    for x, y in [(-0.07, 0.06), (0.07, 0.07), (0.0, -0.08), (0.09, -0.04),
+                 (-0.09, -0.05)]:
+        ax.add_patch(Circle((cx + x * s, cy + y * s), s * 0.035, fc=ink,
+                            ec="none", zorder=6))
+
+
+MATERIALS = [("scaffold", g_scaffold), ("hydrogel", g_hydrogel),
+             ("bioglass", g_bioglass), ("implant", g_implant),
+             ("electrode", g_electrode), ("carrier", g_carrier)]
+GLYPH_S = 0.70                     # cm, glyph extent
+GRID_COLS, GRID_ROW0, GRID_PITCH = 2, 0.72, 1.06   # rows top-down inside the box
+DATA_LABELS = []                   # for the width guard at the end
+
+
+def databox(ax, x, ytop, w, h, grey=False):
+    """Material-data box: a grid of drawn biomaterials, one label under each."""
+    fc = GREY_FILL if grey else "white"
+    ec = GREY_EDGE if grey else BOX_EDGE
+    tc = GREY_TXT if grey else INK
+    ink = "#8C8C8C" if grey else INK
+    box(ax, x, ytop, w, h, fc=fc, ec=ec)
+    txt(ax, x + w / 2, ytop + 0.30, "Material data", size=F_HEAD, weight="bold",
+        color=tc)
+    cell = w / GRID_COLS
+    for i, (label, glyph) in enumerate(MATERIALS):
+        r_, c_ = divmod(i, GRID_COLS)
+        gx = x + cell * (c_ + 0.5)
+        gd = ytop + GRID_ROW0 + r_ * GRID_PITCH + GLYPH_S / 2
+        fill = "#E6E6E6" if grey else MAT_FILL[label]
+        glyph(ax, gx, Y(gd), GLYPH_S, ink, fill)
+        t = txt(ax, gx, gd + GLYPH_S / 2 + 0.05, label, size=F_BODY, va="top",
+                color=GREY_TXT if grey else BODY)
+        DATA_LABELS.append((t, x + cell * c_, x + cell * (c_ + 1)))
+
 
 fig = plt.figure(figsize=(style.WIDTH_2COL, (CH + 2 * PAD) * CM))
 ax = fig.add_axes([PAD / (CW + 2 * PAD), PAD / (CH + 2 * PAD),
@@ -116,14 +258,15 @@ ax.set_aspect("equal")
 
 # =============================================================== panel a =====
 A_HEAD = 0.28                       # baseline of panel letter / heading
-txt(ax, 0.0, A_HEAD, "a", size=F_PANEL, weight="bold", ha="left", va="baseline")
+if not style.panel_data(ax, "a", 0.0, Y(A_HEAD)):
+    txt(ax, 0.0, A_HEAD, "a", size=F_PANEL, weight="bold", ha="left", va="baseline")
 txt(ax, 0.52, A_HEAD, "Conventional pipeline", size=F_SUB, weight="bold",
     ha="left", va="baseline")
 
-A_TOP, A_H = 0.62, 2.42
+A_TOP, A_H = 0.62, 2.42 + DH
 A_MID = A_TOP + A_H / 2
 
-flowbox(ax, X_DATA, A_TOP, W_DATA, A_H, "Material data", DATA_LINES)
+databox(ax, X_DATA, A_TOP, W_DATA, A_H)
 arrow(ax, X_DATA + W_DATA + 0.05, A_MID, X_MODL - 0.05, A_MID)
 flowbox(ax, X_MODL, A_TOP, W_MODL, A_H, "Any ML model", MODEL_LINES)
 arrow(ax, X_MODL + W_MODL + 0.05, A_MID, X_BAND - 0.05, A_MID)
@@ -137,7 +280,7 @@ txt(ax, X_BAND + W_PRED / 2, A_TOP + 0.30, "Point prediction",
 # "e.g. Tg = 812 K" composed from separate text objects: the subscript is a real
 # 7 pt glyph with a manual baseline offset, NOT mathtext (which would set it at
 # 0.7 x the base size and so break the 7 pt floor).
-TG_D = A_TOP + 1.00                                     # baseline, top-down cm
+TG_D = A_TOP + 1.00 + DH / 2                                     # baseline, top-down cm
 TG_SUB_DROP = 0.060                                     # ~0.20 em at 8.5 pt
 TG_SEGS = [("e.g. ", F_TG, "normal", 0.0),
            ("T", F_TG, "italic", 0.0),
@@ -148,11 +291,11 @@ tg_objs = [ax.text(0.0, Y(TG_D + dy), s, fontsize=fs, style=st, color=BODY,
            for s, fs, st, dy in TG_SEGS]
 
 # tiny glyph: a single point on a value axis - deliberately no whiskers
-gx, gd = X_BAND + W_PRED / 2, A_TOP + 1.58
+gx, gd = X_BAND + W_PRED / 2, A_TOP + 1.58 + DH / 2
 ax.add_line(Line2D([gx - 0.72, gx + 0.72], [Y(gd), Y(gd)], color="#AAAAAA",
                    lw=0.6, zorder=3))
 ax.plot([gx], [Y(gd)], marker="o", ms=4.0, color=INK, zorder=5, clip_on=False)
-txt(ax, gx, A_TOP + 1.80, "no interval", size=F_BODY, color=KEY_TXT)
+txt(ax, gx, A_TOP + 1.80 + DH / 2, "no interval", size=F_BODY, color=KEY_TXT)
 
 # ---- trust gap (an annotation on the flow, not a stage: no fill) ------------
 W_DEC = 1.85
@@ -170,7 +313,7 @@ GAP_LINES = ["no calibrated uncertainty",
              "distribution shift (design → bench → body)",
              "sparse, selectively reported data"]
 for i, s in enumerate(GAP_LINES):
-    d = A_TOP + 0.98 + i * 0.46
+    d = A_TOP + 0.98 + DH / 2 + i * 0.46
     # neutral dash bullet: the down-triangle is reserved for the reject decision
     ax.add_line(Line2D([X_GAP + 0.26, X_GAP + 0.44], [Y(d) - 0.10] * 2,
                        color=VERM, lw=1.3, solid_capstyle="butt", zorder=5))
@@ -182,22 +325,25 @@ flowbox(ax, X_DEC, A_TOP, W_DEC, A_H, "Decision",
         ["fabricate", "test", "submit"])
 
 # =============================================================== panel b =====
-B_HEAD = 3.58
-txt(ax, 0.0, B_HEAD, "b", size=F_PANEL, weight="bold", ha="left", va="baseline")
+B_HEAD = 3.58 + DH
+if not style.panel_data(ax, "b", 0.0, Y(B_HEAD)):
+    txt(ax, 0.0, B_HEAD, "b", size=F_PANEL, weight="bold", ha="left", va="baseline")
 txt(ax, 0.52, B_HEAD, "With the trust layer", size=F_SUB, weight="bold",
     ha="left", va="baseline")
 
-BAND_TOP, BAND_PAD, STEP_H = 3.72, 0.56, 1.66
+BAND_TOP, BAND_PAD, STEP_H = 3.72 + DH, 0.56, 1.66
 STEP_TOP = BAND_TOP + BAND_PAD          # band title sits above the step row
 BAND_H = BAND_PAD + STEP_H + 0.36
 B_MID = STEP_TOP + STEP_H / 2
 
 # greyed data + model boxes (unchanged, not retrained)
-GB_H = 2.42
-GB_TOP = B_MID - GB_H / 2
-flowbox(ax, X_DATA, GB_TOP, W_DATA, GB_H, "Material data", DATA_LINES, grey=True)
+GB_H = 2.42 + DH
+GB_TOP = BAND_TOP                 # top-aligned: centring would hit the b heading
+databox(ax, X_DATA, GB_TOP, W_DATA, GB_H, grey=True)
 arrow(ax, X_DATA + W_DATA + 0.05, B_MID, X_MODL - 0.05, B_MID, color=GREY_EDGE)
-flowbox(ax, X_MODL, GB_TOP, W_MODL, GB_H, "Any ML model", MODEL_LINES, grey=True)
+# the model box keeps its original height: only the material grid needed the extra
+# room, and a tall grey box would run into the decision key below it
+flowbox(ax, X_MODL, GB_TOP, W_MODL, 2.42, "Any ML model", MODEL_LINES, grey=True)
 arrow(ax, X_MODL + W_MODL + 0.05, B_MID, X_BAND - 0.05, B_MID, color=BOX_EDGE)
 
 # trust-layer band
@@ -318,6 +464,10 @@ bb = t1.get_window_extent(renderer=r)
 x_after = inv.transform((bb.x1, bb.y0))[0]
 txt(ax, x_after + 0.14, BAND_TOP + 0.42, "wraps the model, no retraining",
     size=7.5, ha="left", va="baseline", color=GREEN_DARK)
+
+for t, xl, xr in DATA_LABELS:
+    bb = t.get_window_extent(renderer=r)
+    assert inv.transform(bb.p0)[0] > xl + 0.03 and inv.transform(bb.p1)[0] < xr - 0.03,         f"material label overflows its grid cell: {t.get_text()}"
 
 png = style.save(fig, "fig1_concept", 1)
 print(png)

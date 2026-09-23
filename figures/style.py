@@ -74,8 +74,22 @@ DECISION = {
 }
 
 FIGROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(FIGROOT, "out")
+# Two output modes, selected by environment variables so that none of the 13
+# figure scripts need to know which mode they are running in:
+#   default                       -> panel letters drawn onto the raster/PDF as
+#                                     before (Word/docx pipeline, unchanged).
+#   BMEAT_NO_PANEL_LETTERS=1      -> panel letters are NOT drawn; their positions
+#                                     are recorded instead and written to a
+#                                     "<stem>.panels.json" sidecar (figure-fraction
+#                                     x, y of each letter's anchor point), for the
+#                                     LaTeX build to overlay with \put(...) (see
+#                                     manuscript/build_latex.py). Output goes to a
+#                                     separate directory so the lettered figures
+#                                     used by the docx pipeline are untouched.
+DRAW_PANEL_LETTERS = os.environ.get("BMEAT_NO_PANEL_LETTERS") != "1"
+OUT = os.path.join(FIGROOT, os.environ.get("BMEAT_FIG_OUTDIR", "out"))
 os.makedirs(OUT, exist_ok=True)
+_PANELS = []
 
 
 def apply():
@@ -116,11 +130,32 @@ def apply():
 
 
 def panel(ax, letter, x=-0.02, y=1.0, fig=None):
-    """Bold lowercase panel letter at the top-left corner of the axes' bounding box."""
+    """Bold lowercase panel letter at the top-left corner of the axes' bounding box.
+
+    When ``DRAW_PANEL_LETTERS`` is off, nothing is drawn; the anchor point is
+    recorded instead (see module docstring / ``save``)."""
     fig = fig or ax.figure
     bb = ax.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.transFigure.inverted())
-    fig.text(bb.x0 + x, bb.y1 + 0.005, letter, fontsize=10, fontweight="bold",
-             ha="left", va="bottom", family="sans-serif")
+    xf, yf = bb.x0 + x, bb.y1 + 0.005
+    if DRAW_PANEL_LETTERS:
+        fig.text(xf, yf, letter, fontsize=10, fontweight="bold",
+                 ha="left", va="bottom", family="sans-serif")
+    else:
+        _PANELS.append({"letter": letter, "x": xf, "y": yf})
+
+
+def panel_data(ax, letter, x_data, y_data, fig=None):
+    """Like ``panel``, but the anchor is given in ``ax``'s data coordinates
+    (for schematic figures such as Fig. 1 and Fig. 3, which draw every label
+    with their own ``ax.text`` helper on one axes spanning the whole figure,
+    rather than through ``panel``'s per-axes-bbox placement)."""
+    fig = fig or ax.figure
+    xf, yf = ax.transData.transform((x_data, y_data))
+    xf, yf = fig.transFigure.inverted().transform((xf, yf))
+    if DRAW_PANEL_LETTERS:
+        return False
+    _PANELS.append({"letter": letter, "x": float(xf), "y": float(yf)})
+    return True
 
 
 def sublabel(ax, roman, x=0.02, y=0.98):
@@ -139,7 +174,15 @@ def save(fig, stem, number=None, tight=True):
     cropping), so the file is at the final print width to the micrometre and the
     7 pt minimum is really 7 pt on the page. Use it when the layout already
     reserves its own margins.
+
+    In "clean" mode (``DRAW_PANEL_LETTERS`` off), ``tight`` is forced to False
+    regardless of the caller's argument: the recorded panel-letter positions
+    are fractions of the *full, undropped* figure canvas (``fig.transFigure``),
+    so the saved PDF must keep that exact canvas -- a ``bbox_inches='tight'``
+    crop would shift the origin and rescale the axes out from under them.
     """
+    if not DRAW_PANEL_LETTERS:
+        tight = False
     bb = "tight" if tight else None
     fig.savefig(os.path.join(OUT, f"{stem}.pdf"), bbox_inches=bb)
     fig.savefig(os.path.join(OUT, f"{stem}.png"), dpi=300, bbox_inches=bb)
@@ -156,4 +199,11 @@ def save(fig, stem, number=None, tight=True):
                 im.convert("RGB").save(tif, compression="tiff_lzw", dpi=(600, 600))
     except ImportError:
         pass
+    if _PANELS:
+        import json
+        w_in, h_in = fig.get_size_inches()
+        sidecar = {"width_pt": w_in * 72.0, "height_pt": h_in * 72.0, "panels": _PANELS}
+        with open(os.path.join(OUT, f"{stem}.panels.json"), "w", encoding="utf-8") as f:
+            json.dump(sidecar, f, indent=1)
+        _PANELS.clear()
     return os.path.join(OUT, f"{stem}.png")

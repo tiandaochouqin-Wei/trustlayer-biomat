@@ -143,10 +143,13 @@ for y, (key, lab) in zip(ypos, TASKS):
              label="in-distribution" if y == ypos[0] else None)
     axC.text(1.035, y, f"m = {S['m']}", fontsize=7, ha="left", va="center")
 axC.axvline(0.90, color="black", lw=0.7, ls=(0, (4, 3)), zorder=0)
-axC.text(0.885, 5.85, "nominal 0.90", fontsize=7, ha="right", va="center")
+axC.text(0.885, 7.9, "nominal 0.90", fontsize=7, ha="right", va="center")
 axC.set_yticks(ypos)
 axC.set_yticklabels([lab for _, lab in TASKS])
-axC.set_ylim(-0.6, 7.4)
+# extra headroom above the top data row (y = 5) so the fixed-size legend box,
+# anchored at the axes' top-left corner, has room to sit without its lower
+# edge reaching down into the glass-Tg row's markers/whiskers.
+axC.set_ylim(-0.6, 10.0)
 axC.set_xlim(0.0, 1.02)
 axC.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
 axC.set_xlabel("coverage")

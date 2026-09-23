@@ -166,7 +166,8 @@ def chip(x0, y, w, label, shape="round", ls="-", h=0.50):
 
 
 # ============================================================================= panel a
-T(0.26, 12.14, "a", fs=FS_P, weight="bold", va="top")
+if not style.panel_data(ax, "a", 0.26, 12.14):
+    T(0.26, 12.14, "a", fs=FS_P, weight="bold", va="top")
 
 IX0, IX1 = 0.26, 3.15          # inputs
 AX0, AX1 = 3.72, 7.62          # left step column
@@ -320,7 +321,8 @@ T(5.15, 4.30, "measured candidates", fs=FS_B, color=INK, italic=True, maxw=2.7)
 T(5.15, 4.30 - LH, "join the target stratum", fs=FS_B, color=INK, italic=True, maxw=2.7)
 
 # ============================================================================= panel b
-T(0.26, 2.30, "b", fs=FS_P, weight="bold", va="top")
+if not style.panel_data(ax, "b", 0.26, 2.30):
+    T(0.26, 2.30, "b", fs=FS_P, weight="bold", va="top")
 gx0, gy0, gy1, gap = 0.26, 0.26, 1.84, 0.28
 gw = (17.24 - gx0 - 3 * gap) / 4
 # "q" is the conformal quantile of step 1 everywhere in this figure, so the FDR
