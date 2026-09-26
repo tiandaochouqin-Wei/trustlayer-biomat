@@ -5,7 +5,7 @@ a  realised target-test coverage versus the number k of target recalibration
    exact exchangeable Beta-theory 5-95% band (one split) and, for the design
    region with the widest k range, the empirical 5-95% spread across splits;
    1 <= k < 9 gives no finite interval at alpha = 0.10;
-b  budget rules: records required so that coverage is within eps of nominal
+b  budget rules: records required so that coverage is no more than eps below nominal (one-sided)
    with probability 1 - delta = 0.90 - the Chebyshev rule of the submitted
    manuscript against the exact Beta rule;
 c  retrospective replay: mean coverage on the not-yet-measured remainder

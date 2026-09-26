@@ -232,7 +232,7 @@ for y, (lab, v, col, mk, fl, side) in zip(YD, DIRECT):
     xt, ha = ((v["hi"] + 0.013, "left") if side == "right" else (v["lo"] - 0.013, "right"))
     axB.text(xt, y, f"{v['mean']:.3f}", fontsize=7, color=col, ha=ha, va="center")
 for y, hk in zip(YH, HKEYS):
-    v = NW[hk]["local_at_target"]
+    v = NW[hk]["local_at_target_loo"]       # leave-one-out: the in-sample form is biased (R9_legacy.md)
     axB.errorbar(v["mean"], y, xerr=[[v["mean"] - v["lo"]], [v["hi"] - v["mean"]]],
                  fmt=style.MARK["heuristic"], ms=3.6, mfc=HEUR, mec=HEUR,
                  ecolor=HEUR, elinewidth=0.8, capsize=1.6, capthick=0.8, zorder=3)
@@ -247,7 +247,7 @@ for t, c in zip(axB.get_yticklabels(), TICKCOL):
 
 axB.text(0.345, 8.30, "direct coverage, 20 splits", fontsize=7.5, style="italic",
          ha="left", va="center")
-axB.text(0.345, 4.25, "kernel-smoothed, design region, 20 splits", fontsize=7.5,
+axB.text(0.345, 4.25, "kernel-smoothed (leave-one-out), design region", fontsize=7.5,
          style="italic", color=HEUR, ha="left", va="center",
          path_effects=WSTROKE)
 axB.text(0.888, -0.15, "nominal 0.90", fontsize=7, ha="right", va="center")
@@ -289,7 +289,7 @@ for k in ("source_test", "intermediate", "target"):
     v = L["by_role"][k]
     print("%-12s %.3f [%.3f, %.3f]" % (k, v["mean"], v["lo"], v["hi"]))
 for hk in HKEYS:
-    v = NW[hk]["local_at_target"]
+    v = NW[hk]["local_at_target_loo"]
     print("  h=%.2f  %.3f [%.3f, %.3f]" % (NW[hk]["h"]["mean"], v["mean"], v["lo"], v["hi"]))
 print("submitted %.4f  excl-cal %.4f  n_cal %d  legacy local h0.55 %.4f"
       % (LEG["marginal_incl_cal_rows"], LEG["marginal_excl_cal_rows"],
