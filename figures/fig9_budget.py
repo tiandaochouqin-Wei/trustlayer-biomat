@@ -207,7 +207,7 @@ axB.set_xlabel("tolerance " + r"$\epsilon$" + " (coverage)")
 axB.set_ylabel("required records m")
 axB.set_title("Budget rule, " + r"$\delta$" + " = 0.10", fontsize=8)
 axB.legend(handles=[Patch(facecolor=style.ROLE["heuristic"], edgecolor="black",
-                          lw=0.4, label="Chebyshev (submitted)"),
+                          lw=0.4, label="Chebyshev"),
                     Patch(facecolor=style.ROLE["recal"], edgecolor="black", lw=0.4,
                           hatch="///", label="exact Beta (stable)"),
                     Line2D([], [], ls="none", marker="o", ms=3.6, mfc="white",
