@@ -250,7 +250,7 @@ TD = len(DS6) - 1
 D_LO, D_HI = -8.6, TD + 1.9
 for y, d in zip(YD, DS6):
     S = D[d]["SHIFT_SRC"]["SC"]
-    keep = 1.0 - S["abstain_1iqr"]["mean"]
+    keep = 1.0 - S["abstain_1iqr_ref"]["mean"]      # on the target-IQR scale, as in the text and legend
     cov = S["coverage"]["mean"]
     axD.plot([cov, keep], [y, y], color=GREY, lw=0.8, zorder=1)
     axD.plot([keep], [y], ls="none", marker=style.MARK["source"], ms=4.2,
@@ -278,15 +278,15 @@ QA["d.legend"] = axD.legend(
                     color=style.ROLE["fail"], label="coverage on the design region")],
     loc="lower left", bbox_to_anchor=(-0.012, 0.315), handlelength=0.9,
     borderpad=0.15, labelspacing=0.25, handletextpad=0.35)
-# The threshold IQR is the one the rule can see at decision time (the target
-# recalibration pool, JSON iqr_seed0.abst_shift), which is NOT the reporting IQR
-# that normalises the widths (iqr_seed0.report_tgt); both are named here.
+# The threshold is the IQR of the whole design region (JSON abstain_1iqr_ref, the
+# report_tgt scale that also normalises the widths), as the text and legend state;
+# on the source-domain IQR (abstain_1iqr) the rule is silent on three tasks, not four.
 # Three short lines that start INSIDE the left spine: a wider two-line version
 # has to be anchored left of the spine, and the spine is then drawn through the
 # type, which is the same defect as a reference line crossing a legend.
 QA["d.note"] = axD.text(0.005, -6.22,
                         "rule: abstain if the interval is wider than 1 × IQR\n"
-                        "of the target recalibration pool.  After recalibration\n"
+                        "of the design region.  After recalibration\n"
                         "every candidate abstains, at 2.1–5.1 × target IQR.",
                         fontsize=7, ha="left", va="center", color=INK, linespacing=1.35)
 
@@ -345,7 +345,7 @@ for d in DS6:
           f"nW {S['norm_width']['mean']:.2f}  |  recal: not abstained "
           f"{1 - T['abstain_1iqr']['mean']:.2f}  coverage {T['coverage']['mean']:.3f}  "
           f"nW {T['norm_width']['mean']:.2f}  |  IQR seed0: report_tgt "
-          f"{Q['report_tgt']:.1f}  abst_shift {Q['abst_shift']:.1f}")
+          f"{Q['report_tgt']:.1f}  abst_shift_src {Q['abst_shift_src']:.1f}")
 nwr = vals("SHIFT_RECAL", "SC", "norm_width", DS6)
 print(f"  recalibrated normalised width, median {statistics.median(nwr):.2f} "
       f"[{min(nwr):.2f}, {max(nwr):.2f}] x target IQR")

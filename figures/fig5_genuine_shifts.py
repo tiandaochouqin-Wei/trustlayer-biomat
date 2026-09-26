@@ -120,11 +120,11 @@ def box(x0, y0, x1, y1):
 # ===================================================================== a
 PROPS = [("Tg", "Tg"), ("YoungModulus", "Young's mod."),
          ("Microhardness", "microhard."), ("Tliquidus", "liquidus")]
-FAM = [("A_labout", "Held-out laboratories"), ("B_temporal", "Future publications"),
+FAM = [("A_labout", "Held-out laboratories"), ("B_temporal", "Later publications"),
        ("C_analysed", "Analysed compositions")]
 # key, label, colour, marker, marker face  (colour AND marker AND row are redundant)
 METH = [("id.row.coverage", "in-distribution", GREY, "v", "none"),
-        ("tgt_test_a.row.coverage", "row-calibrated (i.i.d.)", ROLE["source"], "o", None),
+        ("tgt_test_a.row.coverage", "source-calibrated (i.i.d.)", ROLE["source"], "o", None),
         ("tgt_test_a.lab.coverage", "laboratory-calibrated", OI["skyblue"], "^", None),
         ("weighted.test_a.coverage", "weighted conformal", OI["purple"], "P", None),
         ("recal_a.m.coverage", "target-recalibrated, m = 30", ROLE["recal"], "s", None)]
@@ -203,14 +203,13 @@ axB.set_title("Coverage inside one laboratory", fontsize=8)
 # key: line style carries the series identity, so it is legible without colour,
 # and it sits in the empty upper-left corner, outside the two histograms.
 hB = [Line2D([], [], color=ROLE["source"], lw=1.1, ls=LS_SRC,
-             label="row-calibrated (i.i.d.)"),
+             label="source-calibrated (i.i.d.)"),
       Line2D([], [], color=ROLE["recal"], lw=1.1, ls="-",
              label="laboratory-recalibrated,\n10 of its own glasses")]
-axB.legend(handles=hB, loc="upper left", bbox_to_anchor=(-0.012, 1.03),
+axB.legend(handles=hB, loc="upper left", bbox_to_anchor=(0.055, 1.03),   # clear of sub-panel label i
            handlelength=1.5, handletextpad=0.4, labelspacing=0.22, borderpad=0.0)
 # the two shares, named in words so that nothing here depends on colour
-axB.text(0.995, 65.0, f"n = {len(row):,}", fontsize=7, ha="right", va="top")
-axB.text(0.03, 30.0, "share below 0.80", fontsize=7, ha="left", va="top")
+axB.text(0.03, 30.0, f"share below 0.80 (n = {len(row):,})", fontsize=7, ha="left", va="top")
 axB.text(0.03, 19.5, f"{sh_row * 100:.0f}% i.i.d.,  {sh_l10 * 100:.1f}% recalibrated",
          fontsize=7, ha="left", va="top")
 
@@ -227,7 +226,7 @@ axBi.scatter(rec, 2.55 + rng.uniform(-0.15, 0.15, len(rec)), s=2.4, marker="o",
 for y, q, col, mrk, cv, nm in [(1.35, q_lab, OI["skyblue"], "^", c_lab,
                                 "laboratory-calibrated"),
                                (0.15, q_row, ROLE["source"], "o", c_row,
-                                "row-calibrated")]:
+                                "source-calibrated")]:
     axBi.plot([cen - q, cen + q], [y, y], color=col, lw=1.6, solid_capstyle="butt",
               zorder=3)
     axBi.plot([cen], [y], marker=mrk, ms=3.2, color=col, zorder=4)
@@ -321,7 +320,7 @@ axC2.set_xlabel("coverage")
 axC2.set_title("By chemistry class, k = 0", fontsize=8)
 # the marginal value is named with its numbers and its leader ends on the LEFT
 # edge of the grey band, so that it cannot be read as pointing at nominal 0.90
-axC2.annotate(f"marginal\n{mlo:.2f}-{mhi:.2f}", xy=(mlo, 3.30), xytext=(0.715, 4.00),
+axC2.annotate(f"marginal\n{mlo:.2f}-{mhi:.2f}", xy=(mlo, 3.30), xytext=(0.745, 4.00),
               fontsize=7, color="#3A3A3A", ha="center", va="center", linespacing=1.25,
               arrowprops=dict(arrowstyle="-", lw=0.6, color="#3A3A3A",
                               shrinkA=2, shrinkB=1))
@@ -370,7 +369,7 @@ axD1.set_ylabel("coverage")
 axD1.set_xticklabels([])
 axD1.tick_params(axis="x", length=0)
 axD1.set_title("External histology cohort", fontsize=8)
-axD1.text(-0.52, 0.955, "nominal 0.90", fontsize=7, ha="left", va="bottom",
+axD1.text(-0.33, 0.955, "nominal 0.90", fontsize=7, ha="left", va="bottom",
           color=ROLE["ideal"])
 T2 = {m: R5["architectures"][m]["results"]["T2_Kather2016_5class"]["LAC"]
       for m, _, _, _ in MODd}
@@ -389,7 +388,7 @@ axD2.set_ylim(-0.55, 10.6)
 axD2.set_yticks([0, 3, 6, 9])
 axD2.set_ylabel("prediction-set\nsize", linespacing=1.2)
 axD2.set_xticklabels([d for _, d in DOM])
-axD2.text(-0.52, 9.25, f"all {NCLASS} classes", fontsize=7, ha="left", va="bottom",
+axD2.text(-0.30, 9.25, f"all {NCLASS} classes", fontsize=7, ha="left", va="bottom",
           color=ROLE["ideal"])
 axD2.text(2 - DXMOD + DXCAL - 0.09, T2["SmallCNN"][KR]["set_size"]["mean"],
           f"{T2['SmallCNN'][KR]['set_size']['mean']:.1f}", fontsize=7, ha="right",
@@ -428,6 +427,17 @@ fig.legend(handles=hD, labels=[MODd[0][1], MODd[1][1], "source-calibrated",
            ncol=2, handlelength=1.5, handletextpad=0.4, labelspacing=0.3,
            columnspacing=1.0, borderpad=0.0,
            handler_map={tuple: HandlerTuple(ndivide=None, pad=0.35)})
+
+# ============================================== sub-panel labels (editor: i ii iii, bold, top left)
+def sub(ax, roman, x=0.025, y=0.975):
+    ax.text(x, y, roman, transform=ax.transAxes, fontsize=8, fontweight="bold",
+            ha="left", va="top", zorder=9,
+            bbox=dict(fc="white", ec="none", alpha=0.85, pad=0.8))
+
+
+for ax, r in [(axA[0], "i"), (axA[1], "ii"), (axA[2], "iii"), (axB, "i"), (axBi, "ii"),
+              (axC1, "i"), (axC2, "ii"), (axD1, "i"), (axD2, "ii")]:
+    sub(ax, r)
 
 # ===================================================================== save
 fig.canvas.draw()
